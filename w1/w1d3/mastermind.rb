@@ -22,7 +22,11 @@ class Game
   end
 
   def play_turn
+    @board.display
     guess = get_valid_guess
+    keycode = @computer.check_guess(guess)
+    board.add_row(guess, keycode)
+
     # pass guess to computer to get keycode
     # pass guess & keycode to board
 
@@ -36,8 +40,31 @@ end
 
 class Board
   def initialize
-    #do anything
+    @game_rows = []
   end
+
+  def add_row(guess, keycode)
+    @game_rows << [guess, keycode]
+  end
+
+  def game_over?
+    return false if @game_rows.empty?
+    if @game_rows.size == 10
+      return true
+    else
+      if @game_rows.last[1] == "****"
+        return true
+      end
+    end
+    false
+  end
+
+  def display
+    @game_rows.each do |row|
+      puts "#{row[0].inspect} #{row[0].inspect}"
+    end
+  end
+
 
   # board checks for all asterisks or full board
 end
