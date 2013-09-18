@@ -11,13 +11,14 @@ class Game
   end
 
   def get_valid_guess
-    valid = false
-    while !valid do
-      #prompt
-      input_string
-      #check
-      #set valid
+    input_guess = ""
+
+    until Code.valid_code?(input_guess) do
+      print "Enter valid guess: "
+      input_guess = gets.chomp.upcase!
     end
+
+    input_guess
   end
 
   def play_turn
@@ -46,19 +47,18 @@ class  CodeMaker
     @code
   end
 
-  def is_guess_valid?(code)
-    true
-  end
-
   def check_guess(guess)
     code_copy = @code.dup
     keycode = ""
+
     code_copy.each_with_index do |code_char, i|
       guess_char = guess[i]
+
       if guess_char == code_char
         keycode << "*"
         code_copy[i] = guess[i] = nil
       end
+
     end
 
     code_copy.compact!
@@ -88,6 +88,14 @@ class Code
     4.times do
       rand_code << VALID_PEGS.sample
     end
+  end
+
+  def self.valid_code?(guess)
+    return false if guess.length != 4
+    guess.each do |peg|
+      return false unless VALID_PEGS.include?(peg)
+    end
+    true
   end
 
 end
