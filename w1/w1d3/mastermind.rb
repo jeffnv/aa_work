@@ -1,7 +1,7 @@
 class Game
   def initialize
     @board = Board.new
-    @computer = Codemaker.new
+    @computer = CodeMaker.new
   end
 
   def play_game
@@ -11,11 +11,11 @@ class Game
   end
 
   def get_valid_guess
-    input_guess = ""
+    input_guess = []
 
-    until Code.valid_code?(input_guess) do
+    until @computer.valid_code?(input_guess) do
       print "Enter valid guess: "
-      input_guess = gets.chomp.upcase!
+      input_guess = gets.chomp.upcase!.split("")
     end
 
     input_guess
@@ -25,16 +25,7 @@ class Game
     @board.display
     guess = get_valid_guess
     keycode = @computer.check_guess(guess)
-    board.add_row(guess, keycode)
-
-    # pass guess to computer to get keycode
-    # pass guess & keycode to board
-
-
-
-    # prompt user for guess
-    # checks validity
-    # checks correctness
+    @board.add_row(guess, keycode)
   end
 end
 
@@ -50,9 +41,11 @@ class Board
   def game_over?
     return false if @game_rows.empty?
     if @game_rows.size == 10
+      puts "YOU LOSE"
       return true
     else
       if @game_rows.last[1] == "****"
+        puts "YOU DIDN'T LOSE"
         return true
       end
     end
@@ -61,63 +54,56 @@ class Board
 
   def display
     @game_rows.each do |row|
-      puts "#{row[0].inspect} #{row[0].inspect}"
+      puts "#{row[0].inspect} #{row[1].inspect}"
     end
   end
-
-
-  # board checks for all asterisks or full board
 end
 
-class  CodeMaker
+class CodeMaker
+  VALID_PEGS = %w(R G B Y O P)
+
   def initialize
-    @code
+    @code = get_random_code
   end
 
   def check_guess(guess)
     code_copy = @code.dup
+    guess_copy = guess.dup
     keycode = ""
 
     code_copy.each_with_index do |code_char, i|
-      guess_char = guess[i]
+      guess_copy_char = guess_copy[i]
 
-      if guess_char == code_char
+      if guess_copy_char == code_char
         keycode << "*"
-        code_copy[i] = guess[i] = nil
+        code_copy[i] = guess_copy[i] = nil
       end
 
     end
 
     code_copy.compact!
-    guess.compact!
+    guess_copy.compact!
 
-    guess.each_with_index do |guess_char, i|
-      if code_copy.include?(guess_char)
+    guess_copy.each_with_index do |guess_copy_char, i|
+      if code_copy.include?(guess_copy_char)
         keycode << "."
-        code_copy[i] = guess[i] = nil
+        guess_copy[i] = nil
+        code_copy[code_copy.index(guess_copy_char)] = nil
       end
     end
     keycode
   end
-end
 
-
-
-class Code
-  VALID_PEGS = %w(R G B Y O P)
-  def initialize(input_code = nil)
-    @pegs = input_code || get_random_code
-
-  end
 
   def get_random_code
     rand_code = []
     4.times do
       rand_code << VALID_PEGS.sample
     end
+    rand_code
   end
 
-  def self.valid_code?(guess)
+  def valid_code?(guess)
     return false if guess.length != 4
     guess.each do |peg|
       return false unless VALID_PEGS.include?(peg)
