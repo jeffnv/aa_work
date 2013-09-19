@@ -135,6 +135,46 @@ def make_change(amount, coins = [25, 10, 5, 1])
   ways_of_change[0]
 end
 
+def merge_sort_rec(array)
+
+  return array if array.length == 1
+
+  array_left = array[0..(array.length/2 - 1)]
+
+  array_right = array[(array.length/2)..-1]
+
+  sorted_array_left = merge_sort_rec(array_left)
+  sorted_array_right = merge_sort_rec(array_right)
+
+  unified_array = []
+
+  until sorted_array_left.empty? and sorted_array_right.empty? do
+    if(sorted_array_left.empty?)
+      unified_array << sorted_array_right.shift
+      next
+    end
+
+    if(sorted_array_right.empty?)
+      unified_array << sorted_array_left.shift
+      next
+    end
+
+    if(sorted_array_left.first < sorted_array_right.first)
+      unified_array << sorted_array_left.shift
+    else
+      unified_array << sorted_array_right.shift
+    end
+  end
+
+  return unified_array
+end
+
+def subsets(array)
+  if array.empty?
+    return array
+
+end
+
 #You shouldn't have to pass any arrays between
 #methods; you should be able to do this just passing a
 #single argument for the number of Fibonacci numbers requested.
