@@ -7,26 +7,10 @@ class Player
   def set_up_player(options)
     defaults = {:mode => :hangman}
     @options = defaults.merge(options)
-    set_up_secret_word
   end
 
   def guess_letter
     puts "You guessed a letter!"
-  end
-
-  def confirm_guess(guess)
-  end
-
-  def get_word_length
-
-  end
-
-  def secret_word
-
-  end
-
-  def set_up_secret_word
-
   end
 
 end
@@ -96,6 +80,7 @@ class ComputerPlayer < Player
     end
 
     set_up_player(options)
+    set_up_secret_word
   end
 
   def get_random_word

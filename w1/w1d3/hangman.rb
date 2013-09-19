@@ -14,27 +14,24 @@ class Hangman
     set_up_display(@hangman.get_word_length)
     system('clear')
     until game_over? do
+
       update_display
+
       puts "already guessed: #{@guessed_letters.inspect}"
       guess = @guesser.guess_letter(@display_word, @guessed_letters)
       matches = @hangman.confirm_guess(guess)
+
       if(matches.empty?)
-        #there was no match, decrement remaining turns
         @guesses_remaining -= 1
       else
         @display_word.update_with_correct_guess(matches)
-        #should we move the public secret word to the game class?
-        #if so we could do this:
-        #@secret.update_with_guess(matches)
-        #also we could remove the @hangman.display
-        #and do like
       end
+
       @guessed_letters << guess unless @guessed_letters.include? guess
       @guessed_letters.sort!
+
     end
   end
-
-
 
   private
 
