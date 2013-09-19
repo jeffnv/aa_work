@@ -1,3 +1,4 @@
+load 'player.rb'
 class Hangman
   GUESSES_ALLOWED = 10
   def initialize
@@ -15,7 +16,7 @@ class Hangman
     until game_over? do
       update_display
       puts "already guessed: #{@guessed_letters.inspect}"
-      guess = @guesser.guess_letter
+      guess = @guesser.guess_letter(@display_word, @guessed_letters)
       matches = @hangman.confirm_guess(guess)
       if(matches.empty?)
         #there was no match, decrement remaining turns
@@ -90,7 +91,6 @@ class DisplayWord
   end
 
   def update_with_correct_guess(update_hash)
-    p update_hash
     update_hash.each do |index, letter|
       @word[index] = letter
     end
@@ -99,106 +99,14 @@ class DisplayWord
   def complete?
     @word.none?{|char|char == '_'}
   end
-end
 
-class Player
-  def initialize(options = {})
-    set_up_player(options)
+  def length
+    @word.length
   end
 
-  def set_up_player(options)
-    defaults = {:guesser => :human}
-    @options = defaults.merge(options)
-    set_up_secret_word
+  def pattern
+    @word.map do |letter|
+      letter == '_' ? '\w' : letter
+    end.join('')
   end
-
-  def guess_letter
-  end
-
-  def confirm_guess(guess)
-  end
-
-  def get_word_length
-
-  end
-
-  def secret_word
-
-  end
-
-end
-
-class HumanPlayer < Player
-
-  def initialize(options = {})
-    set_up_player(options)
-  end
-
-  def set_up_secret_word
-    if(@options[:guesser] == :machine)
-      print "How long is your secret word: "
-      gets.chomp.to_i
-    end
-  end
-
-  def guess_letter
-    print "Enter guess: "
-    gets.chomp
-  end
-
-  def confirm_guess
-    #get index of the guessed letter
-    #return a hash of mathes {'a' => 0, 'b' => 1}
-    #an empty hash is a miss
-  end
-
-  def get_word_length
-    print "How long is your secret word: "
-    gets.chomp.to_i
-  end
-
-
-end
-
-class ComputerPlayer < Player
-
-  def initialize(options = {})
-    set_up_player(options)
-  end
-
-  def get_random_word
-    words = File.readlines("dictionary.txt")
-    words.sample.chomp
-  end
-
-  def set_up_secret_word
-    if(@options[:guesser] == :human)
-      @secret_word = get_random_word
-    end
-  end
-
-  def guess_letter
-    (a..z).to_a.sample
-  end
-
-  def confirm_guess(guess)
-    matches = {}
-    secret_word_array = @secret_word.split('')
-    if(@secret_word.include?(guess))
-      secret_word_array.each_with_index do |char, index|
-
-        matches[index] = char if (guess == char)
-      end
-    end
-    matches
-  end
-
-  def get_word_length
-    @secret_word.length
-  end
-
-  def secret_word
-    @secret_word
-  end
-
 end
