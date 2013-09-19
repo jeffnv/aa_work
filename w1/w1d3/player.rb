@@ -5,7 +5,7 @@ class Player
   end
 
   def set_up_player(options)
-    defaults = {:guesser => :human}
+    defaults = {:mode => :hangman}
     @options = defaults.merge(options)
     set_up_secret_word
   end
@@ -25,6 +25,10 @@ class Player
 
   end
 
+  def set_up_secret_word
+
+  end
+
 end
 
 class HumanPlayer < Player
@@ -33,10 +37,9 @@ class HumanPlayer < Player
     set_up_player(options)
   end
 
-  def guess_letter(display_word)
+  def guess_letter(display_word, guessed_letters)
     print "Enter guess: "
     gets.chomp
-    super
 
   end
 
@@ -86,11 +89,13 @@ end
 class ComputerPlayer < Player
 
   def initialize(options = {})
-    set_up_player(options)
     @dictionary = []
+
     File.open('dictionary.txt').each do |line|
       @dictionary << line.chomp
     end
+
+    set_up_player(options)
   end
 
   def get_random_word
@@ -98,7 +103,7 @@ class ComputerPlayer < Player
   end
 
   def set_up_secret_word
-    if(@options[:guesser] == :human)
+    if(@options[:mode] == :hangman)
       @secret_word = get_random_word
     end
   end

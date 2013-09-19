@@ -63,20 +63,32 @@ class Hangman
   def set_up_players(play_mode)
 
     if(play_mode == 'g')
-      @guesser = HumanPlayer.new({:guesser => :human})
-      @hangman = ComputerPlayer.new({:guesser => :human})
+      @guesser = HumanPlayer.new({:mode => :guesser})
+      @hangman = ComputerPlayer.new({:mode => :hangman})
     elsif(play_mode == 'h')
-      @guesser = ComputerPlayer.new({:guesser => :machine})
-      @hangman = HumanPlayer.new({:guesser => :machine})
+      @guesser = ComputerPlayer.new({:mode => :guesser})
+      @hangman = HumanPlayer.new({:mode => :hangman})
     else
       get_game_mode
     end
   end
 
   def set_up_game_mode
-    puts "Would you like to be the guesser or hangman? (enter g or h)"
-    play_mode = (gets.chomp[0])
-    set_up_players(play_mode.downcase)
+    puts "How many human players (0, 1, 2)?"
+    num_humans = gets.chomp.to_i
+
+    case num_humans
+    when 0
+      @guesser = ComputerPlayer.new({:mode => :guesser})
+      @hangman = ComputerPlayer.new({:mode => :hangman})
+    when 1
+      puts "Would you like to be the guesser or hangman? (enter g or h)"
+      play_mode = (gets.chomp[0])
+      set_up_players(play_mode.downcase)
+    when 2
+      @guesser = HumanPlayer.new({:mode => :guesser})
+      @hangman = HumanPlayer.new({:mode => :hangman})
+    end
   end
 
 end
