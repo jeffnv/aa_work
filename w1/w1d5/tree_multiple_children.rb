@@ -1,3 +1,4 @@
+
 class TreeNode
   attr_accessor :value, :parent
   attr_reader :children
