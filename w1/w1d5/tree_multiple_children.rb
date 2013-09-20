@@ -20,11 +20,11 @@ class TreeNode
     prc ||= Proc.new { |value| value == value_to_search }
     return self if prc.call(self.value)
 
-    @children.find do |child_node|
+    @children.each do |child_node|
       child_node_search_result = child_node.dfs(&prc)
 
       if child_node_search_result
-        return child_node # if prc.call(child_node_search_result.value)
+        return child_node_search_result # if prc.call(child_node_search_result.value)
       end
 
     end #find
@@ -45,7 +45,7 @@ class TreeNode
     return nil if nodes_to_search.empty?
 
     nodes_to_search.each do |node|
-      found_node = node.bfs(value_to_search)
+      found_node = node.bfs(&prc)
       return found_node unless found_node.nil?
     end
 
