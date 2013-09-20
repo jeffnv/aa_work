@@ -8,7 +8,7 @@ class TreeNode
   end
 
   def display
-    "Node with value #{self.value}"
+    p self.value
   end
 
   def add_node(new_node)
@@ -53,39 +53,39 @@ class TreeNode
   end
 end
 
-
-root = TreeNode.new("D")
-level1_left = root.add_node(TreeNode.new("C"))
-level1_right = root.add_node(TreeNode.new("F"))
-level2_left = level1_left.add_node(TreeNode.new("B"))
-level1_left.add_node(TreeNode.new("Q"))
-
-
-p root.dfs("Q").display
-
-puts "\n    Testing DFS\n"
-puts "\nSearching for 'B'..."
-result = root.dfs("B")
-p "Found node: #{result.display}"
-
-
-puts "\nSearch 'H' value, not in tree"
-p "Found node: #{root.dfs("H").display}"
-
-puts "\nSearch 'F'"
-p "#{root.dfs("F").display}"
-
-puts "\n\n      BFS search tests:\n\n"
-result = root.bfs("B")
-p "Found node: #{result.display}"
-
-puts "\nSearch 'H' value, not in tree"
-p "Found code: #{root.bfs("H").display}"
-
-puts "\nSearch 'F' found #{root.bfs("F").display}"
-
-puts "\nSearch 'B' with block using DFS"
-p "Found: #{(root.dfs{|val|val == 'B'}).display}"
-
-puts "\nSearch 'B' with block using BFS"
-p "Found: #{(root.bfs{|val|val == 'B'}).display}"
+#
+# root = TreeNode.new("D")
+# level1_left = root.add_node(TreeNode.new("C"))
+# level1_right = root.add_node(TreeNode.new("F"))
+# level2_left = level1_left.add_node(TreeNode.new("B"))
+# level1_left.add_node(TreeNode.new("Q"))
+#
+#
+# p root.dfs("Q").display
+#
+# puts "\n    Testing DFS\n"
+# puts "\nSearching for 'B'..."
+# result = root.dfs("B")
+# p "Found node: #{result.display}"
+#
+#
+# puts "\nSearch 'H' value, not in tree"
+# p "Found node: #{root.dfs("H").display}"
+#
+# puts "\nSearch 'F'"
+# p "#{root.dfs("F").display}"
+#
+# puts "\n\n      BFS search tests:\n\n"
+# result = root.bfs("B")
+# p "Found node: #{result.display}"
+#
+# puts "\nSearch 'H' value, not in tree"
+# p "Found code: #{root.bfs("H").display}"
+#
+# puts "\nSearch 'F' found #{root.bfs("F").display}"
+#
+# puts "\nSearch 'B' with block using DFS"
+# p "Found: #{(root.dfs{|val|val == 'B'}).display}"
+#
+# puts "\nSearch 'B' with block using BFS"
+# p "Found: #{(root.bfs{|val|val == 'B'}).display}"
