@@ -16,22 +16,30 @@ class TreeNode
     new_node.parent = self
   end
 
-  def dfs(value_to_search)
-    return self if self.value == value_to_search
+  def dfs(value_to_search = nil, &prc)
+    prc ||= Proc.new { |value| value == value_to_search }
+    return self if prc.call(self.value)
 
     @children.find do |child_node|
-      child_node_search_result = child_node.dfs(value_to_search)
+      child_node_search_result = child_node.dfs(&prc)
+
       if child_node_search_result
-        child_node_search_result.value == value_to_search
+        return child_node # if prc.call(child_node_search_result.value)
       end
-    end
+
+    end #find
+
   end
 
-  def bfs(value_to_search)
-    return self if self.value == value_to_search
-    nodes_to_search = @children
 
-    found_node  = nodes_to_search.find{|node|node.value == value_to_search}
+  def bfs(value_to_search = nil, &prc)
+    prc ||= Proc.new { |value| value == value_to_search }
+    # condition_satisfied = (block_given? ? prc.call(self.value) : self.value == value_to_search)
+
+    return self if prc.call(self.value)
+
+    nodes_to_search = @children
+    found_node  = nodes_to_search.find{|node|prc.call(node.value)}
 
     return found_node if found_node
     return nil if nodes_to_search.empty?
@@ -58,20 +66,26 @@ p root.dfs("Q").display
 puts "\n    Testing DFS\n"
 puts "\nSearching for 'B'..."
 result = root.dfs("B")
-puts "Found node: #{result.display}"
+p "Found node: #{result.display}"
 
 
 puts "\nSearch 'H' value, not in tree"
-puts "Found node: #{root.dfs("H").display}"
+p "Found node: #{root.dfs("H").display}"
 
 puts "\nSearch 'F'"
-puts "#{root.dfs("F").display}"
+p "#{root.dfs("F").display}"
 
 puts "\n\n      BFS search tests:\n\n"
 result = root.bfs("B")
-puts "Found node: #{result.display}"
+p "Found node: #{result.display}"
 
 puts "\nSearch 'H' value, not in tree"
-p root.bfs("H")
+p "Found code: #{root.bfs("H").display}"
 
 puts "\nSearch 'F' found #{root.bfs("F").display}"
+
+puts "\nSearch 'B' with block using DFS"
+p "Found: #{(root.dfs{|val|val == 'B'}).display}"
+
+puts "\nSearch 'B' with block using BFS"
+p "Found: #{(root.bfs{|val|val == 'B'}).display}"
