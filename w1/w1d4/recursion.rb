@@ -169,10 +169,26 @@ def merge_sort_rec(array)
   return unified_array
 end
 
-def subsets(array)
-  if array.empty?
-    return array
+def sbs(array)
+  array.length.times do |index|
+    (array.length - index).times do |sub_index|
 
+    end
+  end
+end
+
+
+
+
+def subsets(array)
+  subsets = []
+  return [[]] if array.length == 0
+
+  first_item = array[0]
+  rest = subsets(array[1..-1])
+  rest_dup = deep_dup(rest)
+  rest_with_first = rest_dup.map { |subset| subset << first_item }
+  rest_with_first + rest
 end
 
 #You shouldn't have to pass any arrays between
