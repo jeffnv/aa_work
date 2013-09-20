@@ -2,30 +2,43 @@ require 'set'
 class WordChains
 
   def initialize
-    @dictionary = []
-    @current_words = []
-    @visited_words = []
-    @end_word = []
+    @dictionary = Set.new
+    @current_words = Set.new
+    @visited_words = {}
+    @end_word = Set.new
     @target = ""
     File.foreach("dictionary.txt") do |line|
       @dictionary << line.chomp
     end
-    nil
   end
 
-  def adjacent_words(word)
-    adj_words = []
-    filter_by_length(word)
-    word.length.times do |index|
-      pattern = word.dup
-      pattern[index] = '\w'
-      adj_words += @dictionary.select{|word| word =~ /#{pattern}/}
+  def list_of_other_words(word, index_to_replace)
+
+    ('a'..'z').to_a.map do |letter|
+      new_word = word.dup
+      new_word[index_to_replace] = letter
+      new_word
     end
+
+  end
+
+
+  def adjacent_words(word)
+
+    adj_words = Set.new
+    filter_by_length(word)
+
+    word.length.times do |index|
+      word_to_check = list_of_other_words(word, index)
+      adj_words += word_to_check.select{|possible_word| @length_filtered_dictionary.include?(possible_word)}
+    end
+
     adj_words
   end
 
   def filter_by_length(word_to_compare)
-    @dictionary.select!{|word|word.length == word_to_compare.length}
+    @length_filtered_dictionary = @dictionary
+    @length_filtered_dictionary.select!{|word|word.length == word_to_compare.length}
   end
 
   def build_chain
@@ -48,13 +61,13 @@ class WordChains
 
     @start_word = start_word
     @visited_words = {start_word => nil}
-    @current_words << start_word
+    @current_words = Set.new [start_word]
     @end_word = end_word
     found = false
     until found do
-      new_words = []
+      new_words = Set.new
 
-      @current_words.each_with_index do |word, index|
+      @current_words.each do |word|
         adj_words =  adjacent_words(word)
         adj_words_not_yet_visited = (adj_words.select{|adj_word|!@visited_words.include?(adj_word)})
         new_words = new_words + adj_words_not_yet_visited
