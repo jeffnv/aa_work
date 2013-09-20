@@ -82,24 +82,24 @@ level1_left.right = TreeNode.new("Q")
 
 p root.dfs("Q").display
 
-#
-#
-# puts "Searching for 'B'..."
-# result = root.dfs("B")
-# p result.inspect
-# puts "Found node: #{result.display}"
-#
-#
-# puts "\nSearch 'H' value, not in tree"
-# p root.dfs("H")
-#
-# puts "Search 'F'"
-# puts "#{root.dfs("F")}"
-#
-# result = root.bfs("B")
-# puts "Found node: #{result.display}"
-#
-# puts "\nSearch 'H' value, not in tree"
-# p root.bfs("H")
-#
-# puts "Search 'F' found #{root.bfs("F").display}"
+
+
+puts "Searching for 'B'..."
+result = root.dfs("B")
+p result.inspect
+puts "Found node: #{result.display}"
+
+
+puts "\nSearch 'H' value, not in tree"
+p root.dfs("H")
+
+puts "Search 'F'"
+puts "#{root.dfs("F")}"
+
+result = root.bfs("B")
+puts "Found node: #{result.display}"
+
+puts "\nSearch 'H' value, not in tree"
+p root.bfs("H")
+
+puts "Search 'F' found #{root.bfs("F").display}"
