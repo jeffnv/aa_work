@@ -26,13 +26,44 @@ end
 
 class ComputerPlayer
   attr_reader :name
-
   def initialize
     @name = "Tandy 400"
+    @move_tree = nil
   end
 
   def move(game, mark)
+    @move_tree = nil
+    grow_move_tree(game.board.rows, mark)
+
     winner_move(game, mark) || random_move(game, mark)
+
+  end
+
+  def get_available_moves(board)
+    open_spaces = []
+    board.each_with_index do |row, row_index|
+      row.each_with_index  do |space, col_index|
+        if space.nil?
+          open_spaces << [row_index, col_index]
+        end
+      end
+    end
+    open_spaces
+  end
+
+  def grow_move_tree(current_grid, mark)
+    current_node = TreeNode.new({current_grid: current_grid, turn: mark})
+    open_moves = get_available_moves(current_grid)
+    open_moves.each do |open_move|
+      test_grid = current_grid.dup
+      test_grid[open_move[0]][open_move[1]] = mark
+
+      p test_grid[0]
+      p test_grid[1]
+      p test_grid[2]
+      puts "\n-------------------------------------"
+      test_grid[open_move[0]][open_move[1]] = nil
+    end
   end
 
   private

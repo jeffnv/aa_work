@@ -1,5 +1,6 @@
 load './board.rb'
 load './players.rb'
+require "../tree_multiple_children"
 
 class TicTacToe
   class IllegalMoveError < RuntimeError
