@@ -1,85 +1,82 @@
 class Board
-  attr_reader :game_rows
-  def initialize
-    @game_rows = [[:b, :b, :b],[:b, :b, :b],[:b, :b, :b]]
+  attr_reader :rows
+
+  def self.blank_grid
+    (0...3).map { [nil] * 3 }
   end
 
-
-  def mark(coord, mark)
-    @game_rows[coord[0]][coord[1]] = mark
+  def initialize(rows = self.class.blank_grid)
+    @rows = rows
   end
 
-  def space_blank?(coord)
-    @game_rows[coord[0]][coord[1]] == :b
+  def dup
+    duped_rows = rows.map(&:dup)
+    self.class.new(duped_rows)
   end
 
-  def display
-    @game_rows.each do |row|
-      p row
-    end
+  def empty?(pos)
+    self[pos].nil?
   end
 
-  def cats_game?
-    #if there are NO more available spaces to play
-    @game_rows.flatten.none?{|el|el == :b}
+  def []=(pos, mark)
+    raise "mark already placed there!" unless empty?(pos)
+
+    x, y = pos[0], pos[1]
+    @rows[x][y] = mark
   end
 
-  def gameover?(choice, mark)
-    row = choice[0]
-    col = choice[1]
-
-    return true if horizontal_victory?(row, mark)
-    return true if vertical_victory?(col, mark)
-    return true if diagonal_victory?(mark)
-    false
+  def [](pos)
+    x, y = pos[0], pos[1]
+    @rows[x][y]
   end
 
-  def horizontal_victory?(row, current_mark)
-    # Horizontal victory!
-    @game_rows[row].all? {|el| el == current_mark }
-  end
-
-  def vertical_victory?(col, current_mark)
-    column = []
-    @game_rows.each do |row|
-      column << row[col]
-    end
-
-    column.all? { |el| el == current_mark }
-  end
-
-  def available_moves
-    open_coords = []
-    (0..2).each do |row|
-      (0..2).each do |col|
-        open_coords << [row, col] if space_blank?([row,col])
+  def cols
+    cols = [[], [], []]
+    @rows.each do |row|
+      row.each_with_index do |mark, col|
+        cols[col] << mark
       end
     end
-    open_coords
+
+    cols
   end
 
-  def diagonal_victory?(current_mark)
-    # Using the helper function check_diagonal,
-    # diagonal_victory evaluates whether a player
-    # has completely filled a diagonal with his mark.
-    diagonal1_coords = [[0,0], [1,1], [2,2]]
-    diagonal2_coords = [[0,2], [1,1], [2,0]]
+  def diagonals
+    down_diag = [[0, 0], [1, 1], [2, 2]]
+    up_diag = [[0, 2], [1, 1], [2, 0]]
 
-    diag1 = check_diagonal(diagonal1_coords, current_mark)
-    diag2 = check_diagonal(diagonal2_coords, current_mark)
-
-    diag1 || diag2
+    [down_diag, up_diag].map do |diag|
+      # Note the `x, y` inside the block; this unpacks, or
+      # "destructures" the argument. Read more here:
+      # http://tony.pitluga.com/2011/08/08/destructuring-with-ruby.html
+      diag.map { |x, y| @rows[x][y] }
+    end
   end
 
-  def check_diagonal(diagonal_coords, current_mark)
-    # Examines element values at given coordinates
-    # returns true if all elements are equal to
-    # current player's mark
-    diagonal_elements = []
+  def over?
+    # style guide says to use `or`, but I (and many others) prefer to
+    # use `||` all the time. We don't like two ways to do something
+    # this simple.
+    won? || tied?
+  end
 
-      diagonal_coords.each do |coord|
-        diagonal_elements << @game_rows[coord[0]][coord[1]]
-      end
-    diagonal_elements.all? { |el| el == current_mark }
+  def won?
+    !winner.nil?
+  end
+
+  def tied?
+    return false if won?
+
+    # no empty space?
+    @rows.all? { |row| row.none? { |el| el.nil? }}
+  end
+
+  def winner
+    (rows + cols + diagonals).each do |triple|
+      return :x if triple == [:x, :x, :x]
+      return :o if triple == [:o, :o, :o]
+    end
+
+    nil
   end
 end

@@ -1,65 +1,56 @@
 load './board.rb'
 load './players.rb'
+
 class TicTacToe
+  class IllegalMoveError < RuntimeError
+  end
 
-  def initialize
+  attr_reader :board
+
+  def initialize(player1, player2)
     @board = Board.new
-    @players = []
-    @turn = 0
+    @players = { :x => player1, :o => player2 }
+    @turn = :x
   end
 
-  def current_player
-    @players[@turn]
+  def show
+    # not very pretty printing!
+    self.board.rows.each { |row| p row }
   end
 
-  def update_game(coord)
+  def run
+    until self.board.over?
+      play_turn
+    end
 
-    row = coord[0]
-    col = coord[1]
-    if(@board.space_blank?(coord))
-      @board.mark(coord, current_player.mark)
+    if self.board.won?
+      winning_player = self.players[self.board.winner]
+      puts "#{winning_player.name} won the game!"
     else
-      puts "Invalid location"
-      # Ask for a new choice
-      update_game(current_player.choose(@game_rows))
+      puts "No one wins!"
     end
   end
 
-  def create_players
-    if(@humans == 0)
-      @players << ComputerPlayer.new('Computer 1', :x)
-      @players << ComputerPlayer.new('Computer 2', :o)
-    elsif (@humans == 1)
-      @players << HumanPlayer.new('player1', :x)
-      @players << ComputerPlayer.new('Computer 2', :o)
+  attr_reader :players, :turn
+
+  def play_turn
+    while true
+      current_player = self.players[self.turn]
+      pos = current_player.move(self, self.turn)
+
+      break if place_mark(pos, self.turn)
+    end
+
+    # swap next whose turn it will be next
+    @turn = ((self.turn == :x) ? :o : :x)
+  end
+
+  def place_mark(pos, mark)
+    if self.board.empty?(pos)
+      self.board[pos] = mark
+      true
     else
-      @players << HumanPlayer.new('player1', :x)
-      @players << HumanPlayer.new('player2', :o)
+      false
     end
   end
-
-  def play
-    puts "How many humans?"
-
-    @humans = gets.chomp.to_i
-
-    create_players
-
-    while true do
-      @board.display
-      puts "\nCurrent player: #{current_player.name}"
-      choice = current_player.choose(@board)
-      update_game(choice)
-      if(@board.cats_game?)
-        puts "Cat's game! :("
-        break
-      elsif(@board.gameover?(choice, current_player.mark))
-        puts "#{current_player.name} wins!!!"
-        break
-      end
-      @turn = (@turn + 1) % 2
-    end
-  end
-
 end
-
