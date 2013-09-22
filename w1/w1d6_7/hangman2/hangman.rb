@@ -12,7 +12,7 @@ class Hangman
     won = @board.won?
     lost = @board.lost?
     if won
-      puts "Word guessed correctly!"
+      puts "#{@hangman.get_secret_word} guessed correctly!"
     elsif lost
       puts "Word was not guessed correctly! Word was #{@hangman.get_secret_word}"
     end 
