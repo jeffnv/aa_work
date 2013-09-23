@@ -1,2 +1,2 @@
 load 'word_chains.rb'
-WordChains.new.find_chain("duck", "ruby", "dictionary.txt")
+WordChains.new.find_chain("cat", "dog", "dictionary.txt")
