@@ -5,30 +5,31 @@ class Chess
 
     #while
     # => display board
-    #
+    # => ask for current player input
+    # => Board evaluates enemy piece collision
+    # => Board evaluates check
+    # => break if game_over, Board declares checkmate
     #end while
 
   end
 end
 
 class Piece
+
   attr_reader :color, :location
-  def initialize(location, color, board)
-    @location = location
+  def initialize(location, color)
+    # my_location = location
     @color = color
-    @board = board
-  end
-  #color
-
-  def move(coords)
-    #=> throws exception if coords is not in valid_moves?
-    #check if moves are valid
-    #eliminates enemy piece if exist in location
-    #reassigns location variable of piece itself
   end
 
-  def valid_moves
-    moves = get_moves
+  def my_location(board)
+    board.loc_of_piece(self)
+  end
+
+
+  def valid_moves(board)
+    moves = get_moves(board)
+    #filter out the check moves
   end
 
 
@@ -52,11 +53,12 @@ class Piece
 end
 
 module SlidingPiece
-  def get_moves
+  def get_moves(board)
     moves = []
 
     MOVE_DIRS.each do |dir|
-      temp_location = @location.dup
+      #my_location = @board.loc_of(self)
+      temp_location = my_location(board).dup
       slide_stopper_encountered = false
 
       while on_board?(temp_location) do
@@ -76,11 +78,11 @@ module SlidingPiece
 end
 
 module SteppingPiece
-  def get_moves
+  def get_moves(board)
     moves = []
-    MOVE_OFFSETS.each do |row,col|
-      new_move = [row + @location[0], col + @location[1]]
-      next if  hits_friendly?(new_move) || !on_board?
+    @move_offsets.each do |row,col|
+      new_move = [row + my_location(board)[0], col + my_location(board)[1]]
+      next if  hits_friendly?(new_move) || !on_board?(new_move)
       moves << new_move
     end
     moves
@@ -92,18 +94,18 @@ class Pawn < Piece
   BLACK_MOVES = [[2,0],[1,0],[1,1],[1,-1]]
   WHITE_MOVES = [[-2,0],[-1,0],[-1,-1],[-1,1]]
 
-  def initialize(location, color, board)
-    super(location, color, board)
+  def initialize(location, color)
+    super(location, color)
     @has_moved = false
   end
 
-  def get_moves
+  def get_moves(board)
     moves = []
     offsets = @color == :black ? BLACK_MOVES :  WHITE_MOVES
 
     offsets.each do |row,col|
-      new_move = [row + @location[0], col + @location[1]]
-      next if  hits_friendly?(new_move) || !on_board?
+      new_move = [row + my_location(board)[0], col + my_location(board)[1]]
+      next if  hits_friendly?(new_move) || !on_board?(new_move)
       moves << new_move
     end
 
@@ -118,7 +120,7 @@ class Pawn < Piece
     diags.each do |coords|
       #invalid if empty, also invalid if containing friendly piece,
       #but this has already been filtered in line 98
-      invalid_diags << coords if @board.piece_at(coords).nil?
+      invalid_diags << coords if board.piece_at(coords).nil?
     end
 
     invalid_diags.each do |invalid_diag|
@@ -160,8 +162,12 @@ end
 
 class Knight < Piece
   include SteppingPiece
-  MOVE_OFFSETS = [[-2, -1], [-1, -2], [-2, 1], [1, -2],
-  [2, -1], [-1, 2], [2, 1], [1, 2]]
+  def initialize(location, color)
+    super(location, color)
+    @move_offsets = [[-2, -1], [-1, -2], [-2, 1], [1, -2],
+    [2, -1], [-1, 2], [2, 1], [1, 2]]
+  end
+
   def mark
     if @color == :white
       "\u2658"
@@ -214,5 +220,13 @@ end
 if __FILE__ == $PROGRAM_NAME
   chessboard = Board.new
   chessboard.display
-
+  puts "\n\n"
+  chessboard.move([1,0],[2,0])
+  chessboard.display
+  puts "\n\n"
+  chessboard.move([0,1],[2,2])
+  chessboard.display
+  puts "\n\n"
+  chessboard.move([6,0],[5,0])
+  chessboard.display
 end

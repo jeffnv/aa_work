@@ -1,5 +1,4 @@
 class Board
-  PIECE_STARTING_LOCATIONS =
   def initialize
     generate_board
   end
@@ -13,7 +12,6 @@ class Board
 
     init_color(:black)
     init_color(:white)
-    @board
   end
 
   def init_color(color)
@@ -30,18 +28,18 @@ class Board
       location = [royal_row_idx, col_index]
       case col_index
       when 0, 7
-        @board[royal_row_idx][col_index] = Rook.new(location, color, self)
+        @board[royal_row_idx][col_index] = Rook.new(location, color)
       when 1, 6
-        @board[royal_row_idx][col_index] = Knight.new(location, color, self)
+        @board[royal_row_idx][col_index] = Knight.new(location, color)
       when 2, 5
-        @board[royal_row_idx][col_index] = Bishop.new(location, color, self)
+        @board[royal_row_idx][col_index] = Bishop.new(location, color)
       when 3
-        @board[royal_row_idx][col_index] = King.new(location, color, self)
+        @board[royal_row_idx][col_index] = King.new(location, color)
       when 4
-        @board[royal_row_idx][col_index] = Queen.new(location, color, self)
+        @board[royal_row_idx][col_index] = Queen.new(location, color)
       end
 
-      @board[pawn_row_idx][col_index] = Pawn.new(location, color, self)
+      @board[pawn_row_idx][col_index] = Pawn.new(location, color)
     end
   end
 
@@ -65,5 +63,38 @@ class Board
     @board[location[0]][location[1]]
   end
 
+  def loc_of_piece(piece_to_locate)
+    @board.each_index do |row_index|
+      @board[row_index].each_index do |col_index|
+        return [row_index, col_index] if piece_to_locate == @board[row_index][col_index]
+      end
+    end
+    nil
+  end
+
+  def move(start_loc, end_loc)
+    piece_to_move = piece_at(start_loc)
+
+    raise "No piece to move at start location!" unless piece_to_move
+
+    #raise exception if not your piece
+
+
+    moves = piece_to_move.valid_moves(self)
+    puts "I am #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
+    p moves
+    if (moves.include?(end_loc))
+      @board[start_loc[0]][start_loc[1]] = nil
+      @board[end_loc[0]][end_loc[1]] = piece_to_move
+    end
+    #ask piece if end_loc is valid
+    #if valid, move piece
+    #raise invalid move excption
+
+
+
+
+
+  end
 
 end
