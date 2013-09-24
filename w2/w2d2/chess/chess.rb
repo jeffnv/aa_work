@@ -1,75 +1,14 @@
+require './board.rb'
 class Chess
 
-end
+  def play
 
-class Board
-  PIECE_STARTING_LOCATIONS =
-  def initialize
-    generate_board
+    #while
+    # => display board
+    #
+    #end while
+
   end
-
-  def generate_board
-    @board = Array.new(8) do
-      Array.new(8) do
-        nil
-      end
-    end
-
-    init_color(:black)
-    init_color(:white)
-    @board
-  end
-
-  def init_color(color)
-
-    if(color == :black)
-      royal_row_idx = 0
-      pawn_row_idx = 1
-    else
-      royal_row_idx = 7
-      pawn_row_idx = 6
-    end
-
-    8.times do |col_index|
-      location = [royal_row_idx, col_index]
-      case col_index
-      when 0, 7
-        @board[royal_row_idx][col_index] = Rook.new(location, color, self)
-      when 1, 6
-        @board[royal_row_idx][col_index] = Knight.new(location, color, self)
-      when 2, 5
-        @board[royal_row_idx][col_index] = Bishop.new(location, color, self)
-      when 3
-        @board[royal_row_idx][col_index] = King.new(location, color, self)
-      when 4
-        @board[royal_row_idx][col_index] = Queen.new(location, color, self)
-      end
-
-      @board[pawn_row_idx][col_index] = Pawn.new(location, color, self)
-    end
-  end
-
-  def display
-    display_string = ""
-    @board.each_index do |row_idx|
-
-      @board[row_idx].each do |chess_piece|
-        if chess_piece
-          display_string << chess_piece.mark + " "
-        else
-          display_string << '  '
-        end
-      end
-      display_string << "\n"
-    end
-    puts display_string
-  end
-
-  def piece_at(location)
-    @board[location[0]][location[1]]
-  end
-
-
 end
 
 class Piece
@@ -81,9 +20,13 @@ class Piece
   end
   #color
 
-  #def move(coords)
-  # => throws exception if coords is not in valid_moves?
-  #end
+  def move(coords)
+    #=> throws exception if coords is not in valid_moves?
+    #check if moves are valid
+    #eliminates enemy piece if exist in location
+    #reassigns location variable of piece itself
+  end
+
   def valid_moves
     moves = get_moves
   end
@@ -146,7 +89,50 @@ module SteppingPiece
 end
 
 class Pawn < Piece
-  MOVE_OFFSETS = []
+  BLACK_MOVES = [[2,0],[1,0],[1,1],[1,-1]]
+  WHITE_MOVES = [[-2,0],[-1,0],[-1,-1],[-1,1]]
+
+  def initialize(location, color, board)
+    super(location, color, board)
+    @has_moved = false
+  end
+
+  def get_moves
+    moves = []
+    offsets = @color == :black ? BLACK_MOVES :  WHITE_MOVES
+
+    offsets.each do |row,col|
+      new_move = [row + @location[0], col + @location[1]]
+      next if  hits_friendly?(new_move) || !on_board?
+      moves << new_move
+    end
+
+    if @has_moved
+      #only the first move of a pawn can be two squares!
+      moves.reject!{|coords|coords[0].abs > 1}
+    end
+
+    diags = moves.select{|coords| coords[1] != 0}
+    invalid_diags = []
+
+    diags.each do |coords|
+      #invalid if empty, also invalid if containing friendly piece,
+      #but this has already been filtered in line 98
+      invalid_diags << coords if @board.piece_at(coords).nil?
+    end
+
+    invalid_diags.each do |invalid_diag|
+      moves.delete(invalid_diag)
+    end
+
+    moves
+  end
+
+
+  def move(location)
+    super(location)
+    @has_moved = true
+  end
 
   def mark
     if @color == :white
@@ -173,8 +159,9 @@ class Rook < Piece
 end
 
 class Knight < Piece
-include SteppingPiece
-  MOVE_OFFSETS = [[-2, -1], [-1, -2], [-2, 1], [1, -2], [2, -1], [-1, 2], [2, 1], [1, 2]]
+  include SteppingPiece
+  MOVE_OFFSETS = [[-2, -1], [-1, -2], [-2, 1], [1, -2],
+  [2, -1], [-1, 2], [2, 1], [1, 2]]
   def mark
     if @color == :white
       "\u2658"
@@ -186,7 +173,7 @@ include SteppingPiece
 end
 
 class Bishop < Piece
-include SlidingPiece
+  include SlidingPiece
   MOVE_DIRS = [[-1,-1],[-1,1],[1,1],[1,-1],]
 
   def mark
@@ -200,7 +187,7 @@ include SlidingPiece
 end
 
 class Queen < Piece
-include SlidingPiece
+  include SlidingPiece
   MOVE_DIRS = [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
   def mark
     if @color == :white
@@ -213,7 +200,7 @@ include SlidingPiece
 end
 
 class King < Piece
-include SteppingPiece
+  include SteppingPiece
   MOVE_OFFSETS = [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
   def mark
     if @color == :white
@@ -227,4 +214,5 @@ end
 if __FILE__ == $PROGRAM_NAME
   chessboard = Board.new
   chessboard.display
+
 end
