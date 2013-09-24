@@ -15,7 +15,7 @@ class Employee
 end
 
 class Manager < Employee
-  attr_writer :employees
+  attr_accessor :employees
   def initialize(name, title, salary, boss = nil)
     super(name, title, salary, boss)
     @employees = []
