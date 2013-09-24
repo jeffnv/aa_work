@@ -11,10 +11,7 @@ class Employee
     @salary * multiplier
   end
 
-  def assign(manager)
-    @boss = manager
-    manager.employees << self
-  end
+
 end
 
 class Manager < Employee
@@ -34,9 +31,13 @@ class Manager < Employee
     bonus_for_employees = current_employees_sum * multiplier
     @employees.each do |employee|
       next unless employee.is_a? Manager
-       bonus_for_employees += employee.bonus(multiplier)
+      bonus_for_employees += employee.bonus(multiplier)
     end
     bonus_for_employees
   end
 
+  def assign(employee)
+    employee.boss = self
+    self.employees << employee
+  end
 end
