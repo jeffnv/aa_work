@@ -86,6 +86,7 @@ class Minesweeper
 
   def play
     until game_over || @quit_requested do
+      system("clear")
       @board.show
       move = get_move
       if move
@@ -96,15 +97,14 @@ class Minesweeper
         end
       end
     end
-    @board.show
   end
 
   def game_over
     if(@board.won?)
-      puts "good job"
+      puts "\n\n\ngood job"
       true
     elsif(@board.boom?)
-      puts "ouch"
+      puts "\n\n\nouch"
       true
     else
       false
