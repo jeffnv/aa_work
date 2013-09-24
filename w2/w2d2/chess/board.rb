@@ -28,18 +28,18 @@ class Board
       location = [royal_row_idx, col_index]
       case col_index
       when 0, 7
-        @board[royal_row_idx][col_index] = Rook.new(location, color)
+        @board[royal_row_idx][col_index] = Rook.new(color)
       when 1, 6
-        @board[royal_row_idx][col_index] = Knight.new(location, color)
+        @board[royal_row_idx][col_index] = Knight.new(color)
       when 2, 5
-        @board[royal_row_idx][col_index] = Bishop.new(location, color)
+        @board[royal_row_idx][col_index] = Bishop.new(color)
       when 3
-        @board[royal_row_idx][col_index] = King.new(location, color)
+        @board[royal_row_idx][col_index] = King.new(color)
       when 4
-        @board[royal_row_idx][col_index] = Queen.new(location, color)
+        @board[royal_row_idx][col_index] = Queen.new(color)
       end
 
-      @board[pawn_row_idx][col_index] = Pawn.new(location, color)
+      @board[pawn_row_idx][col_index] = Pawn.new(color)
     end
   end
 

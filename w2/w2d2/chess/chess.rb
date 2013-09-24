@@ -16,9 +16,8 @@ end
 
 class Piece
 
-  attr_reader :color, :location
-  def initialize(location, color)
-    # my_location = location
+  attr_reader :color
+  def initialize(color)
     @color = color
   end
 
@@ -56,8 +55,7 @@ module SlidingPiece
   def get_moves(board)
     moves = []
 
-    MOVE_DIRS.each do |dir|
-      #my_location = @board.loc_of(self)
+    get_move_dirs.each do |dir|
       temp_location = my_location(board).dup
       slide_stopper_encountered = false
 
@@ -80,7 +78,7 @@ end
 module SteppingPiece
   def get_moves(board)
     moves = []
-    @move_offsets.each do |row,col|
+    get_move_dirs.each do |row,col|
       new_move = [row + my_location(board)[0], col + my_location(board)[1]]
       next if  hits_friendly?(new_move) || !on_board?(new_move)
       moves << new_move
@@ -94,8 +92,8 @@ class Pawn < Piece
   BLACK_MOVES = [[2,0],[1,0],[1,1],[1,-1]]
   WHITE_MOVES = [[-2,0],[-1,0],[-1,-1],[-1,1]]
 
-  def initialize(location, color)
-    super(location, color)
+  def initialize(color)
+    super(color)
     @has_moved = false
   end
 
@@ -148,7 +146,10 @@ end
 
 class Rook < Piece
   include SlidingPiece
-  MOVE_DIRS = [[-1,0],[0,-1],[1,0],[0,1]]
+
+  def get_move_dirs
+    [[-1,0],[0,-1],[1,0],[0,1]]
+  end
 
   def mark
     if @color == :white
@@ -162,9 +163,9 @@ end
 
 class Knight < Piece
   include SteppingPiece
-  def initialize(location, color)
-    super(location, color)
-    @move_offsets = [[-2, -1], [-1, -2], [-2, 1], [1, -2],
+
+  def get_move_dirs
+    [[-2, -1], [-1, -2], [-2, 1], [1, -2],
     [2, -1], [-1, 2], [2, 1], [1, 2]]
   end
 
@@ -179,8 +180,11 @@ class Knight < Piece
 end
 
 class Bishop < Piece
+
   include SlidingPiece
-  MOVE_DIRS = [[-1,-1],[-1,1],[1,1],[1,-1],]
+  def get_move_dirs
+    [[-1,-1],[-1,1],[1,1],[1,-1]]
+  end
 
   def mark
     if @color == :white
@@ -189,12 +193,15 @@ class Bishop < Piece
       "\u265D"
     end
   end
-
 end
 
 class Queen < Piece
   include SlidingPiece
-  MOVE_DIRS = [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
+
+  def get_move_dirs
+    [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
+  end
+
   def mark
     if @color == :white
       "\u2655"
@@ -207,7 +214,10 @@ end
 
 class King < Piece
   include SteppingPiece
-  MOVE_OFFSETS = [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
+
+  def get_move_dirs
+    [[-1,-1],[-1,1],[1,1],[1,-1],[-1,0],[0,-1],[1,0],[0,1]]
+  end
   def mark
     if @color == :white
       "\u2654"
