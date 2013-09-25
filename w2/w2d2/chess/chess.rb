@@ -26,13 +26,9 @@ class Piece
     board.loc_of_piece(self)
   end
 
-
   def valid_moves(board)
     moves = get_moves(board)
   end
-
-
-
 
   private
   #move filters
@@ -43,7 +39,7 @@ class Piece
   def hits_friendly?(board, location)
     target_piece = board.piece_at(location)
     if(target_piece)
-      board.piece_at(location).color == @color
+      target_piece.color == @color
     else
       false
     end
@@ -52,7 +48,7 @@ class Piece
   def hits_enemy?(board, location)
       target_piece = board.piece_at(location)
       if(target_piece)
-        board.piece_at(location).color != @color
+        target_piece.color != @color
       else
         false
       end
@@ -70,8 +66,7 @@ module SlidingPiece
       while on_board?(temp_location) do
         temp_location = [temp_location[0] + dir[0], temp_location[1] + dir[1]]
 
-        break if !on_board?(temp_location)
-        break if hits_friendly?(board, temp_location)
+        break if !on_board?(temp_location) || hits_friendly?(board, temp_location)
 
         moves << temp_location
 
@@ -89,7 +84,7 @@ module SteppingPiece
     moves = []
     get_move_dirs.each do |row,col|
       new_move = [row + my_location(board)[0], col + my_location(board)[1]]
-      next if  hits_friendly?(board, new_move) || !on_board?(new_move)
+      next if  !on_board?(new_move) || hits_friendly?(board, new_move)
       moves << new_move
     end
     moves
@@ -101,9 +96,13 @@ class Pawn < Piece
   BLACK_MOVES = [[2,0],[1,0],[1,1],[1,-1]]
   WHITE_MOVES = [[-2,0],[-1,0],[-1,-1],[-1,1]]
 
-  def initialize(color)
-    super(color)
-    @has_moved = false
+
+  def has_moved?(board)
+    if @color == :black
+      my_location(board)[0] != 1
+    else
+      my_location(board)[0] != 6
+    end
   end
 
   def get_moves(board)
@@ -117,14 +116,16 @@ class Pawn < Piece
       moves << new_move
     end
 
-    puts "Possible moves after filtering hits_friendly? & !on_board?: #{moves.inspect}"
+    # puts "Possible moves after filtering hits_friendly? & !on_board?: #{moves.inspect}"
+    #p moves
 
-    if @has_moved
+    if has_moved?(board)
       #only the first move of a pawn can be two squares!
-      moves.reject!{|coords|coords[0].abs > 1}
+      my_row = my_location(board)[0]
+      moves.reject!{|coords|(my_row - coords[0]).abs > 1}
     end
 
-    puts "Possible moves after checking has_moved: #{moves.inspect}"
+    # puts "Possible moves after checking has_moved: #{moves.inspect}"
 
     diags = moves.select{|coords| coords[1] != my_location(board)[1]}
     invalid_diags = []
@@ -139,17 +140,12 @@ class Pawn < Piece
       moves.delete(invalid_diag)
     end
 
-    puts "Possible moves after filtering out diagonal moves (w/o enemies):"
-    p moves
+    # puts "Possible moves after filtering out diagonal moves (w/o enemies):"
+    #p moves
 
     moves
   end
 
-
-  def move(location)
-    super(location)
-    @has_moved = true
-  end
 
   def mark
     if @color == :white
@@ -268,7 +264,7 @@ if __FILE__ == $PROGRAM_NAME
   chessboard.display
   puts "\n\n"
 
-  puts "CHECK!" if chessboard.in_check?(:white)
+  puts "CHECK!" if chessboard.color_in_check?(:white)
 
   # chessboard = Board.new
   # chessboard.display

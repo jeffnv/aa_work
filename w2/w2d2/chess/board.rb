@@ -1,7 +1,12 @@
 require 'yaml'
 class Board
-  def initialize
-    generate_board
+  def initialize(custom_board = nil)
+    @board = nil
+    unless custom_board
+      generate_board
+    else
+      @board = custom_board
+    end
   end
 
   def generate_board
@@ -81,25 +86,79 @@ class Board
     #raise exception if not your piece
 
     moves = piece_to_move.valid_moves(self)
-    puts "I am #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
+    puts "I am #{piece_to_move.color} #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
     puts "Valid moves are: #{moves.inspect}"
 
-
     #check for check...
+    moves.reject! do |destination|
+      move_causes_check?(start_loc, destination, piece_to_move.color)
+    end
 
     if (moves.include?(end_loc))
-      @board[start_loc[0]][start_loc[1]] = nil
-      @board[end_loc[0]][end_loc[1]] = piece_to_move
+      move_raw(start_loc, end_loc)
     else
       raise "Move is invalid"
     end
   end
 
-  def in_check?(color)
+  def move_raw(start_loc, end_loc)
+    piece = @board[start_loc[0]][start_loc[1]]
+
+    @board[start_loc[0]][start_loc[1]] = nil
+
+    @board[end_loc[0]][end_loc[1]] = piece
+  end
+
+  def move_causes_check?(start_loc, end_loc, color)
+      test_board = self.dup
+
+      test_board.move_raw(start_loc, end_loc)
+      #puts "****************************COPIED BOARD"
+      #test_board.display
+      # puts "#{[start_loc, end_loc]} causes check!" if result
+      #puts "****************************END COPIED BOARD"
+      result = test_board.color_in_check?(color)
+      #puts "Test board results in check? #{result}\n\n\n"
+      if result
+      #  puts "****************************COPIED BOARD"
+      #  test_board.display
+        puts "#{[start_loc, end_loc]} causes check!" if result
+       # puts "****************************END COPIED BOARD"
+      end
+
+      result
+  end
+
+  def dup
+    Board.new(dup_board_array)
+  end
+
+  def dup_board_array
+    new_board = []
+
+      @board.each do |row|
+        new_row = []
+
+        row.each do |tile_element|
+          if tile_element.is_a? Piece
+            new_row << (tile_element.class).new(tile_element.color)
+          else
+            new_row << tile_element
+          end
+        end
+        new_board << new_row
+      end
+      new_board
+  end
+
+  def color_in_check?(color)
     all_opponent_pieces = @board.flatten.compact.select { |piece| piece.color != color }
     all_opponent_pieces.each do |opponent_piece|
       opponent_piece.valid_moves(self).each do |opponent_valid_move|
-        return true if piece_at(opponent_valid_move).is_a?(King)
+        if piece_at(opponent_valid_move).is_a?(King)
+          puts "King is within sight!\n\n"
+          return true
+        end
       end
     end
     false
