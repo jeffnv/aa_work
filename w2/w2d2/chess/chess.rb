@@ -136,8 +136,17 @@ class Pawn < Piece
       invalid_diags << coords if board.piece_at(coords).nil?
     end
 
-    invalid_diags.each do |invalid_diag|
-      moves.delete(invalid_diag)
+    verticals = moves.select{|coords| coords[1] == my_location(board)[1]}
+    invalid_verts = []
+
+    verticals.each do |coords|
+      #invalid if occupied, also invalid if containing enemy piece,
+      #but this has already been filtered in line 98
+      invalid_verts << coords unless board.piece_at(coords).nil?
+    end
+
+    (invalid_diags + invalid_verts).each do |invalid_move|
+      moves.delete(invalid_move)
     end
 
     # puts "Possible moves after filtering out diagonal moves (w/o enemies):"
@@ -248,9 +257,6 @@ if __FILE__ == $PROGRAM_NAME
   chessboard = Board.new
   chessboard.display
 
-  chessboard.move([6,5],[5,5])
-  chessboard.display
-  puts "\n\n"
 
   chessboard.move([1,4],[3,4])
   chessboard.display
@@ -260,9 +266,18 @@ if __FILE__ == $PROGRAM_NAME
   chessboard.display
   puts "\n\n"
 
+  chessboard.move([6,5],[5,5])
+  chessboard.display
+  puts "\n\n"
+
+  puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
+
+
   chessboard.move([0,3],[4,7])
   chessboard.display
   puts "\n\n"
+
+  puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
 
   puts "CHECK!" if chessboard.color_in_check?(:white)
 

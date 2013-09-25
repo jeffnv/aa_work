@@ -78,6 +78,17 @@ class Board
     nil
   end
 
+  #moves that are both valid and legal, i.e.
+  #on the board, not into a friendly, not beyond an enemy
+  #and don't leave US in check
+  def get_legal_moves(piece)
+    start = loc_of_piece(piece)
+    moves = piece.valid_moves(self)
+    moves.reject do |destination|
+      move_causes_check?(start, destination, piece.color)
+    end
+  end
+
   def move(start_loc, end_loc)
     piece_to_move = piece_at(start_loc)
 
@@ -85,14 +96,9 @@ class Board
 
     #raise exception if not your piece
 
-    moves = piece_to_move.valid_moves(self)
-    puts "I am #{piece_to_move.color} #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
-    puts "Valid moves are: #{moves.inspect}"
-
-    #check for check...
-    moves.reject! do |destination|
-      move_causes_check?(start_loc, destination, piece_to_move.color)
-    end
+    moves = get_legal_moves(piece_to_move)
+    puts "I am #{piece_to_move.color} #{piece_to_move.class} ordered to move from #{start_loc} to #{end_loc}"
+    puts "My valid moves are: #{moves.inspect}"
 
     if (moves.include?(end_loc))
       move_raw(start_loc, end_loc)
@@ -111,22 +117,8 @@ class Board
 
   def move_causes_check?(start_loc, end_loc, color)
       test_board = self.dup
-
       test_board.move_raw(start_loc, end_loc)
-      #puts "****************************COPIED BOARD"
-      #test_board.display
-      # puts "#{[start_loc, end_loc]} causes check!" if result
-      #puts "****************************END COPIED BOARD"
-      result = test_board.color_in_check?(color)
-      #puts "Test board results in check? #{result}\n\n\n"
-      if result
-      #  puts "****************************COPIED BOARD"
-      #  test_board.display
-        puts "#{[start_loc, end_loc]} causes check!" if result
-       # puts "****************************END COPIED BOARD"
-      end
-
-      result
+      test_board.color_in_check?(color)
   end
 
   def dup
@@ -156,7 +148,6 @@ class Board
     all_opponent_pieces.each do |opponent_piece|
       opponent_piece.valid_moves(self).each do |opponent_valid_move|
         if piece_at(opponent_valid_move).is_a?(King)
-          puts "King is within sight!\n\n"
           return true
         end
       end
@@ -164,8 +155,18 @@ class Board
     false
   end
 
-  def checkmate?
+  def checkmate?(color)
+    checkmate = true
+    friendly_pieces = @board.flatten.compact.select { |piece| piece.color == color }
+    friendly_pieces.each do |friendly|
+      lmc = get_legal_moves(friendly).count
+      if(lmc > 0)
+        puts "piece #{friendly.color} #{friendly.class} at #{loc_of_piece(friendly)} has #{lmc} moves" if lmc > 0
+        puts "they are #{get_legal_moves(friendly)}"
+      end
 
+    end
+    true
   end
 
 end
