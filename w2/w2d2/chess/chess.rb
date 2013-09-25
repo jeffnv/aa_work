@@ -1,38 +1,69 @@
 require './board.rb'
-require 'yaml'
+require './chess_errors.rb'
 
 class Chess
 
   def initialize
     @board = Board.new
+    @player_colors = [:black, :white]
+
   end
 
   def play
+    current_color = @player_colors.first
 
-    until @board.checkmate?(:white)
-      system("clear")
+    until @board.checkmate?(current_color)
+      # system("clear")
       @board.display
-      row, col = get_input
+      player_input = get_input
       # => ask for current player input
-      @board.move(row, col)
-
+      move_successful = play_move(player_input)
       # system("clear")
 
       # => ask for current player input
       # => Board evaluates enemy piece collision
       # => Board evaluates check
       # => break if game_over, Board declares checkmate
+      if move_successful
+        @player_colors.rotate!
+        current_color = @player_colors.first
+      end
     end
 
   end
 
+  def play_move(player_input)
+    begin
+      start_loc, end_loc = player_input
+      @board.move(start_loc, end_loc, @player_colors.first)
+      return true
+    rescue MoveIntoCheckError => e
+      puts "Move would leave YOUR KING IN CHECK!"
+      return false
+    rescue NotYourPieceError => e
+      puts "That is NOT your piece!"
+      return false
+    rescue OutsideBoundsError => e
+      puts "Move off bounds of board!"
+      return false
+    rescue NoPieceSelectedError => e
+      puts "No piece selected!"
+      return false
+    rescue IllegalMove => e
+      puts "That is an illegal move!"
+      return false
+    end
+  end
+
+
   def get_input
     begin
-      puts "Enter location of what you want to move (row,col)"
-      source_loc = gets.chomp.scan(/\d+/).map(&:to_i)
+      puts "#{@player_colors.first} player, enter location of what you want to move (row,col)"
+      source_loc = gets.chomp.scan(/-?\d+/).map(&:to_i)
 
-      puts "Enter destination location (row,col)"
-      dest_loc = gets.chomp.scan(/\d+/).map(&:to_i)
+      puts "#{@player_colors.first} player, enter destination location (row,col)"
+      dest_loc = gets.chomp.scan(/-?\d+/).map(&:to_i)
+      p [source_loc, dest_loc]
       [source_loc, dest_loc]
     rescue
       puts "\nINVALID INPUT\n\n"

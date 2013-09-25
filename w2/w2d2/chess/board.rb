@@ -1,4 +1,4 @@
-require 'yaml'
+
 class Board
   def initialize(custom_board = nil)
     @board = nil
@@ -50,9 +50,11 @@ class Board
   end
 
   def display
-    display_string = ""
-    @board.each_index do |row_idx|
 
+    display_string = "  " << (0..7).to_a.join(' ') << "\n"
+
+    @board.each_index do |row_idx|
+      display_string << "#{row_idx} "
       @board[row_idx].each do |chess_piece|
         if chess_piece
           display_string << chess_piece.mark + " "
@@ -82,28 +84,50 @@ class Board
   #on the board, not into a friendly, not beyond an enemy
   #and don't leave US in check
   def get_legal_moves(piece)
+    cause_check_moves = []
+
     start = loc_of_piece(piece)
     moves = piece.valid_moves(self)
     moves.reject do |destination|
+      cause_check_moves << destination if move_causes_check?(start, destination, piece.color)
       move_causes_check?(start, destination, piece.color)
     end
   end
 
-  def move(start_loc, end_loc)
+  def retrieve_check_moves(piece)
+
+  end
+
+  def move(start_loc, end_loc, color)
+
+    [start_loc, end_loc].each do |location_pair|
+        puts "loc_pair #{location_pair}"
+      raise OutsideBoundsError.new unless location_pair.all? { |coord| coord.between?(0,7)}
+    end
+
     piece_to_move = piece_at(start_loc)
+    raise NoPieceSelectedError.new unless piece_to_move
 
-    raise "No piece to move at start location!" unless piece_to_move
 
-    #raise exception if not your piece
 
-    moves = get_legal_moves(piece_to_move)
+    raise NotYourPieceError.new if piece_to_move.color != color
+
+    moves = piece_to_move.valid_moves(self)
+    cause_check_moves = moves.select do |destination|
+      move_causes_check?(start_loc, destination, piece_to_move.color)
+    end
+
+    raise MoveIntoCheckError.new if cause_check_moves.include?(end_loc)
+
+    moves = moves - cause_check_moves
+
     puts "I am #{piece_to_move.color} #{piece_to_move.class} ordered to move from #{start_loc} to #{end_loc}"
     puts "My valid moves are: #{moves.inspect}"
 
     if (moves.include?(end_loc))
       move_raw(start_loc, end_loc)
     else
-      raise "Move is invalid"
+      raise IllegalMove.new
     end
   end
 
