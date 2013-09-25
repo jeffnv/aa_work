@@ -79,20 +79,15 @@ class Board
 
     #raise exception if not your piece
 
-
     moves = piece_to_move.valid_moves(self)
     puts "I am #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
-    p moves
+    puts "Valid moves are: #{moves.inspect}"
     if (moves.include?(end_loc))
       @board[start_loc[0]][start_loc[1]] = nil
       @board[end_loc[0]][end_loc[1]] = piece_to_move
+    else
+      raise "Move is invalid"
     end
-    #ask piece if end_loc is valid
-    #if valid, move piece
-    #raise invalid move excption
-
-
-
 
 
   end
