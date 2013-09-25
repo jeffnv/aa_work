@@ -11,23 +11,21 @@ class Chess
 
   def play
     current_color = @player_colors.first
-
+    error_message = ""
     until @board.checkmate?(current_color)
-      # system("clear")
+
+      system("clear")
+
+      puts error_message unless error_message.empty?
       @board.display
       player_input = get_input
-      # => ask for current player input
-      move_successful = play_move(player_input)
-      # system("clear")
+      error_message = play_move(player_input)
 
-      # => ask for current player input
-      # => Board evaluates enemy piece collision
-      # => Board evaluates check
-      # => break if game_over, Board declares checkmate
-      if move_successful
+      if error_message.empty?
         @player_colors.rotate!
         current_color = @player_colors.first
       end
+
     end
 
   end
@@ -36,22 +34,17 @@ class Chess
     begin
       start_loc, end_loc = player_input
       @board.move(start_loc, end_loc, @player_colors.first)
-      return true
+      return ""
     rescue MoveIntoCheckError => e
-      puts "Move would leave YOUR KING IN CHECK!"
-      return false
+      return "Move would leave YOUR KING IN CHECK!"
     rescue NotYourPieceError => e
-      puts "That is NOT your piece!"
-      return false
+      return "That is NOT your piece!"
     rescue OutsideBoundsError => e
-      puts "Move off bounds of board!"
-      return false
+      return "Move off bounds of board!"
     rescue NoPieceSelectedError => e
-      puts "No piece selected!"
-      return false
+      return "No piece selected!"
     rescue IllegalMove => e
-      puts "That is an illegal move!"
-      return false
+      return "That is an illegal move!"
     end
   end
 
