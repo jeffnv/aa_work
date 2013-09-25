@@ -101,7 +101,6 @@ class Board
   def move(start_loc, end_loc, color)
 
     [start_loc, end_loc].each do |location_pair|
-        puts "loc_pair #{location_pair}"
       raise OutsideBoundsError.new unless location_pair.all? { |coord| coord.between?(0,7)}
     end
 

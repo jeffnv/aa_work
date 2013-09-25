@@ -15,7 +15,7 @@ class Chess
     until @board.checkmate?(current_color)
 
       system("clear")
-
+      #print it here
       puts error_message unless error_message.empty?
       @board.display
       player_input = get_input
@@ -52,11 +52,10 @@ class Chess
   def get_input
     begin
       puts "#{@player_colors.first} player, enter location of what you want to move (row,col)"
-      source_loc = gets.chomp.scan(/-?\d+/).map(&:to_i)
+      source_loc = gets.chomp.scan(/-?\d/).map(&:to_i)
 
       puts "#{@player_colors.first} player, enter destination location (row,col)"
-      dest_loc = gets.chomp.scan(/-?\d+/).map(&:to_i)
-      p [source_loc, dest_loc]
+      dest_loc = gets.chomp.scan(/-?\d/).map(&:to_i)
       [source_loc, dest_loc]
     rescue
       puts "\nINVALID INPUT\n\n"
