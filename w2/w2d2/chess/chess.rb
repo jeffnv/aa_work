@@ -1,16 +1,43 @@
 require './board.rb'
 require 'yaml'
+
 class Chess
+
+  def initialize
+    @board = Board.new
+  end
 
   def play
 
-    #while
-    # => display board
-    # => ask for current player input
-    # => Board evaluates enemy piece collision
-    # => Board evaluates check
-    # => break if game_over, Board declares checkmate
-    #end while
+    until @board.checkmate?(:white)
+      system("clear")
+      @board.display
+      row, col = get_input
+      # => ask for current player input
+      @board.move(row, col)
+
+      # system("clear")
+
+      # => ask for current player input
+      # => Board evaluates enemy piece collision
+      # => Board evaluates check
+      # => break if game_over, Board declares checkmate
+    end
+
+  end
+
+  def get_input
+    begin
+      puts "Enter location of what you want to move (row,col)"
+      source_loc = gets.chomp.scan(/\d+/).map(&:to_i)
+
+      puts "Enter destination location (row,col)"
+      dest_loc = gets.chomp.scan(/\d+/).map(&:to_i)
+      [source_loc, dest_loc]
+    rescue
+      puts "\nINVALID INPUT\n\n"
+      retry
+    end
 
   end
 end
@@ -250,36 +277,45 @@ class King < Piece
 end
 
 if __FILE__ == $PROGRAM_NAME
+  game = Chess.new
+  game.play
+
   # f2, f3
   # e7, e5
   # g2, g4
   # d8, h4
-  chessboard = Board.new
-  chessboard.display
+
+  #
+  # chessboard = Board.new
+  # chessboard.display
+  #
+  #
+  # chessboard.move([1,4],[3,4])
+  # chessboard.display
+  # puts "\n\n"
+  #
+  # chessboard.move([6,6],[4,6])
+  # chessboard.display
+  # puts "\n\n"
+  #
+  # chessboard.move([6,5],[5,5])
+  # chessboard.display
+  # puts "\n\n"
+  #
+  # puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
+  #
+  #
+  # chessboard.move([0,3],[4,7])
+  # chessboard.display
+  # puts "\n\n"
+  #
+  # puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
+  #
+  # puts "CHECK!" if chessboard.color_in_check?(:white)
+  #
+  #
 
 
-  chessboard.move([1,4],[3,4])
-  chessboard.display
-  puts "\n\n"
-
-  chessboard.move([6,6],[4,6])
-  chessboard.display
-  puts "\n\n"
-
-  chessboard.move([6,5],[5,5])
-  chessboard.display
-  puts "\n\n"
-
-  puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
-
-
-  chessboard.move([0,3],[4,7])
-  chessboard.display
-  puts "\n\n"
-
-  puts "It's #{chessboard.checkmate?(:white)} that white is in checkmate"
-
-  puts "CHECK!" if chessboard.color_in_check?(:white)
 
   # chessboard = Board.new
   # chessboard.display

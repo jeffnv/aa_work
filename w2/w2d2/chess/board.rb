@@ -160,10 +160,10 @@ class Board
     friendly_pieces = @board.flatten.compact.select { |piece| piece.color == color }
     friendly_pieces.each do |friendly|
       lmc = get_legal_moves(friendly).count
-      if(lmc > 0)
-        puts "piece #{friendly.color} #{friendly.class} at #{loc_of_piece(friendly)} has #{lmc} moves" if lmc > 0
-        puts "they are #{get_legal_moves(friendly)}"
-      end
+      return false if lmc > 0
+      #   puts "piece #{friendly.color} #{friendly.class} at #{loc_of_piece(friendly)} has #{lmc} moves" if lmc > 0
+      #   puts "they are #{get_legal_moves(friendly)}"
+      # end
 
     end
     true
