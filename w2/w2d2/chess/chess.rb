@@ -1,4 +1,5 @@
 require './board.rb'
+require 'yaml'
 class Chess
 
   def play
@@ -28,7 +29,6 @@ class Piece
 
   def valid_moves(board)
     moves = get_moves(board)
-    #filter out the check moves
   end
 
 
@@ -245,21 +245,46 @@ class King < Piece
 end
 
 if __FILE__ == $PROGRAM_NAME
+  # f2, f3
+  # e7, e5
+  # g2, g4
+  # d8, h4
   chessboard = Board.new
   chessboard.display
-  puts "\n\n"
-  chessboard.move([1,0],[2,0])
+
+  chessboard.move([6,5],[5,5])
   chessboard.display
   puts "\n\n"
-  chessboard.move([0,1],[2,2])
+
+  chessboard.move([1,4],[3,4])
   chessboard.display
   puts "\n\n"
-  chessboard.move([6,0],[5,0])
+
+  chessboard.move([6,6],[4,6])
   chessboard.display
   puts "\n\n"
-  chessboard.move([1,3],[2,3])
+
+  chessboard.move([0,3],[4,7])
   chessboard.display
   puts "\n\n"
-  chessboard.move([0,2],[5,7])
-  chessboard.display
+
+  puts "CHECK!" if chessboard.in_check?(:white)
+
+  # chessboard = Board.new
+  # chessboard.display
+  # puts "\n\n"
+  # chessboard.move([1,0],[2,0])
+  # chessboard.display
+  # puts "\n\n"
+  # chessboard.move([0,1],[2,2])
+  # chessboard.display
+  # puts "\n\n"
+  # chessboard.move([6,0],[5,0])
+  # chessboard.display
+  # puts "\n\n"
+  # chessboard.move([1,3],[2,3])
+  # chessboard.display
+  # puts "\n\n"
+  # chessboard.move([0,2],[5,7])
+  # chessboard.display
 end

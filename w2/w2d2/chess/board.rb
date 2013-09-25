@@ -1,3 +1,4 @@
+require 'yaml'
 class Board
   def initialize
     generate_board
@@ -34,9 +35,9 @@ class Board
       when 2, 5
         @board[royal_row_idx][col_index] = Bishop.new(color)
       when 3
-        @board[royal_row_idx][col_index] = King.new(color)
-      when 4
         @board[royal_row_idx][col_index] = Queen.new(color)
+      when 4
+        @board[royal_row_idx][col_index] = King.new(color)
       end
 
       @board[pawn_row_idx][col_index] = Pawn.new(color)
@@ -51,7 +52,7 @@ class Board
         if chess_piece
           display_string << chess_piece.mark + " "
         else
-          display_string << '  '
+          display_string << "\u2218 "
         end
       end
       display_string << "\n"
@@ -82,13 +83,29 @@ class Board
     moves = piece_to_move.valid_moves(self)
     puts "I am #{piece_to_move.class} directed to move from #{start_loc} to #{end_loc}"
     puts "Valid moves are: #{moves.inspect}"
+
+
+    #check for check...
+
     if (moves.include?(end_loc))
       @board[start_loc[0]][start_loc[1]] = nil
       @board[end_loc[0]][end_loc[1]] = piece_to_move
     else
       raise "Move is invalid"
     end
+  end
 
+  def in_check?(color)
+    all_opponent_pieces = @board.flatten.compact.select { |piece| piece.color != color }
+    all_opponent_pieces.each do |opponent_piece|
+      opponent_piece.valid_moves(self).each do |opponent_valid_move|
+        return true if piece_at(opponent_valid_move).is_a?(King)
+      end
+    end
+    false
+  end
+
+  def checkmate?
 
   end
 
