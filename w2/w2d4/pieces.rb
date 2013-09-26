@@ -24,20 +24,18 @@ class Piece
   end
   
   def get_valid_slides(board)
-    #TODO: has forced slides! this is for every piece!!! not just the selected
+    loc = board.get_loc(self)
       
-      loc = board.get_loc(self)
+    puts "I am a #{@color} piece at #{loc.inspect}!"
       
-      puts "I am a #{@color} piece at #{loc.inspect}!"
+    return [] unless jumps = board.has_forced_jumps?(@color)
       
-      return [] unless jumps = board.has_forced_jumps?(@color)
-      
-      moves = offsets.map{|offset|add_offset(loc, offset)}
-      moves.select do |move|
-        on_board = on_board?(move)
-        empty = board.get_piece(move).nil?
-        on_board && empty
-      end
+    moves = offsets.map{|offset|add_offset(loc, offset)}
+    moves.select do |move|
+      on_board = on_board?(move)
+      empty = board.get_piece(move).nil?
+      on_board && empty
+    end
   end
   
   def get_valid_jumps(board)
@@ -55,6 +53,7 @@ class Piece
       end
     end
     
+    #valid jumps require a safe landing on the other side!
     enemies.select do |enemy_loc|
       enemy_dir = [enemy_loc[0] - my_loc[0], enemy_loc[1] - my_loc[1]]
       loc_beyond_enemy = add_offset(enemy_loc, enemy_dir)

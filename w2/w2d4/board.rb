@@ -1,5 +1,6 @@
 require './pieces'
 require 'colorize'
+require './checker_errors.rb'
 class Board
   def initialize
     @board = build_game_board
@@ -42,22 +43,25 @@ class Board
   def jump(start_loc, end_loc)
     jumps = get_piece(start_loc).get_valid_jumps(self)
 
-    raise InvalidJumpError unless jumps.include?(end_loc)
-    #TODO: delete victim from board
+    raise InvalidJumpError.new unless jumps.include?(end_loc)
+    
+    victim_location = get_jump_victim_loc(start_loc, end_loc)
+    @board[victim_location[0]][victim_location[1]] = nil
+    
     move_raw(start_loc, end_loc)
   end
   
   def slide(start_loc, end_loc)
     piece_to_slide = get_piece(start_loc)
     
-    raise "Has jump!!!!!!" if has_forced_jumps?(piece_to_slide.color)
-      
+    raise ForcedJumpError.new if has_forced_jumps?(piece_to_slide.color)
+    
     slides = piece_to_slide.get_valid_slides(self)
     
     if slides.include? end_loc
       move_raw(start_loc, end_loc) 
     else
-      #TODO: raise invalid move exception
+      raise InvalidSlideError.new
     end
   end
   
@@ -133,6 +137,12 @@ class Board
     end
     
     do_for_every_square &piece_setter
+  end
+  
+  def get_jump_victim_loc(jump_start, jump_end)
+    row = (jump_start[0] + jump_end[0]) / 2
+    col = (jump_start[1] + jump_end[1]) / 2
+    [row, col]
   end
   
 end
