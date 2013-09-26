@@ -22,6 +22,7 @@ class Piece
       offsets
     end
   end
+
   
   def get_valid_slides(board)
     loc = board.get_loc(self)
@@ -29,7 +30,7 @@ class Piece
     return [] if board.has_forced_jumps?(@color)
       
     moves = offsets.map{|offset|add_offset(loc, offset)}
-    p offsets
+    #p offsets
     moves.select do |move|
       on_board = on_board?(move)
       empty = board.get_piece(move).nil?
@@ -61,8 +62,6 @@ class Piece
         v_jumps << loc_beyond_enemy
       end
     end
-    
-    puts "valid jumps: #{v_jumps}"
     v_jumps
   end
   
@@ -73,14 +72,14 @@ class Piece
   end
   
   def add_offset(start, offset, multiplier = 1)
-    puts "start #{start.inspect}"
-    puts "offset #{offset}"
+   # puts "start #{start.inspect}"
+    #puts "offset #{offset}"
     result = start.dup
     multiplier.times do
       result[0] += offset[0]
       result[1] += offset[1]
     end
-    puts "after offset #{start.inspect}"
+   # puts "after offset #{start.inspect}"
     result
   end
 

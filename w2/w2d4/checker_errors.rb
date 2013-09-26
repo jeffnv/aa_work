@@ -10,3 +10,6 @@ end
 class InvalidJumpError < RuntimeError
 end
 
+class InvalidSequenceError < RuntimeError
+end
+

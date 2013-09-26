@@ -57,6 +57,29 @@ class Board
     puts display_string
   end
   
+  def play_sequence(sequence)
+    p sequence
+    
+    sequence.each_index do |index|
+      break if index == sequence.length - 1
+      
+      move_type = get_move_type(sequence[index], sequence[index + 1])
+      
+      if move_type == :slide
+        slide(sequence[index], sequence[index + 1])
+        return
+      elsif move_type == :jump
+        jump(sequence[index], sequence[index + 1])
+      end
+    end
+  
+    #look at first two, is it a slide?
+    # => if so, execute it and return
+    #is it a jump?
+    # => if it is valid, execute it and consider the next element
+    # => is next element a jump?...etc
+  end
+  
 
   def dark_square?(row_idx, col_idx)
     (row_idx.even? && col_idx.odd?)||(row_idx.odd? && col_idx.even?)
@@ -133,6 +156,18 @@ class Board
   end
   
   private
+  
+  def get_move_type(start_loc, end_loc)
+    distance = (start_loc[0] - end_loc[0]).abs
+    if(distance == 1)
+      :slide
+    elsif(distance == 2)
+      :jump
+    else
+      raise InvalidSequenceError
+    end
+  end
+  
    
   def get_entire_color(color)
     @board.flatten.compact.select do |piece|

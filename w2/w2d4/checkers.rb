@@ -16,27 +16,23 @@ class Checkers
   end
   
   def play
-    update_display
     until game_over? || @quit do
+      update_display
       get_char
-      start_loc = get_location_from_cursor
-      end_loc = get_location_from_cursor
-      play_turn(start_loc, end_loc)
+      sequence = get_sequence_from_cursor
+      play_turn(sequence)
       #turn_over = play_move
+    
     end
   end
   
   private
   
-  def play_turn(start_loc, end_loc)
+  def play_turn(sequence)
     begin
-      num_squares = (start_loc[0] - end_loc[0]).abs
-      if num_squares == 1 #slide
-        @board.slide(start_loc, end_loc)
-      elsif num_squares == 2
-        @board.jump(start_loc, end_loc)
-      end
       
+      @board.play_sequence(sequence)
+      @error_msg = ""
     rescue InvalidSlideError => e
       @error_msg =  "Invalid slide!"
       return false
@@ -61,8 +57,9 @@ class Checkers
     @board.display
   end
   
-  def get_location_from_cursor
+  def get_sequence_from_cursor
     #system('clear')
+    sequence = []
     while true
       update_display
       input = get_char
@@ -80,7 +77,11 @@ class Checkers
       when 'k'
         exit
       when ' '
-        return @board.cursor
+        sequence << @board.cursor
+      when "\r"
+        return sequence
+        
+      else 'entered'
       end
 
       @board.cursor = [cursor_row, cursor_col]
