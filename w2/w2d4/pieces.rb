@@ -26,11 +26,10 @@ class Piece
   def get_valid_slides(board)
     loc = board.get_loc(self)
       
-    puts "I am a #{@color} piece at #{loc.inspect}!"
-      
-    return [] unless jumps = board.has_forced_jumps?(@color)
+    return [] if board.has_forced_jumps?(@color)
       
     moves = offsets.map{|offset|add_offset(loc, offset)}
+    p offsets
     moves.select do |move|
       on_board = on_board?(move)
       empty = board.get_piece(move).nil?
@@ -54,11 +53,17 @@ class Piece
     end
     
     #valid jumps require a safe landing on the other side!
-    enemies.select do |enemy_loc|
+    v_jumps = []
+    enemies.each do |enemy_loc|
       enemy_dir = [enemy_loc[0] - my_loc[0], enemy_loc[1] - my_loc[1]]
       loc_beyond_enemy = add_offset(enemy_loc, enemy_dir)
-      on_board?(loc_beyond_enemy) && board.get_piece(loc_beyond_enemy).nil?
+      if on_board?(loc_beyond_enemy) && board.get_piece(loc_beyond_enemy).nil?
+        v_jumps << loc_beyond_enemy
+      end
     end
+    
+    puts "valid jumps: #{v_jumps}"
+    v_jumps
   end
   
   private
@@ -68,11 +73,15 @@ class Piece
   end
   
   def add_offset(start, offset, multiplier = 1)
+    puts "start #{start.inspect}"
+    puts "offset #{offset}"
+    result = start.dup
     multiplier.times do
-      start[0] += offset[0]
-      start[1] += offset[1]
+      result[0] += offset[0]
+      result[1] += offset[1]
     end
-    start
+    puts "after offset #{start.inspect}"
+    result
   end
 
 end

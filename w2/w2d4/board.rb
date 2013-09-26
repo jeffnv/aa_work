@@ -2,8 +2,10 @@ require './pieces'
 require 'colorize'
 require './checker_errors.rb'
 class Board
+  attr_accessor :cursor
   def initialize
     @board = build_game_board
+    @cursor = [0,0]
   end
   
   def build_game_board
@@ -13,22 +15,42 @@ class Board
     #create and place the pieces on the squares
   end
   
+  def move_cursor(dir)
+    case dir
+    when :up
+      @cursor[1] -= 1 unless @cursor[1] == 0
+    when :down
+      @cursor[1] += 1 unless @cursor[1] == 7
+    when :left
+      @cursor[0] -= 1 unless @cursor[0] == 0
+    when :right
+      @cursor[0] += 1 unless @cursor[0] == 7
+    end
+  end
+  
   def display
     display_string = "  0 1 2 3 4 5 6 7\n"
     color = [:white, :black]
     string_builder = Proc.new do |row_idx, col_idx, piece|
+      
       display_string << "#{row_idx} " if col_idx.zero?
-      if dark_square?(row_idx, col_idx)
-        if(piece)
-          #there is something on this square
-          display_string << piece.mark.on_blue
-        else
-          display_string << "  ".on_blue
-        end
+
+      square = "  " #empty space
+      
+      if([row_idx, col_idx] == @cursor)
+        square = "\u261d ".green
       else
-        #draw magenta
-        display_string << "  ".on_magenta
+        if dark_square?(row_idx, col_idx)
+          square = piece.mark if piece
+        end
       end
+      
+      if dark_square?(row_idx, col_idx)
+        display_string << square.on_blue
+      else
+        display_string << square.on_magenta
+      end
+      
       display_string << "\n" if col_idx == 7
     end
     do_for_every_square(&string_builder)
@@ -42,10 +64,12 @@ class Board
   
   def jump(start_loc, end_loc)
     jumps = get_piece(start_loc).get_valid_jumps(self)
-
+    puts "jump from #{start_loc.inspect} to #{end_loc.inspect}" 
+    puts "my valid jumps #{jumps}" 
     raise InvalidJumpError.new unless jumps.include?(end_loc)
     
     victim_location = get_jump_victim_loc(start_loc, end_loc)
+    puts "victim at #{victim_location.inspect}"
     @board[victim_location[0]][victim_location[1]] = nil
     
     move_raw(start_loc, end_loc)
@@ -53,11 +77,11 @@ class Board
   
   def slide(start_loc, end_loc)
     piece_to_slide = get_piece(start_loc)
-    
-    raise ForcedJumpError.new if has_forced_jumps?(piece_to_slide.color)
+    puts "slide from #{start_loc.inspect} to #{end_loc.inspect}"
+    raise PendingJumpsError.new if has_forced_jumps?(piece_to_slide.color)
     
     slides = piece_to_slide.get_valid_slides(self)
-    
+    puts "valid slides #{slides.inspect}"
     if slides.include? end_loc
       move_raw(start_loc, end_loc) 
     else
@@ -94,8 +118,6 @@ class Board
           forced_jumps << [get_loc(piece), dest]
         end
       end
-    
-      puts "#{color} has the following forced jumps:\n#{forced_jumps.inspect}"
     end
   end
   
