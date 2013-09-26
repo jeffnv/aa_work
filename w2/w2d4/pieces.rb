@@ -23,23 +23,26 @@ class Piece
     end
   end
   
-  def get_valid_moves(board)
-    #rules: 
-      #1.if a jump is available(enemy with opening behind), must take jump
-      #2.can move into an unoccupied square
+  def get_valid_slides(board)
+    #TODO: has forced slides! this is for every piece!!! not just the selected
       
       loc = board.get_loc(self)
+      
       puts "I am a #{@color} piece at #{loc.inspect}!"
       
-      jumps = forced_jumps(board, loc)
-      puts "I am forced to make jumps at #{jumps.inspect}"
-      #check adjacent squares, contain enemy?
-      #if not, then can choose
+      return [] unless jumps = board.has_forced_jumps?(@color)
+      
+      moves = offsets.map{|offset|add_offset(loc, offset)}
+      moves.select do |move|
+        on_board = on_board?(move)
+        empty = board.get_piece(move).nil?
+        on_board && empty
+      end
   end
   
-  def forced_jumps(board, my_loc)
+  def get_valid_jumps(board)
     offs = offsets
-    p offs
+    my_loc = board.get_loc(self)
     neighbor_squares = offsets.map do |offset| 
       [my_loc[0] + offset[0], my_loc[1] + offset[1]]
     end
