@@ -1,6 +1,8 @@
 
 class Board
+  attr_accessor :cursor
   def initialize(custom_board = nil)
+    @cursor  = [0,0]
     unless custom_board
       generate_board
     else
@@ -12,11 +14,15 @@ class Board
     display_string = "\n  " << (0..7).to_a.join(' ') << "\n"
     @board.each_index do |row_idx|
       display_string << "#{row_idx} "
-      @board[row_idx].each do |chess_piece|
-        if chess_piece
-          display_string << chess_piece.mark + " "
+      @board[row_idx].each_with_index do |chess_piece, col_idx|
+        if([row_idx, col_idx] == @cursor)
+          display_string << "\u261d ".colorize(:green)
         else
-          display_string << "\u2218 "
+          if chess_piece
+            display_string << chess_piece.mark + " "
+          else
+            display_string << "\u2218 "
+          end
         end
       end
       display_string << "\n"
@@ -36,6 +42,13 @@ class Board
     end
     nil
   end
+  #
+  # def cursor_loc=(coords)
+  #   @cursor = coords
+  # end
+  # def cursor_loc
+  #   @cursor
+  # end
 
 
   def move(start_loc, end_loc, color)
@@ -150,7 +163,7 @@ class Board
     def show_board_for_animation
       puts "Setting up chess board..."
       display
-      sleep(0.1)
+      sleep(0.06)
       system("clear")
     end
 
