@@ -10,20 +10,37 @@ class Board
     end
   end
 
+  def bg_color(row_i, tile_i)
+    if row_i.even? && tile_i.even?
+      :light_white
+    elsif row_i.even? && tile_i.odd?
+      :white
+    elsif row_i.odd? && tile_i.even?
+      :white
+    elsif row_i.odd? && tile_i.odd?
+      :light_white
+    end
+  end
+
   def display
     display_string = "\n  " << (0..7).to_a.join(' ') << "\n"
     @board.each_index do |row_idx|
       display_string << "#{row_idx} "
       @board[row_idx].each_with_index do |chess_piece, col_idx|
+        square_to_print = ""
         if([row_idx, col_idx] == @cursor)
-          display_string << "\u261d ".colorize(:green)
+          square_to_print << "\u261d ".colorize({:color => :green, :background => bg_color(row_idx, col_idx)})
         else
+          square_to_print = ""
+
           if chess_piece
-            display_string << chess_piece.mark + " "
+            square_to_print << chess_piece.mark + " "
           else
-            display_string << "\u2218 "
+            square_to_print << "  "
           end
         end
+        display_string << square_to_print.colorize({:background => bg_color(row_idx, col_idx)})
+
       end
       display_string << "\n"
     end
