@@ -56,6 +56,16 @@ class Board
     do_for_every_square(&piece_finder)
     location
   end
+  
+  def get_piece(location)
+    @board[location[0]][location[1]]
+  end
+  
+  def move_raw(start_loc, end_loc)
+    piece_to_move = get_piece(start_loc)
+    @board[start_loc[0]][start_loc[1]] = nil
+    @board[end_loc[0]][end_loc[1]] = piece_to_move
+  end
   private
   
   def do_for_every_square(&prc)
