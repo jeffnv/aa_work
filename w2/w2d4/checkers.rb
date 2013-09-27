@@ -30,7 +30,7 @@ class Checkers
   
   def play_turn(sequence)
     begin
-      
+      @board.sequence_valid?(sequence)
       @board.play_sequence(sequence)
       @error_msg = ""
     rescue InvalidSlideError => e
@@ -44,6 +44,9 @@ class Checkers
       return false
     rescue InvalidJumpError => e
       @error_msg =  "Invalid jump"
+      return false
+    rescue InvalidSequenceError
+      @error_msg = "Invalid sequence"
       return false
     end
   end

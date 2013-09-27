@@ -3,9 +3,29 @@ require 'colorize'
 require './checker_errors.rb'
 class Board
   attr_accessor :cursor
-  def initialize
-    @board = build_game_board
+  
+  def initialize(board = nil)
+    if board.nil?
+      @board = build_game_board 
+    else
+      @board = board
+    end
+
     @cursor = [0,0]
+  end
+  
+  def dup
+    dup_game_board = Array.new(8){Array.new(8)}
+    dup_game_board.each_with_index do |row, row_index|
+      row.each_with_index do |item, col_index|
+        piece = @board[row_index][col_index] 
+        if piece
+          dup_game_board[row_index][col_index] = piece.class.new(piece.color)
+        end
+      end
+    end
+    
+    Board.new(dup_game_board)
   end
   
   def build_game_board
@@ -58,28 +78,50 @@ class Board
   end
   
   def play_sequence(sequence)
-    p sequence
-    
+    if(sequence_valid?(sequence))
+      execute_sequence_raw(sequence)
+    else
+      raise InvalidSequenceError.new
+    end
+  end
+  
+  def execute_sequence_raw(sequence, board = self)
     sequence.each_index do |index|
       break if index == sequence.length - 1
       
       move_type = get_move_type(sequence[index], sequence[index + 1])
       
       if move_type == :slide
-        slide(sequence[index], sequence[index + 1])
-        return
+        if(index == 0) #only the first may be a slide
+          board.slide(sequence[index], sequence[index + 1])
+          raise InvalidSequenceError.new if sequence.length > 2
+          return
+        else
+          raise InvalidSequenceError.new
+        end
       elsif move_type == :jump
-        jump(sequence[index], sequence[index + 1])
+        board.jump(sequence[index], sequence[index + 1])
       end
     end
-  
-    #look at first two, is it a slide?
-    # => if so, execute it and return
-    #is it a jump?
-    # => if it is valid, execute it and consider the next element
-    # => is next element a jump?...etc
   end
   
+  def sequence_valid?(sequence)
+    begin
+      execute_sequence_raw(sequence, self.dup)
+      true
+    rescue InvalidSlideError => e
+      return false
+    rescue PendingJumpsError => e
+      return false
+    rescue OffBoardError => e
+      return false
+    rescue InvalidJumpError => e
+      return false
+    rescue InvalidSequenceError
+      return false
+    end
+  end
+    
 
   def dark_square?(row_idx, col_idx)
     (row_idx.even? && col_idx.odd?)||(row_idx.odd? && col_idx.even?)
