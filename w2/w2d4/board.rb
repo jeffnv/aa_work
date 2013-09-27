@@ -195,9 +195,20 @@ class Board
     piece_to_move = get_piece(start_loc)
     @board[start_loc[0]][start_loc[1]] = nil
     @board[end_loc[0]][end_loc[1]] = piece_to_move
+    promote_piece(piece_to_move)
   end
   
   private
+  
+  def promote_piece(piece)
+    piece_pos = get_loc(piece)
+    
+    king_row = piece.color == :black ? 0 : 7
+    if get_loc(piece)[0] == king_row
+      puts "HAIL TO THE KING!!!"
+      @board[piece_pos[0]][piece_pos[1]] = King.new(piece.color)
+    end
+  end
   
   def get_move_type(start_loc, end_loc)
     distance = (start_loc[0] - end_loc[0]).abs
@@ -226,7 +237,7 @@ class Board
   end
   
   def add_color_pieces(color)
-    rows_of_pieces = color == :white ? (0..2) : (5..7)
+    rows_of_pieces = color == :white ? (0..0) : (3..7)
     
     piece_setter = Proc.new do |row_idx, col_idx, square|
       if(dark_square?(row_idx, col_idx) && rows_of_pieces.include?(row_idx))
