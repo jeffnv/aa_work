@@ -13,3 +13,6 @@ end
 class InvalidSequenceError < RuntimeError
 end
 
+class WrongColorError < RuntimeError
+end
+

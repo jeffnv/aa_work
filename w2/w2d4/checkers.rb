@@ -20,9 +20,8 @@ class Checkers
       update_display
       get_char
       sequence = get_sequence_from_cursor
-      play_turn(sequence)
-      #turn_over = play_move
-    
+  
+      @turn.rotate! if play_turn(sequence)
     end
   end
   
@@ -30,8 +29,8 @@ class Checkers
   
   def play_turn(sequence)
     begin
-      @board.sequence_valid?(sequence)
-      @board.play_sequence(sequence)
+      @board.sequence_valid?(sequence, @turn.first)
+      @board.play_sequence(sequence, @turn.first)
       @error_msg = ""
     rescue InvalidSlideError => e
       @error_msg =  "Invalid slide!"
@@ -51,7 +50,7 @@ class Checkers
     end
   end
   def update_display
-    #system("clear")
+    system("clear")
     #instructions = "to play, move cursor around screen. Use spacebar to select"
     #instructions << " a piece to move. Select a destination and press space"
     #puts instructions

@@ -77,19 +77,21 @@ class Board
     puts display_string
   end
   
-  def play_sequence(sequence)
-    if(sequence_valid?(sequence))
-      execute_sequence_raw(sequence)
+  def play_sequence(sequence, color)
+    if(sequence_valid?(sequence, color))
+      execute_sequence_raw(sequence, color)
     else
       raise InvalidSequenceError.new
     end
   end
   
-  def execute_sequence_raw(sequence, board = self)
+  def execute_sequence_raw(sequence, color, board = self)
     sequence.each_index do |index|
       break if index == sequence.length - 1
       
       move_type = get_move_type(sequence[index], sequence[index + 1])
+      piece = get_piece(sequence[index])
+      raise WrongColorError.new if piece.color != color
       
       if move_type == :slide
         if(index == 0) #only the first may be a slide
@@ -105,9 +107,9 @@ class Board
     end
   end
   
-  def sequence_valid?(sequence)
+  def sequence_valid?(sequence, color)
     begin
-      execute_sequence_raw(sequence, self.dup)
+      execute_sequence_raw(sequence, color, self.dup)
       true
     rescue InvalidSlideError => e
       return false
@@ -118,6 +120,8 @@ class Board
     rescue InvalidJumpError => e
       return false
     rescue InvalidSequenceError
+      return false
+    rescue WrongColorError
       return false
     end
   end
