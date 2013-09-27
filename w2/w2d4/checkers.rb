@@ -57,6 +57,8 @@ class Checkers
     puts @error_msg.red unless @error_msg.empty?
     
     @board.display
+    
+    puts "\nWaiting for #{@turn.first}"
   end
   
   def get_sequence_from_cursor
