@@ -91,6 +91,7 @@ class Board
       
       move_type = get_move_type(sequence[index], sequence[index + 1])
       piece = get_piece(sequence[index])
+      raise InvalidSequenceError.new unless piece
       raise WrongColorError.new if piece.color != color
       
       if move_type == :slide
@@ -241,7 +242,7 @@ class Board
   end
   
   def add_color_pieces(color)
-    rows_of_pieces = color == :white ? (0..0) : (3..7)
+    rows_of_pieces = color == :white ? (0..2) : (5..7)
     
     piece_setter = Proc.new do |row_idx, col_idx, square|
       if(dark_square?(row_idx, col_idx) && rows_of_pieces.include?(row_idx))
