@@ -16,3 +16,5 @@ end
 class WrongColorError < RuntimeError
 end
 
+class NoPieceError < RuntimeError
+end

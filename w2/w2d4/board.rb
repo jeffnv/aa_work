@@ -78,11 +78,7 @@ class Board
   end
   
   def play_sequence(sequence, color)
-    if(sequence_valid?(sequence, color))
       execute_sequence_raw(sequence, color)
-    else
-      raise InvalidSequenceError.new
-    end
   end
   
   def execute_sequence_raw(sequence, color, board = self)
@@ -109,22 +105,7 @@ class Board
   end
   
   def sequence_valid?(sequence, color)
-    begin
       execute_sequence_raw(sequence, color, self.dup)
-      true
-    rescue InvalidSlideError => e
-      return false
-    rescue PendingJumpsError => e
-      return false
-    rescue OffBoardError => e
-      return false
-    rescue InvalidJumpError => e
-      return false
-    rescue InvalidSequenceError
-      return false
-    rescue WrongColorError
-      return false
-    end
   end
     
 

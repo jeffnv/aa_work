@@ -47,6 +47,9 @@ class Checkers
     rescue InvalidSequenceError
       @error_msg = "Invalid sequence"
       return false
+    rescue NoPieceError 
+      @error_msg = "No piece selected"
+      return false
     end
   end
   def update_display
