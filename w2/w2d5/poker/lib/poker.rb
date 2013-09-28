@@ -21,9 +21,7 @@ class Hand
   end
 
   def compare(other_hand)
-
-
-
+    self.get_hand_rank <=> other_hand.get_hand_rank
   end
 
   def full_house?
@@ -99,6 +97,47 @@ class Hand
 end
 
 class Deck
+
+  def initialize
+    reset
+  end
+
+
+  def count
+    @deck.count
+  end
+
+  def draw(num)
+    @deck.pop(num)
+  end
+
+
+
+  def reset
+    @deck = build_deck
+    @deck.shuffle!
+    nil
+  end
+
+  private
+
+  def shuffle
+    @deck.shuffle
+    nil
+  end
+
+  def build_deck
+    suits = [:c, :h, :s, :d]
+    values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    deck = []
+    suits.each do |suit|
+      values.each do |value|
+        deck << Card.new({suit: suit, value: value})
+      end
+    end
+    deck
+  end
+
 end
 
 class Player

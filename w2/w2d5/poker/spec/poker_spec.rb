@@ -11,12 +11,9 @@ end
 describe Hand do
   subject (:hand) {Hand.new}
 
-  describe "#initialize" do
-  end
-
   describe "#compare hands" do
     let(:straight) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 4, :suit => :h )
       cards << double("card2", :value => 5, :suit => :d )
       cards << double("card3", :value => 6, :suit => :h )
@@ -26,7 +23,7 @@ describe Hand do
     end
 
     let(:straight_flush) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 4, :suit => :h )
       cards << double("card2", :value => 5, :suit => :h )
       cards << double("card3", :value => 6, :suit => :h )
@@ -36,13 +33,13 @@ describe Hand do
     end
 
     it "should correctly indicate the better hand" do
-      expect(straight_flush <=> straight).to eq(1)
+      expect(straight_flush.compare(straight)).to eq(1)
     end
   end
 
   describe "#straight_flush?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 4, :suit => :h )
       cards << double("card2", :value => 5, :suit => :h )
       cards << double("card3", :value => 6, :suit => :h )
@@ -58,7 +55,7 @@ describe Hand do
 
   describe "#four_of_a_kind?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :c )
       cards << double("card3", :value => 10, :suit => :h )
@@ -74,7 +71,7 @@ describe Hand do
 
   describe "#full_house?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :d )
       cards << double("card3", :value => 10, :suit => :d )
@@ -90,7 +87,7 @@ describe Hand do
 
   describe "#flush?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :d )
       cards << double("card3", :value => 10, :suit => :d )
@@ -106,7 +103,7 @@ describe Hand do
 
   describe "#straight" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 4, :suit => :d )
       cards << double("card2", :value => 5, :suit => :c )
       cards << double("card3", :value => 6, :suit => :h )
@@ -122,7 +119,7 @@ describe Hand do
 
   describe "#three_of_a_kind?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :c )
       cards << double("card3", :value => 10, :suit => :h )
@@ -138,7 +135,7 @@ describe Hand do
 
   describe "#two_pair?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :c )
       cards << double("card3", :value => 6, :suit => :h )
@@ -154,7 +151,7 @@ describe Hand do
 
   describe "#pair?" do
     let(:test_hand) do
-      cards = []
+      cards                           = []
       cards << double("card1", :value => 10, :suit => :d )
       cards << double("card2", :value => 10, :suit => :c )
       cards << double("card3", :value => 6, :suit => :h )
@@ -168,14 +165,36 @@ describe Hand do
     end
   end
 
+  describe "#discard" do
+    let(:test_hand) do
+      cards = []
+      cards << double("card1", :value => 10, :suit => :d )
+      cards << double("card2", :value => 10, :suit => :c )
+      cards << double("card3", :value => 6, :suit => :h )
+      cards << double("card4", :value => 7, :suit => :c )
+      cards << double("card5", :value => 3, :suit => :h )
+      Hand.new(cards)
+    end
+
+    let(:card1) { double("card1", :value => 10, :suit => :d ) }
+    let(:card2) { double("card2", :value => 10, :suit => :c ) }
+    let(:card3) { double("card3", :value => 6, :suit => :h ) }
+    let(:card4) { double("card4", :value => 7, :suit => :c ) }
+    let(:card5) { double("card5", :value => 3, :suit => :h ) }
+
+    it "should remove cards from hand" do
+     expect(test_hand.discard([card1, card2, card3])).to match_array([card4, card5])
+    end
+
+
+  end
 
   describe "#show" do
   end
-
 end
 
 describe Card do
-  subject(:card) { Card.new({:value => 8, :suit => :h}) }
+  subject(:card) { Card.new({:value   => 8, :suit => :h}) }
 
   describe "#suit" do
     it "should have suit" do
@@ -193,12 +212,9 @@ describe Card do
 end
 
 describe Player do
+  subject(:player){Player.new()}
 
-  describe "#initialize" do
-  end
 
-  describe "#discard" do
-  end
 
   describe "#fold" do
   end
@@ -213,15 +229,25 @@ describe Player do
 end
 
 describe Deck do
-  describe "#initialize" do
-  end
+  subject(:deck){Deck.new}
 
   describe "#draw" do
-    #exception if deck is empty
+    it "draw return correct number of cards" do
+      expect(deck.draw(3).count).to eq(3)
+    end
+
+    it "removes drawn cards from deck" do
+      deck.draw(3)
+      expect(deck.count).to eq(49)
+    end
   end
 
-  describe "#shuffle" do
+  describe "#reset" do
+    it "returns number of cards in deck to 52" do
+      deck.draw(3)
+      deck.reset
+      expect(deck.count).to eq(52)
+    end
   end
-
 end
 
