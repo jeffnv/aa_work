@@ -63,4 +63,8 @@ class User < SqlParent
 
   end
 
+  def followed_questions
+    QuestionFollowers.followed_questions_for_user_id(@id)
+  end
+
 end

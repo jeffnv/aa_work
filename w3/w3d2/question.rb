@@ -43,4 +43,8 @@ class Question < SqlParent
     Reply.find_by_question_id(@id)
   end
 
+  def followers
+    QuestionFollowers.followers_for_question_id(@id)
+  end
+
 end
