@@ -71,4 +71,13 @@ class User < SqlParent
     QuestionLike.liked_questions_for_user_id(@id)
   end
 
+  def avg_karma
+    results = QuestionsDatabase.instance.execute(<<-SQL, @id, @id)
+    SELECT (COUNT(questions.id) *1.0/ (SELECT COUNT(*) FROM questions WHERE user_id = ?))
+    FROM questions JOIN question_likes ON (question_likes.question_id = questions.id)
+    WHERE questions.user_id = ?
+    SQL
+    results[0].values[0]
+  end
+
 end

@@ -66,6 +66,8 @@ VALUES
 ('question1?', 'question 1 body?',
 	(SELECT id FROM users WHERE fname = 'john' AND lname = 'smith')),
 ('question2?', 'question 2 body?',
+	(SELECT id FROM users WHERE fname = 'sarah' AND lname = 'smith')),
+('question3?', 'question 3 body?',
 	(SELECT id FROM users WHERE fname = 'sarah' AND lname = 'smith'));
 
 
@@ -106,4 +108,8 @@ VALUES
 	(SELECT id FROM users WHERE fname = 'dale' AND lname = 'jenkins')),
 
 ((SELECT id FROM questions WHERE title = 'question2?'),
-	(SELECT id FROM users WHERE fname = 'john' AND lname = 'smith'));
+	(SELECT id FROM users WHERE fname = 'john' AND lname = 'smith')),
+
+((SELECT id FROM questions WHERE title = 'question3?'),
+	(SELECT id FROM users WHERE fname = 'dale' AND lname = 'jenkins'))
+	;
