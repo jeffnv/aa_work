@@ -1,41 +1,28 @@
-class Question
+class Question < SqlParent
   attr_accessor :title, :body, :user_id
+  def self.table_name
+    "questions"
+  end
   def self.all
     results = QuestionsDatabase.instance.execute("SELECT * FROM questions")
     results.map { |result| Question.new(result) }
   end
 
-  def self.find_by_id(id)
-    obj_id = QuestionsDatabase.instance.execute(<<-SQL, id)
+  def self.find_by_author_id(id)
+    obj_hash = QuestionsDatabase.instance.execute(<<-SQL, id)
       SELECT *
       FROM
         questions
       WHERE
-        id=?;
+        user_id=?
     SQL
 
-    if obj_id.empty?
-      return nil
+    if obj_hash.empty?
+      return []
     else
-      Question.new(obj_id[0])
+      obj_hash.map { |result| Question.new(result) }
     end
   end
-
-  # def self.find_by_name(title, body, user_id)
-  #   user_hash = QuestionsDatabase.instance.execute(<<-SQL, fname, lname)
-  #     SELECT *
-  #     FROM
-  #       users
-  #     WHERE
-  #       fname=? AND lname = ?;
-  #   SQL
-  #
-  #   if user_hash.empty?
-  #     return nil
-  #   else
-  #     User.new(user_hash[0])
-  #   end
-  # end
 
   def initialize(options = {})
     @id = options["id"]
@@ -46,6 +33,14 @@ class Question
 
   def to_s
     "#{@title} #{@body} by #{@user_id} - #{User.find_by_id(@user_id)}"
+  end
+
+  def author
+    User.find_by_id(@user_id)
+  end
+
+  def replies
+    Reply.find_by_question_id(@id)
   end
 
 end

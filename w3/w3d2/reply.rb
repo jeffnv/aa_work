@@ -1,66 +1,61 @@
-# CREATE TABLE replies (
-#   id INTEGER PRIMARY KEY,
-#
-#   question_id INTEGER NOT NULL,
-#   user_id INTEGER NOT NULL,
-#   body VARCHAR(255) NOT NULL,
-#
-#   parent_reply_id INTEGER,
-#   FOREIGN KEY (question_id) REFERENCES questions(id),
-#   FOREIGN KEY (user_id) REFERENCES users(id)
-#
-# );
+class Reply < SqlParent
+  attr_accessor :question_id, :user_id, :body, :parent_reply_id
 
-
-
-class Reply
-  attr_accessor :fname, :lname
   def self.all
-    results = QuestionsDatabase.instance.execute("SELECT * FROM users")
-    results.map { |result| User.new(result) }
+    results = QuestionsDatabase.instance.execute("SELECT * FROM replies")
+    p results
+    results.map { |result| Reply.new(result) }
   end
 
-  def self.find_by_id(id)
-    user_hash = QuestionsDatabase.instance.execute(<<-SQL, id)
-      SELECT *
-      FROM
-        users
-      WHERE
-        id=?;
-    SQL
+  def self.table_name
+    "replies"
+  end
 
-    if user_hash.empty?
-      return nil
-    else
-      User.new(user_hash[0])
+  def self.find_by_question_id(question_id)
+    results = QuestionsDatabase.instance.execute("SELECT * FROM replies WHERE question_id = ?", question_id)
+    results.map do |result|
+      Reply.new(result)
     end
   end
 
-  def self.find_by_name(fname, lname)
-    user_hash = QuestionsDatabase.instance.execute(<<-SQL, fname, lname)
-      SELECT *
-      FROM
-        users
-      WHERE
-        fname=? AND lname = ?;
-    SQL
-
-    if user_hash.empty?
-      return nil
-    else
-      User.new(user_hash[0])
+  def self.find_by_user_id(user_id)
+    results = QuestionsDatabase.instance.execute("SELECT * FROM replies WHERE user_id = ?", user_id)
+    results.map do |result|
+      Reply.new(result)
     end
   end
 
   def initialize(options = {})
     @id = options["id"]
-    @fname = options["fname"]
-    @lname = options["lname"]
+    @question_id = options["question_id"]
+    @user_id = options["user_id"]
+    @body = options["body"]
+    @parent_reply_id = options["parent_reply_id"]
   end
 
-  def to_s
-    "#{@fname} #{@lname}"
+  def author
+    User.find_by_id(@user_id)
   end
+
+  def question
+    Question.find_by_id(@question_id)
+  end
+
+  def parent_reply
+    Reply.find_by_id(@parent_reply_id)
+  end
+
+  def child_replies
+    results = QuestionsDatabase.instance.execute("SELECT * FROM replies WHERE parent_reply_id = ?", @id)
+    results.map do |result|
+      Reply.new(result)
+    end
+  end
+
+
+  # def to_s
+  #   "qid: #{@question_id} #{@body} pid #{@parent_reply_id}"
+  # end
 
   def authored_questions
     auth_q = []
@@ -69,5 +64,7 @@ class Reply
     end
     auth_q
   end
+
+
 
 end
