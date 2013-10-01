@@ -47,4 +47,16 @@ class Question < SqlParent
     QuestionFollowers.followers_for_question_id(@id)
   end
 
+  def most_followed(n)
+    QuestionFollowers.most_followed_questions(n)
+  end
+
+  def likers
+    QuestionLike.likers_for_question_id(@id)
+  end
+
+  def num_likes
+    QuestionLike.num_likes_for_question_id(@id)
+  end
+
 end

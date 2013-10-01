@@ -5,6 +5,7 @@ load 'user.rb'
 load 'question.rb'
 load 'reply.rb'
 load 'question_followers.rb'
+load 'question_like.rb'
 
 
 class QuestionsDatabase < SQLite3::Database

@@ -22,4 +22,26 @@ class QuestionFollowers
     results = QuestionsDatabase.instance.execute(query, user_id)
     results.map { |result| Question.new(result) }
   end
+
+  def self.most_followed_questions(n)
+    query = <<-SQL
+    SELECT
+      questions.id, questions.title, questions.body, questions.user_id
+    FROM
+      question_followers qf
+    JOIN
+      questions
+    ON
+    (questions.id = qf.question_id)
+    GROUP BY
+      qf.question_id
+    ORDER BY
+      COUNT(qf.question_id) DESC
+      LIMIT ?
+    SQL
+    results = QuestionsDatabase.instance.execute(query, n)
+    results.map { |result| Question.new(result) }
+  end
+
+
 end
