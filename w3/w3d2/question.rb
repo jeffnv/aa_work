@@ -24,6 +24,14 @@ class Question < SqlParent
     end
   end
 
+  def self.most_liked(n)
+    QuestionLike.most_liked_questions(n)
+  end
+
+  def self.most_followed(n)
+    QuestionFollowers.most_followed_questions(n)
+  end
+
   def initialize(options = {})
     @id = options["id"]
     @title = options["title"]
@@ -47,9 +55,7 @@ class Question < SqlParent
     QuestionFollowers.followers_for_question_id(@id)
   end
 
-  def most_followed(n)
-    QuestionFollowers.most_followed_questions(n)
-  end
+
 
   def likers
     QuestionLike.likers_for_question_id(@id)
