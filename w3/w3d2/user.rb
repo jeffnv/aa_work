@@ -1,5 +1,5 @@
 class User < SqlParent
-  attr_accessor :fname, :lname
+  attr_accessor :fname, :lname, :id
   def self.all
     results = QuestionsDatabase.instance.execute("SELECT * FROM users")
     results.map { |result| User.new(result) }
@@ -78,6 +78,28 @@ class User < SqlParent
     WHERE questions.user_id = ?
     SQL
     results[0].values[0]
+  end
+
+  def save
+    params = [self.fname, self.lname]
+    if self.id.nil?
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        INSERT INTO
+          users (fname, lname)
+        VALUES
+          (?, ?)
+      SQL
+
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        UPDATE users
+        SET fname = ?, lname = ?
+        WHERE id = #{@id}
+
+      SQL
+
+    end
   end
 
 end
