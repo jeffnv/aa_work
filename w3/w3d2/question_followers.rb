@@ -43,5 +43,4 @@ class QuestionFollowers
     results.map { |result| Question.new(result) }
   end
 
-
 end

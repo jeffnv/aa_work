@@ -1,5 +1,6 @@
 class Reply < SqlParent
   attr_accessor :question_id, :user_id, :body, :parent_reply_id
+  attr_reader :id
 
   def self.all
     results = QuestionsDatabase.instance.execute("SELECT * FROM replies")
@@ -52,11 +53,6 @@ class Reply < SqlParent
     end
   end
 
-
-  # def to_s
-  #   "qid: #{@question_id} #{@body} pid #{@parent_reply_id}"
-  # end
-
   def authored_questions
     auth_q = []
     Question.all.each do |question|
@@ -65,6 +61,23 @@ class Reply < SqlParent
     auth_q
   end
 
+  def save
+    params = [self.question_id, self.user_id, self.body, self.parent_reply_id]
+    if self.id.nil?
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        INSERT INTO
+          replies (question_id, user_id, body, parent_reply_id)
+        VALUES
+          (?, ?, ?, ?)
+      SQL
 
-
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        UPDATE replies
+        SET question_id = ?, user_id = ?, body = ?, parent_reply_id = ?
+        WHERE id = #{@id}
+      SQL
+    end
+  end
 end

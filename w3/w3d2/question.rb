@@ -1,5 +1,6 @@
 class Question < SqlParent
   attr_accessor :title, :body, :user_id
+  attr_reader :id
   def self.table_name
     "questions"
   end
@@ -55,14 +56,32 @@ class Question < SqlParent
     QuestionFollowers.followers_for_question_id(@id)
   end
 
-
-
   def likers
     QuestionLike.likers_for_question_id(@id)
   end
 
   def num_likes
     QuestionLike.num_likes_for_question_id(@id)
+  end
+
+  def save
+    params = [self.title, self.body, self.user_id]
+    if self.id.nil?
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        INSERT INTO
+          questions (title, body, user_id)
+        VALUES
+          (?, ?, ?)
+      SQL
+
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.instance.execute(<<-SQL, *params)
+        UPDATE questions
+        SET title = ?, body = ?, user_id = ?
+        WHERE id = #{@id}
+      SQL
+    end
   end
 
 end

@@ -36,11 +36,6 @@ class User < SqlParent
   end
 
   def authored_questions
-    # auth_q = []
-    # Question.all.each do |question|
-    #   auth_q << question if question.user_id == @id
-    # end
-    # auth_q
     results = QuestionsDatabase.instance.execute(<<-SQL, @id)
       SELECT *
       FROM
