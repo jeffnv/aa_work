@@ -1,0 +1,49 @@
+print "input email: "
+usr_email = gets.chomp
+
+user = User.where("email = ?", usr_email).first
+if user
+  puts "What do you want to do?"
+  puts "0. Create shortened URL"
+  puts "1. Visit shortened URL"
+  puts "2. Tag a url"
+  case gets.chomp.to_i
+  when 0
+    print "Enter url to shorten: "
+    long_url = gets.chomp
+
+    new_url = ShortenedUrl.create_for_user_and_long_url!(user, long_url)
+    puts "Shortened to: #{new_url.short_url}"
+  when 1
+    print "Enter shortened url: "
+    short_url = gets.chomp
+    url = ShortenedUrl.find_by_short_url(short_url)
+    long_url = url.long_url
+
+    Launchy.open( long_url ) do |exception|
+      puts "Attempted to open #{uri} and failed because #{exception}"
+    end
+    Visit.record_visit!(user, url)
+    puts url.num_clicks.to_s + ' total visit'.pluralize(url.num_clicks)
+    puts url.num_uniques.to_s + ' unique visit'.pluralize(url.num_uniques)
+    puts url.num_recent_uniques.to_s + ' visit'.pluralize(url.num_recent_uniques) + " in the last 10 minutes"
+  when 2
+    print "Enter shortened url to tag: "
+    short_url = gets.chomp
+    url = ShortenedUrl.find_by_short_url(short_url)
+    tags = TagTopic.all
+    tag_string = ""
+    tags.each_with_index do |tag, index|
+      tag_string << "#{index}. #{tag.tag}\n"
+    end
+    puts tag_string
+
+    print "enter number tag to...tag: "
+    choice = gets.chomp.to_i
+    Tagging.tag!(tags[choice], url)
+  end
+
+
+else
+  puts "unknown user: #{usr_email}"
+end
