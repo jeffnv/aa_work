@@ -1,0 +1,91 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (8.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateUsers (20131003181536)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_user_name" ON "users" ("user_name")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131003181536')
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePolls (20131003181541)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "polls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_polls_on_title" ON "polls" ("title")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_polls_on_author" ON "polls" ("author")[0m
+SQLite3::SQLException: table polls has no column named author: CREATE  INDEX "index_polls_on_author" ON "polls" ("author")
+  [1m[35m (0.5ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20131003181536)
+Migrating to CreatePolls (20131003181541)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "polls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_polls_on_title" ON "polls" ("title")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_polls_on_author_id" ON "polls" ("author_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20131003181541')[0m
+  [1m[35m (5.6ms)[0m  commit transaction
+Migrating to CreateQuestions (20131003181545)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "poll_id" integer, "question_body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_questions_on_poll_id" ON "questions" ("poll_id")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131003181545')
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAnswerChoices (20131003181552)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "answer_choices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "answer_body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_answer_choices_on_question_id" ON "answer_choices" ("question_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20131003181552')[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateResponses (20131003181558)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "responses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "question_id" integer, "answer_choice_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_responses_on_user_id" ON "responses" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_responses_on_question_id" ON "responses" ("question_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_responses_on_answer_choice_id" ON "responses" ("answer_choice_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131003181558')
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20131003181536)
+Migrating to CreatePolls (20131003181541)
+Migrating to CreateQuestions (20131003181545)
+Migrating to CreateAnswerChoices (20131003181552)
+Migrating to CreateResponses (20131003181558)
+Migrating to RemoveQuestionIdFromResponse (20131003210110)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TEMPORARY TABLE "altered_responses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "question_id" integer, "answer_choice_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_responses_on_answer_choice_id" ON "altered_responses" ("answer_choice_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "temp_index_altered_responses_on_question_id" ON "altered_responses" ("question_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_responses_on_user_id" ON "altered_responses" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "responses"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_responses" ("id","user_id","question_id","answer_choice_id","created_at","updated_at") VALUES (1, 2, NULL, 1, '2013-10-03 20:54:18.313747', '2013-10-03 20:54:18.313747')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "responses"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "responses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "answer_choice_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_responses_on_user_id" ON "responses" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_responses_on_answer_choice_id" ON "responses" ("answer_choice_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "altered_responses"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "responses" ("id","user_id","answer_choice_id","created_at","updated_at") VALUES (1, 2, 1, '2013-10-03 20:54:18.313747', '2013-10-03 20:54:18.313747')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "altered_responses"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20131003210110')[0m
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
