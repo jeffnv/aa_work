@@ -10,6 +10,6 @@ module Searchable
     FROM #{self.table_name}
     WHERE #{where_str}
     SQL
-    db_rows.map{|params| self.new(params)}
+    self.parse_all(db_rows)
   end
 end

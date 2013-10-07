@@ -6,6 +6,7 @@ require 'active_support/inflector' #we need to 'ClassName'.underscore.pluralize
 
 class SQLObject < MassObject
   extend Searchable
+  extend Associatable
   def self.set_table_name(table_name = self.class.to_s.underscore.pluralize)
     @table_name = table_name
   end
@@ -19,10 +20,7 @@ class SQLObject < MassObject
     SELECT *
     FROM #{@table_name}
     SQL
-    attr_rows.map do |attrs|
-      puts attrs
-      self.new(attrs)
-    end
+    self.parse_all(attr_rows)
   end
 
 
@@ -33,7 +31,7 @@ class SQLObject < MassObject
     WHERE id = ?
     SQL
     unless(attr_rows.empty?)
-      self.new(attr_rows[0])
+      self.parse_all(attr_rows)[0]
     else
       nil
     end

@@ -9,7 +9,8 @@ class DBConnection
   end
 
   def self.execute(*args)
-    puts args[0]
+    #p args[1..-1]
+    #puts args[0]
     @db.execute(*args)
   end
 
