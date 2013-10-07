@@ -5,6 +5,7 @@ require_relative './searchable'
 require 'active_support/inflector' #we need to 'ClassName'.underscore.pluralize
 
 class SQLObject < MassObject
+  extend Searchable
   def self.set_table_name(table_name = self.class.to_s.underscore.pluralize)
     @table_name = table_name
   end
