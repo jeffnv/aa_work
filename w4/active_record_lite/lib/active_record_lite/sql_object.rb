@@ -37,7 +37,16 @@ class SQLObject < MassObject
       nil
     end
   end
-
+  
+  def save
+    if(@id.nil?)
+      create
+    else
+      update
+    end
+  end
+  
+  private 
   def create
     attrs = self.class.attributes.zip(attribute_values)
     attrs.delete_if{|key, val|val.nil?}
@@ -66,13 +75,7 @@ class SQLObject < MassObject
      
   end
   
-  def save
-    if(@id.nil?)
-      create
-    else
-      update
-    end
-  end
+
 
   def attribute_values
     attr_vals = self.class.attributes.map do |attr_name| 
