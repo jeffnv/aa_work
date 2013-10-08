@@ -58,8 +58,6 @@ class SQLObject < MassObject
     VALUES
   (#{questions})
     SQL
-    
-    puts "********running the following:\n#{query}\n\nwith#{attr_vals.inspect}"
     DBConnection.execute(query, attr_vals)
     @id = DBConnection.last_insert_row_id
   end
