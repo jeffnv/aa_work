@@ -88,13 +88,8 @@ module Associatable
         where_var = self.id
       end
       
-      if as2_prms.type == :belongs_to
-        on_str = "t1.#{as2_prms.params[:foreign_key]} = 
-        t2.#{as2_prms.params[:primary_key]}"
-      else
-        on_str = "t1.#{as2_prms.params[:primary_key]} = 
-        t2.#{as2_prms.params[:foreign_key]}"
-      end
+      on_str = "t1.#{as2_prms.params[:foreign_key]} = 
+      t2.#{as2_prms.params[:primary_key]}"
       
       sql = <<-SQL
       SELECT t2.*
