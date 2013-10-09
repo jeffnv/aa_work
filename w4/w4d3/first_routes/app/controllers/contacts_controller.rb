@@ -1,10 +1,9 @@
 class ContactsController < ApplicationController
   def index
-    #render :json => Contact.all
-    render :json => contacts_for_user_id(params[:user_id])
+    render :json => self.class.contacts_for_user_id(params[:user_id])
   end
 
-  def contacts_for_user_id(user_id)
+  def self.contacts_for_user_id(user_id)
     c = Contact.joins(<<-SQL)
     LEFT JOIN contact_shares cs ON cs.contact_id = contacts.id
     SQL

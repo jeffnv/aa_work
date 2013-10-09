@@ -1,5 +1,4 @@
 class ContactSharesController < ApplicationController
-
   def destroy
     cs = ContactShare.find_by_id(params[:id])
     if cs
@@ -17,5 +16,4 @@ class ContactSharesController < ApplicationController
       render :json => cs.errors, :status => :unprocessable_entity
     end
   end
-
 end

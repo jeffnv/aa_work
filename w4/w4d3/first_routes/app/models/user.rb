@@ -10,6 +10,5 @@ class User < ActiveRecord::Base
   has_many :shared_contacts, :through => :contact_shares, :source => :contact
 
   validates :name, :email, :presence => true
-
 end
 
