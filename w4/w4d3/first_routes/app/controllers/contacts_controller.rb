@@ -1,6 +1,14 @@
 class ContactsController < ApplicationController
   def index
-    render :json => Contact.all
+    #render :json => Contact.all
+    render :json => contacts_for_user_id(params[:user_id])
+  end
+
+  def contacts_for_user_id(user_id)
+    c = Contact.joins(<<-SQL)
+    LEFT JOIN contact_shares cs ON cs.contact_id = contacts.id
+    SQL
+    c.where("contacts.user_id = ? OR cs.user_id = ?" , user_id, user_id)
   end
 
   def create
