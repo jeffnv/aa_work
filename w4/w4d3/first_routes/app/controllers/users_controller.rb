@@ -13,10 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    render :text => "Got request for user #{params[:id]}"
-  end
-
   def update
     user = User.find(params[:id])
     if user.update_attributes(params[:user])
