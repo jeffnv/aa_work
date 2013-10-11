@@ -1,0 +1,37 @@
+<label for="cat_name">Name</label>
+<input type="text" name="cat[name]" id="cat_name" value="<%=@cat.name%>">
+<br>
+<br>
+
+<label for="cat_age">Age</label>
+<input type="text" name="cat[age]"  id="cat_age" value="<%=@cat.age%>">
+<br>
+<br>
+
+<% ["Male","Female"].each do |sex| %>
+	<label for="cat_sex_<%=sex.downcase%>"><%= sex %></label>
+	<input type="radio" name="cat[sex]" id="cat_sex_<%=sex.downcase%>" value="<%=sex[0]%>"
+		<%='checked' if @cat.sex == sex[0] %>>
+<% end %>
+<br>
+<br>
+
+<label for="cat_color">Color</label>
+<select name="cat[color]" id="cat_color">
+	<option></option>
+	<% cat_colors.each do |color| %>
+		<option value="<%= color %>"
+			<%='selected' if @cat.color == color %> ><%= color.capitalize %>
+		</option>
+	<% end %>
+</select>
+<br>
+<br>
+
+<label for="cat_birth_date">Birth Date</label>
+<input type="date"
+			 name="cat[birth_date]"
+			 id="cat_birth_date"
+			 value="<%= @cat.birth_date.try(:to_date) %>">
+<br>
+<br>

@@ -1,0 +1,30 @@
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Sex</th>
+		<th>Color</th>
+		<th>Birthday</th>
+	</tr>
+	<tr>
+		<td><%= @cat.name %></td>
+		<td><%= @cat.age %></td>
+		<td><%= @cat.sex %></td>
+		<td><%= @cat.color %></td>
+		<td><%= @cat.birth_date %></td>
+	</tr>
+</table>
+<br>
+<br>
+<table>
+	<tr>
+		<th>Start Date</th>
+		<th>End Date</th>
+	</tr>
+	<%@requests.each do |request|%>
+	<tr>
+		<td><%= request.start_date %></td>
+		<td><%= request.end_date %></td>
+	</tr>
+	<%end%>
+</table>
