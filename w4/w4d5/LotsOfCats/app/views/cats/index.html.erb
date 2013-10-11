@@ -1,0 +1,10 @@
+<table>
+	<tr><th>Name</th><th>Show</th></tr>
+<% @cats.each do |cat| %>
+	<tr><td><%= cat.name %></td><td><%= link_to "Show cat", cat_url(cat.id) %></td></tr>
+	<% end %>
+</table>
+
+<p>Create New Rental Request</p>
+<%= button_to "Rent a cat!", new_cat_rental_request_url, :method => :get %>
+<%= button_to "Pimp out your cat.", new_cat_url, :method => :get%>

@@ -1,0 +1,26 @@
+<table>
+	<tr><th>Attribute</th><th>Value</th></tr>
+	<tr><td>Name</td><td><%= @cat.name %></td></tr>
+	<tr><td>Age</td><td><%= @cat.age %></td></tr>
+	<tr><td>Sex</td><td><%= @cat.sex %></td></tr>
+	<tr><td>Birthdate</td><td><%= @cat.birth_date %></td></tr>
+	<tr><td>Color</td><td><%= @cat.color %></td></tr>
+	<tr><td>Owner</td><td><%= @cat.user.user_name %></td></tr>
+</table>
+<br>
+<%= image_tag "cat#{@cat.id}.jpg" , :size => "400x300"%>
+<% if current_user.id == @cat.user_id%>
+		<p>Approved Requests</p>
+		<% @cat.approved_requests.each do |request| %>
+			<%= request.start_date %> - <%= request.end_date %><br>
+		<% end %>
+		<br>
+
+		<p>Pending Requests</p>
+		<% @cat.cat_rental_requests.each do |request| %>
+			<% next unless request.pending? %>
+			<%= request.start_date %> - <%= request.end_date %><br>
+			<%= button_to "Approve", approve_cat_rental_request_url(request.id) %>
+			<%= button_to "Deny", deny_cat_rental_request_url(request.id) %>
+		<% end %>
+<% end%>
