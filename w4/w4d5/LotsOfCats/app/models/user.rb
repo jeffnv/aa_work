@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   after_initialize :set_session_token
 
   has_many :cats
+  has_many :sessions
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
@@ -30,6 +31,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
+  #create a new session
   def set_session_token
     self.session_token ||= self.class.generate_session_token
   end

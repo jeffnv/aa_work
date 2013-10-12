@@ -11,14 +11,13 @@ class SessionsController < ApplicationController
       flash[:errors] = ["Credentials were wrong"]
       render :new
     else
-      @user.reset_session_token!
       self.current_user = @user
       redirect_to cats_url
     end
   end
 
   def destroy
-    self.current_user.reset_session_token!
+    Session.find_by_session_token(session[:session_token]).delete
     session[:session_token] = nil
     redirect_to new_session_url
   end

@@ -1,0 +1,14 @@
+This is <%= @user.user_name%>'s page.<br>
+
+Here are the cats that you are pimping out <br>
+
+
+<% @user.cats.each do |cat|%>
+	<%= link_to(cat.name, cat_url(cat.id)) %><br>
+<% end %>
+<br>
+<h3>Here are your running sessions</h3><br>
+<% @user.sessions.each do |session|%>
+<%= session.env%><br>
+<% end%>
+

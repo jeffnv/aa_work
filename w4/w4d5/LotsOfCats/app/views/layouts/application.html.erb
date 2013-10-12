@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p><h1>(=^‥^=) LOTS OF CATS (=^‥^=)</h1></p>
+	<%= link_to("(=^‥^=) LOTS OF CATS (=^‥^=)", cats_url)%><br>
 	<% if flash.now[:errors] %>
 	  <% flash.now[:errors].each do |error| %>
 	   <%= error %><br />

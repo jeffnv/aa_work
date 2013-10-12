@@ -1,7 +1,7 @@
 LotsOfCats::Application.routes.draw do
   root :to => "cats#index"
   resource :session, only: [:new, :create, :destroy]
-  resource :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 
   resources :cats do
     resources :cat_rental_requests, only: [:new, :index]
