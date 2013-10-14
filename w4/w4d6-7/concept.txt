@@ -1,0 +1,4 @@
+ideas:
+1. users have an email, password hash, and session (and user id, and timestamps)
+2. moments belong to users, logged in users can see the authors 
+3. moments page renders a random moment

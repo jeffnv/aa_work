@@ -1,0 +1,2 @@
+module FartsHelper
+end
