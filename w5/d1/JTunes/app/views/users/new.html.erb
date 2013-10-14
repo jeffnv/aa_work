@@ -1,0 +1,7 @@
+<h1>Sign Up</h1>
+<form action="<%=users_url%>" method="post" accept-charset="utf-8">
+	<%=render 'partials/user_form'%>
+	<p><input type="submit" value="Sign Up"></p>
+	<br>
+</form>
+<%=link_to "Already registered? Sign in here.", new_session_url%>

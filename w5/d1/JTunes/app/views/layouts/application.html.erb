@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JTunes</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%if !!current_user%>
+	<h3><%="Logged in as: #{current_user.email}"%></h3>
+	<%=button_to "Log Out", session_url, method: :delete%>
+	<br>
+	<%end%>
+	
+	<%if !!flash[:errors]%>
+	<ul>
+		<%flash[:errors].each do |error|%>
+			<li><%=error%></li>
+		<%end%>
+	</ul>
+	<%end%>
+	
+	<%= yield %>
+	<br>
+	<br>
+	<%=params%>
+</body>
+</html>
