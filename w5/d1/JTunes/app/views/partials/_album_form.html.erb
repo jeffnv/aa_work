@@ -1,5 +1,5 @@
 <h3>Add Album</h3>
-<form action="<%= albums_url%>" method="post" accept-charset="utf-8">
+<form action="<%= band_albums_url(@band)%>" method="post" accept-charset="utf-8">
   <input type="hidden" name="authenticity_token"                 
    value="<%=form_authenticity_token%>">
    
@@ -19,15 +19,12 @@
     
     
     <%@album.album_types.each do |type|%>
-    
-    <%end%>
-    <label for="album_album_type_studio">Studio</label>                                                 
+    <label for="album_album_type_<%=type%>"><%=type%></label>                                                 
     <input type="radio" name="album[album_type]" 
-     id="album_album_type_studio" value="Studio" />
-    
-     <label for="album_album_type_live">Live</label>                                                 
-     <input type="radio" name="album[album_type]" 
-      id="album_album_type_live" value="Lives" />
+     id="album_album_type_<%=type%>" value="<%=type%>" 
+     <%="checked" if type == @album.album_type%>
+     >
+    <%end%>
       
   <p><input type="submit" value="Add Album"></p>
 </form>

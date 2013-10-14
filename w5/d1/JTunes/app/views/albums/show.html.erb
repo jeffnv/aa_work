@@ -1,11 +1,16 @@
+<h1><%=@album.title%></h1>
+<h2><%=@album.album_type%> album, by <%=link_to @album.band.name, band_url(@album.band_id)%></h2>
 <ol>
 <% @tracks.each do |track|%>
-<li><%=link_to track.title, track_url(track.id)%></li>
+<li>
+  <%=link_to track.title, track_url(track.id)%>
+  <%=button_to "Remove Track", track_url(track.id), method: :delete%>
+</li>
 <% end %>
 </ol>
 
 <h3>Add Track</h3>
-<form action="<%=tracks_url%>" method="post" accept-charset="utf-8">
+<form action="<%=album_tracks_url(@album)%>" method="post" accept-charset="utf-8">
   <input type="hidden" name="authenticity_token" 
    value="<%=form_authenticity_token%>" id="some_name">
    

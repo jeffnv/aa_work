@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-
+  before_filter :ensure_logged_in
   def albums
   end
 

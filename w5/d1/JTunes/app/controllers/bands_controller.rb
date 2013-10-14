@@ -2,6 +2,7 @@ class BandsController < ApplicationController
   before_filter :ensure_logged_in
   
   def new
+    @band = Band.new
   end
   
   def create
@@ -28,4 +29,18 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])
     
   end
+  
+  def destroy
+    Band.delete(params[:id])
+    redirect_to bands_url
+    
+  end
+  
+  #index
+  #show
+  #new
+  #create
+  #edit
+  #update
+  #destroy
 end

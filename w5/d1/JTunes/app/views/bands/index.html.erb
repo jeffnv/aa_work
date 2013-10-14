@@ -2,8 +2,13 @@
 <%if @bands.count > 0%>
   <ul>
     <%@bands.each do |band|%>
-    <li><%=link_to band.name, band_url(band.id)%>
-       (<%=band.albums.count%> albums, <%=band.tracks.count%> tracks)</li>
+    <li>
+      <%=link_to band.name, band_url(band.id)%>
+      <%=band.albums.count%> albums, <%=band.tracks.count%> tracks)
+      <br>
+      
+      <%= button_to "Remove Band", band_url(band.id), method: :delete%>
+     </li>
     
     <%end%>
   </ul>
