@@ -1,0 +1,7 @@
+<h2><%=@band.name%></h2>
+<ul>
+<%@band.albums.each do |album|%>
+  <li><%=link_to album.title, album_url(album.id)%></li>
+<%end%>
+<%=render 'partials/album_form'%>
+</ul>

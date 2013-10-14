@@ -1,0 +1,7 @@
+<h3><%=@track.title%><br>
+  <%=link_to @track.album.band.name, band_url(@track.album.band)%> - 
+  <%=link_to @track.album.title, album_url(@track.album)%>
+</h3>
+    
+<h2>Lyrics</h2>
+<%=@track.lyrics%>

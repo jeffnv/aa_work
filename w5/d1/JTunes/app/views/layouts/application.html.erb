@@ -7,11 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%if !!current_user%>
-	<h3><%="Logged in as: #{current_user.email}"%></h3>
-	<%=button_to "Log Out", session_url, method: :delete%>
-	<br>
-	<%end%>
+  <h1>JTunes</h1>
 	
 	<%if !!flash[:errors]%>
 	<ul>
@@ -23,7 +19,13 @@
 	
 	<%= yield %>
 	<br>
+	<%if !!current_user%>
+  <%=link_to "Home", bands_url%><br>
+	<h3><%="Logged in as: #{current_user.email}"%></h3>
+	<%=button_to "Log Out", session_url, method: :delete%>
 	<br>
-	<%=params%>
+	<%end%>
+	<br>
+	<%#=params%>
 </body>
 </html>

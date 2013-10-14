@@ -1,0 +1,26 @@
+<ol>
+<% @tracks.each do |track|%>
+<li><%=link_to track.title, track_url(track.id)%></li>
+<% end %>
+</ol>
+
+<h3>Add Track</h3>
+<form action="<%=tracks_url%>" method="post" accept-charset="utf-8">
+  <input type="hidden" name="authenticity_token" 
+   value="<%=form_authenticity_token%>" id="some_name">
+   
+   <input type="hidden" name="track[album_id]" value="<%=@album.id%>">
+   
+   <label for="track_title">Title</label>
+   <input type="text" name="track[title]" 
+    value="<%=@track.title%>" id="track_title">
+  <br>
+    
+  <label for="track_lyrics">Lyrics</label>
+  <textarea cols="40" rows="5" id="track_lyrics" name="track[lyrics]">
+  <%=@track.lyrics%>
+  </textarea>
+ 
+
+  <p><input type="submit" value="Add Track"></p>
+</form>
