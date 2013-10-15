@@ -30,3 +30,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'debugger'
 end
+
+gem "letter_opener", :group => :development
+

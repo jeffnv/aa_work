@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       log_in_user(@user)
+      @user.create_activation_token!
+      UserMailer.welcome_email(@user).deliver
       redirect_to bands_url
     else
       flash.now[:errors] = @user.errors.full_messages
