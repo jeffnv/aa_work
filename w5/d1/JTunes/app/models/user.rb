@@ -1,13 +1,18 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :session_token, :password
+  attr_accessible :email, :password_digest, :session_token, 
+                  :password, :activated, :activation_token
+  
   attr_reader :password
   
   validates :password_digest, :session_token, :email, presence: true
   validates :password, :length => {minimum: 6}, on: :create
   validates :email, uniqueness: true
+  
+  has_many :notes
 
   before_validation :ensure_session_token
+  after_initialize :ensure_activated
     
   def password=(pword)
     @password = pword
@@ -40,6 +45,14 @@ class User < ActiveRecord::Base
     nil
     
   end
+
+  def ensure_activated
+    user.activated ||= false
+  end
   
+  def activate!
+    self.activated = true
+    self.save!
+  end
   
 end

@@ -14,4 +14,11 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def activate
+    user = User.find_by_activation_token(params[:activation_token])
+    user.activate!
+    flash[:errors] = ["Thanks for activating"]
+    redirect_to new_session_url
+  end
 end

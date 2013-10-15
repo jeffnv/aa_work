@@ -1,0 +1,19 @@
+<h3>Notes</h3>
+<br>
+<%@notes.each do |note|%>
+  <%=note.body%> - 
+  <%=button_to "Remove", note_url(note.id), method: :delete%>
+<%end%>
+
+<h3>Add New Note</h3>
+<form action="<%=track_notes_url(@track)%>" method="post" accept-charset="utf-8">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <input type="hidden" name="note[user_id]" value="<%=current_user.id%>">
+  <input type="hidden" name="note[track_id]" value="<%=params[:id]%>"  
+
+  <label for="note_body">Note</label>
+  <textarea cols="40" rows="5" id="note_body" name="note[body]">
+  <%=@note.body%>
+  </textarea>
+  <p><input type="submit" value="Add note"></p>
+</form>

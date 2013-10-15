@@ -41,5 +41,7 @@ class TracksController < ApplicationController
   
   def show
     @track = Track.find(params[:id])
+      @notes = @track.notes
+      @note = Note.new
   end
 end

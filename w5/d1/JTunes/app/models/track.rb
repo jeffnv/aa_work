@@ -3,4 +3,5 @@ class Track < ActiveRecord::Base
   validates :album_id, :title, :lyrics,  presence: true
   
   belongs_to :album
+  has_many :notes
 end
