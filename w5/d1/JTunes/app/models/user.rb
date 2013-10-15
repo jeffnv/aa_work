@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :notes
 
   before_validation :ensure_session_token
-  after_initialize :ensure_activated
+  # after_initialize :ensure_activated
     
   def password=(pword)
     @password = pword
@@ -45,14 +45,14 @@ class User < ActiveRecord::Base
     nil
     
   end
-
-  def ensure_activated
-    user.activated ||= false
-  end
-  
-  def activate!
-    self.activated = true
-    self.save!
-  end
+  # 
+  # def ensure_activated
+  #   user.activated ||= false
+  # end
+  # 
+  # def activate!
+  #   self.activated = true
+  #   self.save!
+  # end
   
 end
