@@ -1,0 +1,9 @@
+<form action="<%= users_reset_password_url %> " method="POST" accept-charset="utf-8">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="hidden" name="reset_token" value="<%= @reset_token %>">
+
+	<label for="new_password">New Password</label>
+	<input type="password" name="user[password]" id="new_password">
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>
