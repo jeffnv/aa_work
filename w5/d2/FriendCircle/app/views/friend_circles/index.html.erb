@@ -3,3 +3,11 @@
 <li><%="#{circle.name} - #{circle.friends.pluck(:email).join(", ")}"%></li>
 <% end %>
 </ul>
+
+<h3>My friends...</h3>
+
+<%= "#{current_user.friends.pluck(:email).join(', ')}"%>
+
+<%= link_to "Add some friends", new_user_friendship_url(current_user) %>
+
+<%= link_to "Make a circle", new_friend_circle_url %>

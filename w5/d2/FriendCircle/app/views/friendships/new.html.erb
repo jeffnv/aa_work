@@ -1,2 +1,20 @@
-<h1>Friendships#new</h1>
-<p>Find me in app/views/friendships/new.html.erb</p>
+<form action="<%=user_friendships_url(current_user)%>" method="POST" accept-charset="utf-8">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" >
+
+   <% @users.each do |friend| %>
+     <% html_id = "friend_id_#{friend.id}" %>
+     <input
+       type="checkbox"
+       name="friend_ids[]"
+       value="<%= friend.id %>"
+       id="<%= html_id %>"
+			 <%= "checked" if current_user.friends.pluck(:id).include?(friend.id) %>
+			 >
+     <label for="<%= html_id %>">
+       <%= friend.email %>
+     </label>
+   <% end %>
+
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>

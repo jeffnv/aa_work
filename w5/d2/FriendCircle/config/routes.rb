@@ -7,6 +7,8 @@ FriendCircle::Application.routes.draw do
   post "users/reset_password" => "users#reset_password"
   resources :friend_circles
 
-  resources :users
+  resources :users do
+    resources :friendships
+  end
   resource :session
 end
