@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       redirect_to friend_circles_url
     else
       @user = User.new
+      flash.now[:errors] = ["Unable to find user or password incorrect"]
       render :new
     end
   end

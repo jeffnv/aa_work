@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   before_validation :ensure_token
 
+  has_many :friendships, foreign_key: :friender_id
+
+  has_many :circles, foreign_key: :owner_id
+
+  has_many :friends, through: :friendships, source: :friendee
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
@@ -34,5 +40,12 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
+
+  def generate_reset_token!
+    self.reset_token = User.generate_session_token
+    self.save!
+    self.reset_token
+  end
+
 
 end
