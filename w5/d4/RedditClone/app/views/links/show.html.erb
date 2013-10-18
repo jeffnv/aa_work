@@ -1,0 +1,22 @@
+<%= @link.title %>
+
+<!-- "this is embarassing" -->
+<% def render_comments(comments)                                                   %>
+<%   comment_string = ""                                                           %>
+<%   if comments.empty?                                                            %>
+<%     return comment_string                                                       %>
+<%   else                                                                          %>
+<%     comment_string << "<ul>"                                                    %>
+<%     comments.each do |comment|                                                  %>
+<%       comment_string << "<li>#{comment.body} #{link_to "reply", comment}</li>"  %>
+<%       comment_string += render_comments(comment.child_comments)                 %>
+<%     end                                                                         %>
+<%     comment_string << "</ul>"                                                   %>
+<%   end                                                                           %>
+<%                                                                                 %>
+<%    comment_string                                                               %>
+<% end                                                                             %>
+
+<%= raw render_comments(@link.comments.where("comments.parent_comment_id IS NULL"))%>
+
+<%=render 'shared/comment_form', locals: {parent_id: nil, link_id: @link.id}%>

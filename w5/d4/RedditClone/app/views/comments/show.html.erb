@@ -1,0 +1,4 @@
+<%=@parent.body%>
+
+<%=render 'shared/comment_form',
+					locals:{parent_id: @parent.id, link_id: @parent.link_id}%>

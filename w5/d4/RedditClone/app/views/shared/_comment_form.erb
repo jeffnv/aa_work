@@ -1,0 +1,17 @@
+<form action="<%=comments_url%>" method="post" accept-charset="utf-8">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>" id="authenticity_token">
+
+	<input type="hidden" name="comment[author_id]"
+	 value="<%=current_user.id%>">
+
+ 	<input type="hidden" name="comment[parent_comment_id]"
+ 	 value="<%=locals[:parent_id]%>">
+
+	<input type="hidden" name="comment[link_id]" value="<%=locals[:link_id]%>">
+
+
+	<label for="comment_body">Body</label><input type="text" name="comment[body]" value="<%=@comment.body%>" id="comment_body">
+
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>

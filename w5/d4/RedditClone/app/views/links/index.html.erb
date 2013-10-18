@@ -1,0 +1,11 @@
+WELCOME TO LINKS INDEX ON REDDIT<br><br><br>
+<table>
+	<% @links.each do |link| %>
+			<tr>
+				<td><%= link_to link.title, link.url %></td>
+				<td><%= link_to "Comments", link_url(link) %>
+				<td><%= "UPVOTES #{link.upvotes} DOWNVOTES #{link.downvotes}" %></td>
+			</tr>
+<% end %>
+</table>
+<%= link_to "CREATE NEW LINK!!!", new_link_url %>

@@ -1,0 +1,11 @@
+<h1>SUBMIT Link</h1>
+<form action="<%= links_url %>" method="post" accept-charset="utf-8">
+	<input type="hidden" name="authenticity_token" value="" id="<%=  form_authenticity_token %>">
+	<label for="title">Title</label><input type="text" name="link[title]" value="" id="title">
+	<label for="url">URL</label><input type="url" name="link[url]" value="" id="url">
+	<label for="body">Body</label><input type="text" name="link[body]" value="" id="body">
+	<input type="hidden" name="link[submitter_id]" value="<%= current_user.id %>" id="link[submitter_id]">
+
+
+	<p><input type="submit" value="Continue &rarr;"></p>
+</form>
