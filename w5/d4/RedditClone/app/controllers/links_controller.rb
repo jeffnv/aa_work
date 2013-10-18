@@ -27,19 +27,4 @@ class LinksController < ApplicationController
     render :index
   end
 
-  def render_comments(comments)
-    comment_string = ""
-    if comments.empty?
-      return comment_string
-    else
-      comment_string << "<ul>"
-      comments.each do |comment|
-        comment_string << "<li>#{comment.body}</li>"
-        comment_string += render_comments(comment.child_comments)
-      end
-      comment_string << "</ul>"
-    end
-
-     comment_string
-  end
 end
