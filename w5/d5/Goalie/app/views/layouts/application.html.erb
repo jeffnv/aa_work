@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goalie</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%if logged_in?%>
+  <h1><%= "Logged in as: #{current_user.username}"%></h1>
+  <br>
+  <%= button_to "Log Out", session_url, :method => :delete%>
+  <%end%>
+  
+  <%if flash[:errors]%>
+  <ul>
+    <%flash[:errors].each do |error|%>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+  <%end%>
+<%= yield %>
+
+</body>
+</html>

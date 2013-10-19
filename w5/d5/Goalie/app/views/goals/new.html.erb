@@ -1,0 +1,41 @@
+<h1>New goal</h1>
+
+<form action="<%=goals_url%>" method="post" accept-charset="utf-8">
+  <input 
+   type="hidden" 
+   name="authenticity_token" 
+   value="<%=form_authenticity_token%>">
+   
+
+   <label for="goal_name">Goal Name</label>
+   <input 
+    type="text" 
+    name="goal[goal_info]" 
+    value="<%=@goal.goal_info%>" 
+    id="goal_name">
+    <br>
+     
+    Visibility:  
+    <%Goal::GOAL_VISIBILITY.each_with_index do |visibility, index|%>
+    <label for="<%="visibility#{index}"%>"><%=visibility%></label>
+    <input 
+     type="radio" 
+     name="goal[visibility]" 
+     value="<%=visibility%>" 
+     id="<%="visibility#{index}"%>"
+     <%="checked" if @goal.visibility == visibility %>>
+    <%end%>
+    <br>
+    
+    <label for="status">Status</label>
+    <select name="goal[status]" id="status">
+      <%Goal::GOAL_STATUSES.each_with_index do |status, index| %>
+      <option value="<%= status %>">
+        <%= status %>
+      </option>
+      <% end %>
+    </select>
+  
+
+  <p><input type="submit" value="Add Goal"></p>
+</form>

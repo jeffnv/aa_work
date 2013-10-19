@@ -1,0 +1,9 @@
+<h1>Goals#index</h1>
+
+<ul>
+  <% @goals.each do |goal| %>
+    <li><%= link_to "#{goal.goal_info}", goal_url(goal) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New goal", new_goal_url %>
