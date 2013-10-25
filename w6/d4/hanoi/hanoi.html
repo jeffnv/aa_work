@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="hanoi.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="hanoi.js"></script>
+    <script type="text/javascript" src="hanoiUI.js"></script>
+  </head>
+
+  <body>
+    <h1>Trees of Hanoi</h1>
+    <div class="hanoi"></div>
+
+    <script>
+      var game = new Hanoi.Game();
+      var UI = new Hanoi.UI(game, $("div.hanoi"));
+      UI.play();
+    </script>
+ </body>
+</html>

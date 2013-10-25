@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="ttt.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="ticTacToe.js"></script>
+    <script type="text/javascript" src="tttUI.js"></script>
+  </head>
+  <body>
+    <div class="ttt">
+      <h1 class="title">Tic Tac Toe</h1>
+      <div class="ttt-board">
+        <div class="ttt-row">
+          <div class="ttt-tile" data-row="0" data-col="0"></div>
+          <div class="ttt-tile" data-row="0" data-col="1"></div>
+          <div class="ttt-tile" data-row="0" data-col="2"></div>
+        </div>
+        <div class="ttt-row">
+          <div class="ttt-tile" data-row="1" data-col="0"></div>
+          <div class="ttt-tile" data-row="1" data-col="1"></div>
+          <div class="ttt-tile" data-row="1" data-col="2"></div>
+        </div>
+        <div class="ttt-row">
+          <div class="ttt-tile" data-row="2" data-col="0"></div>
+          <div class="ttt-tile" data-row="2" data-col="1"></div>
+          <div class="ttt-tile" data-row="2" data-col="2"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        var game = new TTT.Game();
+        var mainContainer = $('div.ttt-board');
+        var UI = new TTT.UI(game, mainContainer);
+        UI.play();
+      });
+    </script>
+  </body>
+</html>
+

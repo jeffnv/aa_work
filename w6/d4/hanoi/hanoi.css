@@ -1,0 +1,22 @@
+
+
+.hanoi {
+  background-color: white;
+}
+.tower {
+  background-color: #663300;
+  width: 5%;
+  margin-left: 13%;
+  height: 80%;
+  float: left;
+
+}
+
+.disc {
+  background-color: green;
+  height: 10%;
+  position: relative;
+
+
+/*  left: -100%;*/
+}

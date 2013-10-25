@@ -1,0 +1,21 @@
+.ttt-board{
+  background-color: orange;
+  height: 600px;
+  width: 600px;
+}
+
+.ttt-row{
+  height: 32%;
+  padding-top: 1%;
+}
+
+.ttt-tile{
+  height: 99%;
+  width: 32%;
+  background-color: black;
+  margin-left: 1%;
+  display: inline-block;
+  float: left;
+  color: white;
+  font-size: 200px;
+}

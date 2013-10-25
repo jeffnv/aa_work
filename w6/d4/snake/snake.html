@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="snake.css">
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="snake.js"></script>
+    <script type="text/javascript" src="snakeUI.js"></script>
+    <script type="text/javascript" src="snakeBoard.js"></script>
+
+  </head>
+
+  <body>
+    <h1>Snake of Hanoi</h1>
+    <div class="snake"></div>
+
+    <script>
+      var UI = new Snake.UI( $("div.snake"));
+      UI.start();
+    </script>
+ </body>
+</html>
