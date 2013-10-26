@@ -1,0 +1,46 @@
+<ul>
+<% @users.each do |user|%>
+<li>
+  <h4><%=user.username%></h4>
+      <div
+        class="friend-buttons <%= current_user.can_friend?(user.id) ? "friend" : "unfriend"%>"
+       data-user-id=<%= user.id %>>
+      <%= button_to "Add Friend!", user_friendships_url(user), :form_class => "friend-button"%>
+      <%= button_to "Unfriend!", "/friendships/#{user.id}", :form_class => "unfriend-button", :method => :delete %></div>
+</li>
+<% end %>
+</ul>
+
+<script>
+
+  var toggleFriendButtons = function(user_id) {
+    var buttons_div = $('[data-user-id=' + user_id + ']')
+    buttons_div.toggleClass('friend unfriend');
+  }
+
+
+  $('.unfriend-button').on("click", function (event) {
+    event.preventDefault();
+    var user_id = $(event.currentTarget.parentElement).data('user-id');
+    $.ajax({
+      url: "/friendships/" + user_id,
+      type: "DELETE",
+      success: function(){
+        toggleFriendButtons(user_id);
+      }
+    });
+  });
+
+  $('.friend-button').on("click", function (event) {
+    event.preventDefault();
+    var user_id = $(event.currentTarget.parentElement).data('user-id');
+    $.ajax({
+      url: "/users/" + user_id + "/friendships",
+      type: "POST",
+      success: function(){
+        toggleFriendButtons(user_id);
+      }
+
+    });
+  });
+</script>
