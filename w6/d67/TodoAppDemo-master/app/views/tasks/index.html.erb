@@ -1,0 +1,18 @@
+<!-- app/views/tasks/index.html.erb -->
+<div id="sidebar" style="float: left;"></div>
+<div id="content" style="float: left;"></div>
+
+<script type="text/javascript">
+  $(function () {
+    // start me up!
+    
+    // Preload, or *bootstrap* initial task data.
+    var tasksData = <%= Task.all.to_json.html_safe %>;
+    
+    window.TD.initialize(
+      $("#sidebar"),
+      $("#content"),
+      tasksData
+    );
+  });
+</script>

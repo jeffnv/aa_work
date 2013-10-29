@@ -1,0 +1,10 @@
+<% feeds.each(function (feed) { %>
+  <li>
+    <a href="#/feeds/<%= feed.get("id") %>"><%= feed.escape("title") %></a>
+  </li>
+<% }); %>
+
+<li>
+  <input class="add-feed" type="text" name="feed[url]">
+  <button class="add-button">Add feed</button>
+</li>

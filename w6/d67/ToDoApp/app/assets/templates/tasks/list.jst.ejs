@@ -1,0 +1,10 @@
+<!-- app/assets/templates/tasks/list.jst.ejs -->
+<ul>
+  <% _(tasks).each(function (task) { %>
+    <li class="task">
+      <a href="#/tasks/<%= task.id %>">
+        <%= task.title %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
