@@ -3,6 +3,7 @@ Journal.Views.PostShow = Backbone.View.extend({
   events: {
   'dblclick .post-title': 'handleDblClick',
   'dblclick .post-body': 'handleDblClick',
+  'submit': 'handleSubmit'
   },
   
   handleDblClick: function(event){
@@ -14,6 +15,10 @@ Journal.Views.PostShow = Backbone.View.extend({
     $(class_name).toggleClass('shown not-shown')
     //get the item clicked
     //toggle its class to not-shown
+  },
+  
+  handleSubmit: function(event){
+    
   },
   
   render: function(){
