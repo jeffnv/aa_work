@@ -1,9 +1,22 @@
 <div id="errors"></div>
 <form>
   <label for="title">Title</label>
-  <input type="text" name="post[title]" id="title" value="<%=post.escape("title")%>">
+  <input 
+    type="text" 
+    data-id="<%=post.id%>" 
+    class="post-title"
+    name="post[title]" 
+    id="title" 
+    value="<%=post.escape("title")%>">
+    
   <label for="body">Body</label>
-  <input type="text" name="post[body]" id="body" value="<%=post.escape("body")%>">
+  <input 
+    type="text" 
+    data-id="<%=post.id%>" 
+    class="post-body"
+    name="post[body]" 
+    id="body" 
+    value="<%=post.escape("body")%>">
   
   <p><input type="submit" value="Continue &rarr;"></p>
 </form>

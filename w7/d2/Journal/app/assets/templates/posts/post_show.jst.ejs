@@ -1,0 +1,13 @@
+<h3 class="post-title shown"><%=post.get('title')%></h3>
+<form class="post-title not-shown">
+  <input type="text" name="post[title]" value="<%=post.get('title')%>">
+  <input type="submit" value="Continue &rarr;">
+</form>
+<br>
+<p class="post-body shown"><%=post.get('body')%></p>
+<form class="post-body not-shown">
+  <input type="text" name="post[body]" value="<%=post.get('body')%>">
+  <input type="submit" value="Continue &rarr;">
+</form>
+<br>
+<a href="#posts/<%=post.id%>/edit">Edit Post</a>

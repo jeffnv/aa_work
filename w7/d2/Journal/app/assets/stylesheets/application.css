@@ -23,3 +23,12 @@ div.content {
     width:100px;
     float:right
 }
+
+.not-shown{
+  display:none;
+  
+}
+
+.shown{
+  display:block;
+}
