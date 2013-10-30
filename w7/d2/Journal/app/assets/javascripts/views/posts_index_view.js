@@ -16,14 +16,16 @@ Journal.Views.PostsIndex = Backbone.View.extend({
   render: function () {
     var that  = this;
     this.$el.html('<a href="#/posts/new">New Post</a>')
-    this.$el.append('<ul></ul>');
+    this.$el.append('<table></table>');
     this.collection.each(function(post){
-        that.$el.find('ul').append(
-          '<li>' + 
+      var $row = $('<tr></tr>')
+        $row.append(
+          '<td>' + 
           "<a href=\"#posts/" +  post.id + "\">"+ post.get('title')
-          + '</a>' +   
-          "<button data-id=" + post.id + "  class=\"delete-button\" type=\"button\">Delete</button>" + 
-          '</li>');
+          + '</a></td>' +   
+          "<td><button data-id=" + post.id + "  class=\"delete-button\" type=\"button\">Delete</button>" + 
+          '</td>');
+      that.$el.find('table').append($row);
       }
     )
 
