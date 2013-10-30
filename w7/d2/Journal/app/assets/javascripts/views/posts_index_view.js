@@ -1,4 +1,5 @@
 Journal.Views.PostsIndex = Backbone.View.extend({
+  template: JST['posts/post_index'],
   initialize: function(options){
      this.listenTo(this.collection, "add remove change:title reset", this.render);
   },
@@ -15,20 +16,8 @@ Journal.Views.PostsIndex = Backbone.View.extend({
   
   render: function () {
     var that  = this;
-    this.$el.html('<a href="#/posts/new">New Post</a>')
-    this.$el.append('<table></table>');
-    this.collection.each(function(post){
-      var $row = $('<tr></tr>')
-        $row.append(
-          '<td>' + 
-          "<a href=\"#posts/" +  post.id + "\">"+ post.get('title')
-          + '</a></td>' +   
-          "<td><button data-id=" + post.id + "  class=\"delete-button\" type=\"button\">Delete</button>" + 
-          '</td>');
-      that.$el.find('table').append($row);
-      }
-    )
-
+    var rc = this.template({posts: this.collection})
+    this.$el.html(rc);
     return this;
   }
 });

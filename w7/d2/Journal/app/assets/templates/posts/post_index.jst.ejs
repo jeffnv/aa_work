@@ -1,0 +1,11 @@
+<a href="#/posts/new">New Post</a>
+<table>
+<%posts.each(function(post){%>
+  <tr> 
+    <td><a href="#posts/<%=post.id%>"><%=post.get('title')%></a></td>
+    <td>
+      <button data-id="<%=post.id%>"  class="delete-button" type="button">Delete</button> 
+    </td>
+  </tr>
+<% }); %> 
+</table>
