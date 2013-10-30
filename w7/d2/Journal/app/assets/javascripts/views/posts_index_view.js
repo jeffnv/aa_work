@@ -17,7 +17,9 @@ Journal.Views.PostsIndex = Backbone.View.extend({
     this.$el.html('<ul></ul>');
     this.collection.each(function(post){
         that.$el.find('ul').append(
-          '<li>' + post.get('title') +  
+          '<li>' + 
+          "<a href=\"#posts/" +  post.id + "\">"+ post.get('title')
+          + '</a>' +   
           "<button data-id=" + post.id + "  class=\"delete-button\" type=\"button\">Delete</button>" + 
           '</li>');
       }
