@@ -1,0 +1,28 @@
+Journal.Views.PostsIndex = Backbone.View.extend({
+  initialize: function(options){
+     this.listenTo(this.collection, "add remove change:title reset", this.render);
+  },
+  
+  events: {
+    'click .delete-button': 'deleteItem'
+  },
+  
+  deleteItem: function(event){
+    event.preventDefault();
+    var id = $(event.target).data('id')
+  },
+  
+  render: function () {
+    var that  = this;
+    this.$el.html('<ul></ul>');
+    this.collection.each(function(post){
+        that.$el.find('ul').append(
+          '<li>' + post.get('title') +  
+          "<button data-id=" + post.id + "  class=\"delete-button\" type=\"button\">Delete</button>" + 
+          '</li>');
+      }
+    )
+
+    return this;
+  }
+});
