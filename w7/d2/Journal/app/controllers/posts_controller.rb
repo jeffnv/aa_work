@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if(@post.save)
       render json: @post
     else
-      render json: @post.errors
+      render json: @post.errors.full_messages, status: 422
     end
   end
   
@@ -18,8 +18,14 @@ class PostsController < ApplicationController
     if @post.update_attributes(params[:post])
       render json: @post
     else
-      render json: @post.errors, status: true
+      render json: @post.errors.full_messages, status: 422
     end
+  end
+  
+  def destroy
+    @post = Post.find(params[:id]);
+    @post.destroy
+    render :json => "goodbye"
   end
   
   def root

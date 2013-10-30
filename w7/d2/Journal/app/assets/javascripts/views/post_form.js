@@ -7,15 +7,23 @@ Journal.Views.PostForm = Backbone.View.extend({
   
   submitForm: function(event){
     event.preventDefault();
-    
+    var that = this;
+    var isNew = this.model.isNew();
     var payload = $(event.currentTarget).serializeJSON();
-    this.model.set(payload.post);      
-    this.model.save({},{
+    that.model.set(payload.post);      
+    that.model.save({},{
       success: function(event){
-        Backbone.history.navigate("/", { trigger: true });
+        if(isNew){
+          Journal.posts.add(that.model);
+        }
+        Backbone.history.navigate("#posts/" + that.model.id, { trigger: true });
       },
-      error: function(data){
-        alert("You done goofed.");
+      error: function(post, response){
+        var $errors = $('#errors');
+        $errors.empty();
+        response.responseJSON.forEach(function(errorMessage){
+          $errors.append("<p>" + errorMessage + "</p>");
+        })
       }
     });
   },

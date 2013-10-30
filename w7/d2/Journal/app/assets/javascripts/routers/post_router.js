@@ -10,21 +10,21 @@ Journal.PostRouter = Backbone.Router.extend({
     var postIndexView = new Journal.Views.PostsIndex({
       collection:Journal.posts
     });
-    $('div').html(postIndexView.render().$el);
+    $('div.sidebar').html(postIndexView.render().$el);
   },
   
   showPost: function(id){
     var postShowView = new Journal.Views.PostShow({
       model: Journal.posts.get(id)
     });
-    $('div').html(postShowView.render().$el);
+    $('div.content').html(postShowView.render().$el);
   },
   
   showEditForm: function(id){
     var postEditView = new Journal.Views.PostForm({
       model: Journal.posts.get(id)
     });
-    $('div').html(postEditView.render().$el);
+    $('div.content').html(postEditView.render().$el);
   },
   
   showNewForm: function(){
@@ -32,7 +32,7 @@ Journal.PostRouter = Backbone.Router.extend({
       model: new Journal.Models.Post(),
       collection: Journal.posts
     });
-    $('div').html(postEditView.render().$el);
+    $('div.content').html(postEditView.render().$el);
   }
   
 });

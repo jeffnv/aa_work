@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+div.body {
+    100%;
+}
+div.index {
+    width:100px;
+    float:left
+}
+div.content {
+    width:100px;
+    float:right
+}

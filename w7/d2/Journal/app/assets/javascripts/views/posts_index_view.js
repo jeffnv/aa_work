@@ -10,6 +10,7 @@ Journal.Views.PostsIndex = Backbone.View.extend({
   deleteItem: function(event){
     event.preventDefault();
     var id = $(event.target).data('id')
+    Journal.posts.get(id).destroy();
   },
   
   render: function () {
@@ -24,6 +25,7 @@ Journal.Views.PostsIndex = Backbone.View.extend({
           '</li>');
       }
     )
+    this.$el.append('<a href="#/posts/new">New Post</a>')
 
     return this;
   }

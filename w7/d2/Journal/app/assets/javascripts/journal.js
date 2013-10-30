@@ -10,6 +10,11 @@ window.Journal = {
       success:function(){
         new Journal.PostRouter();
         Backbone.history.start();
+        
+        var postIndexView = new Journal.Views.PostsIndex({
+          collection:Journal.posts
+        });
+        $('div.sidebar').html(postIndexView.render().$el);
       }
     });
   }
