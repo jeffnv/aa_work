@@ -15,7 +15,8 @@ Journal.Views.PostsIndex = Backbone.View.extend({
   
   render: function () {
     var that  = this;
-    this.$el.html('<ul></ul>');
+    this.$el.html('<a href="#/posts/new">New Post</a>')
+    this.$el.append('<ul></ul>');
     this.collection.each(function(post){
         that.$el.find('ul').append(
           '<li>' + 
@@ -25,7 +26,6 @@ Journal.Views.PostsIndex = Backbone.View.extend({
           '</li>');
       }
     )
-    this.$el.append('<a href="#/posts/new">New Post</a>')
 
     return this;
   }
