@@ -1,9 +1,13 @@
 Journal.Views.PostShow = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo(this.model, "change", this.render);
+  },
+  
   template: JST['posts/post_show'],
   events: {
   'dblclick .post-title': 'handleDblClick',
   'dblclick .post-body': 'handleDblClick',
-  'submit': 'handleSubmit'
+  'submit form': 'handleSubmit'
   },
   
   handleDblClick: function(event){
@@ -18,7 +22,11 @@ Journal.Views.PostShow = Backbone.View.extend({
   },
   
   handleSubmit: function(event){
-    
+    event.preventDefault();
+    var payload = $(event.currentTarget).serializeJSON();
+    this.handleDblClick(event);
+    this.model.set(payload.post); 
+    this.model.save();  
   },
   
   render: function(){
