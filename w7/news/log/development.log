@@ -1,0 +1,47 @@
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-01 10:46:11 -0700
+Processing by FeedsController#index as HTML
+  Rendered feeds/index.html.erb within layouts/application (2.8ms)
+Compiled entries.css  (11ms)  (pid 44281)
+Compiled feeds.css  (1ms)  (pid 44281)
+Compiled application.css  (27ms)  (pid 44281)
+Compiled jquery.js  (1ms)  (pid 44281)
+Compiled jquery_ujs.js  (0ms)  (pid 44281)
+Compiled entries.js  (266ms)  (pid 44281)
+Compiled feeds.js  (138ms)  (pid 44281)
+Compiled application.js  (442ms)  (pid 44281)
+Completed 200 OK in 578ms (Views: 577.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /entries.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /feeds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/entries.js?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /entries.js - 200 OK (2ms)
+
+
+Started GET "/assets/feeds.js?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /feeds.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 10:46:12 -0700
+Served asset /application.js - 200 OK (6ms)
