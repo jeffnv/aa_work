@@ -12,4 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require news_reader
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .
+
+
+Backbone.View.prototype.close = function(){
+  if(this.childViews){
+    this.childViews.forEach(function(child){
+      child.close();
+    });
+  }
+  this.remove();
+  this.unbind();
+}
