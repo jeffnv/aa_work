@@ -1,7 +1,5 @@
-<h4>FEEDS FEEDS FEEDS</h4>
 <ul>
-<%feeds.forEach(function(feed){%>
-  <li><%=feed.get('title')%></li>
-<%})%>
-
+  <%feeds.forEach(function(feed){%>
+  <li><a href="#feeds/<%=feed.id%>"><%=feed.get('title')%></a></li>
+  <%})%>
 </ul>

@@ -1,0 +1,13 @@
+<h4>
+  <%=feed.get('title')%>
+  <button id="refresh-button">Refresh</button>
+</h4>
+
+<p><%=feed.get('url')%></p>
+
+<ul>
+  <%entries.forEach(function(entry){%>
+    <li><a href="<%= entry.get('link')%>"><%=entry.get('title')%></li>
+  <%})%>
+  
+</ul>
