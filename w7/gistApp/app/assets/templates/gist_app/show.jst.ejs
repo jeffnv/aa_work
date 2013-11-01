@@ -1,0 +1,7 @@
+<h4><%= gist.escape('title') %></h4>
+<% if(gist.favorite.isNew()) { %>
+  <input type='submit' value='Favorite' class='favorite-button' data-id='<%= gist.id %>'>
+<% } else { %>
+  <input type='submit' value='Unfavorite' class='unfavorite-button' data-id='<%= gist.id %>'>
+<% } %>
+<p>user id: <%= gist.escape('user_id') %></p>

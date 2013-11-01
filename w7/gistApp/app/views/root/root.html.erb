@@ -1,0 +1,10 @@
+<script>
+  $(document).ready(function(){
+    GistApp.initialize();
+  });
+  GistApp.TAGS = <%= Tag.all.to_json.html_safe %>
+</script>
+
+<h1><a href="">Gist</a></h1>
+<div class='content'>
+</div>

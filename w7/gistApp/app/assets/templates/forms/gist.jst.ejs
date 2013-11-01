@@ -1,0 +1,20 @@
+<ul class="errors">
+<% errors.forEach(function(error){ %>
+<li><%=error%></li>
+<%}) %>
+</ul>
+<form class='gist-submit' method="get" accept-charset="utf-8">
+  <label for="gist-title">Title:</label>
+  <input type="text" id='gist-title' name="gist[title]" value="">
+  <input type="submit" class='add-gist-file' value="Add Gist File">
+  <div class="gist-files"></div>
+
+  <br>
+  <select data-placeholder="Pick a tag..." style="width:350px;" multiple class="chosen-select">
+    <% tags.forEach(function(tag){ %>
+      <option><%=tag.name%></option>
+    <%}) %>
+  </select>
+  <script>$(".chosen-select").chosen();</script>
+  <p><input type="submit" value="Create Gist"></p>
+</form>
