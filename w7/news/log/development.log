@@ -23341,3 +23341,925 @@ Processing by FeedsController#show as JSON
   [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
   [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
 Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-01 17:56:03 -0700
+Processing by FeedsController#index as HTML
+  Rendered feeds/index.html.erb within layouts/application (2.1ms)
+Compiled views/show_feed.js  (0ms)  (pid 49703)
+Compiled application.js  (13ms)  (pid 49703)
+Completed 200 OK in 139ms (Views: 138.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feeds.css?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /feeds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/entries.css?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /entries.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /underscore.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /application.css - 200 OK (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/news_reader.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /news_reader.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /backbone.js - 200 OK (3ms)
+
+
+Started GET "/assets/collections/entries.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /collections/entries.js - 200 OK (2ms)
+
+
+Started GET "/assets/feeds/index.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /feeds/index.js - 200 OK (2ms)
+
+
+Started GET "/assets/feeds/show.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /feeds/show.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/entry.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /models/entry.js - 200 OK (2ms)
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /collections/feeds.js - 200 OK (2ms)
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /models/feed.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/feeds_index.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /views/feeds_index.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/show_feed.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /views/show_feed.js - 200 OK (2ms)
+
+
+Started GET "/assets/entries.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /entries.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/feeds.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /feeds.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /application.js - 200 OK (21ms)
+
+
+Started GET "/assets/routers/news_router.js?body=1" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Served asset /routers/news_router.js - 304 Not Modified (3ms)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2013-11-01 17:56:04 -0700
+Processing by FeedsController#index as JSON
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" [0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 1
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 2[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 3
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 6[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 184ms (Views: 123.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/feeds/1" for 127.0.0.1 at 2013-11-01 17:56:08 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 1 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT "entries"."guid" FROM "entries" [0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 1
+Completed 200 OK in 1568ms (Views: 14.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:15 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mSELECT "entries"."guid" FROM "entries" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353775"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:15+00:00", :link=>"http://example.com/test/1383353775", :description=>"Adipisicing aliquip enim esse culpa mollit ea officia excepteur et aliquip fugiat consequat quis enim.", :pubDate=>2013-11-01 17:56:15 -0700, :guid=>"http://example.com/test/1383353775", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353775"], ["published_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:15+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353774"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:14+00:00", :link=>"http://example.com/test/1383353774", :description=>"Aliqua proident voluptate quis veniam.", :pubDate=>2013-11-01 17:56:14 -0700, :guid=>"http://example.com/test/1383353774", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353774"], ["published_at", Sat, 02 Nov 2013 00:56:14 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:14+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353773"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:13+00:00", :link=>"http://example.com/test/1383353773", :description=>"Reprehenderit anim nulla anim ad ea.", :pubDate=>2013-11-01 17:56:13 -0700, :guid=>"http://example.com/test/1383353773", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353773"], ["published_at", Sat, 02 Nov 2013 00:56:13 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:13+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353772"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:12+00:00", :link=>"http://example.com/test/1383353772", :description=>"In elit laboris aliqua ex exercitation cupidatat pariatur.", :pubDate=>2013-11-01 17:56:12 -0700, :guid=>"http://example.com/test/1383353772", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353772"], ["published_at", Sat, 02 Nov 2013 00:56:12 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:12+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353771"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:11+00:00", :link=>"http://example.com/test/1383353771", :description=>"Aliqua sit in non nisi nulla do ea.", :pubDate=>2013-11-01 17:56:11 -0700, :guid=>"http://example.com/test/1383353771", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353771"], ["published_at", Sat, 02 Nov 2013 00:56:11 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:11+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353770"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:10+00:00", :link=>"http://example.com/test/1383353770", :description=>"Enim aute nisi in anim velit.", :pubDate=>2013-11-01 17:56:10 -0700, :guid=>"http://example.com/test/1383353770", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353770"], ["published_at", Sat, 02 Nov 2013 00:56:10 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:10+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353769"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:09+00:00", :link=>"http://example.com/test/1383353769", :description=>"Aliqua ex consequat sunt est commodo reprehenderit id proident non reprehenderit sint.", :pubDate=>2013-11-01 17:56:09 -0700, :guid=>"http://example.com/test/1383353769", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353769"], ["published_at", Sat, 02 Nov 2013 00:56:09 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:09+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353768"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:08+00:00", :link=>"http://example.com/test/1383353768", :description=>"Nostrud pariatur culpa duis quis ipsum voluptate ullamco consequat in exercitation.", :pubDate=>2013-11-01 17:56:08 -0700, :guid=>"http://example.com/test/1383353768", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353768"], ["published_at", Sat, 02 Nov 2013 00:56:08 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:08+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353767"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:07+00:00", :link=>"http://example.com/test/1383353767", :description=>"Est pariatur enim laboris excepteur quis aliquip amet consequat voluptate duis sit exercitation.", :pubDate=>2013-11-01 17:56:07 -0700, :guid=>"http://example.com/test/1383353767", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353767"], ["published_at", Sat, 02 Nov 2013 00:56:07 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:07+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353766"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:06+00:00", :link=>"http://example.com/test/1383353766", :description=>"Culpa id pariatur enim esse id Lorem nisi laboris magna irure sint eiusmod.", :pubDate=>2013-11-01 17:56:06 -0700, :guid=>"http://example.com/test/1383353766", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353766"], ["published_at", Sat, 02 Nov 2013 00:56:06 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:06+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:15 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 785ms (Views: 16.4ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:16 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:17 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:17 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:17 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:18 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:20 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:21 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:21 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:22 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 60ms (Views: 58.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:22 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:22 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:22 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:23 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:24 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:24 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:24 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:24 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:24 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:25 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:25 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:25 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:25 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:25 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:26 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mSELECT "entries"."guid" FROM "entries" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353786"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:26+00:00", :link=>"http://example.com/test/1383353786", :description=>"Dolore adipisicing amet reprehenderit aliquip elit tempor minim id culpa fugiat proident amet amet qui.", :pubDate=>2013-11-01 17:56:26 -0700, :guid=>"http://example.com/test/1383353786", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353786"], ["published_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:26+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353785"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:25+00:00", :link=>"http://example.com/test/1383353785", :description=>"Anim nostrud nostrud consequat nisi consequat dolore quis ea qui anim.", :pubDate=>2013-11-01 17:56:25 -0700, :guid=>"http://example.com/test/1383353785", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353785"], ["published_at", Sat, 02 Nov 2013 00:56:25 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:25+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353784"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:24+00:00", :link=>"http://example.com/test/1383353784", :description=>"Pariatur exercitation irure fugiat exercitation fugiat ex ad.", :pubDate=>2013-11-01 17:56:24 -0700, :guid=>"http://example.com/test/1383353784", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353784"], ["published_at", Sat, 02 Nov 2013 00:56:24 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:24+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353783"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:23+00:00", :link=>"http://example.com/test/1383353783", :description=>"Ut ea fugiat consequat officia commodo sint dolor aliqua qui proident duis consequat.", :pubDate=>2013-11-01 17:56:23 -0700, :guid=>"http://example.com/test/1383353783", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353783"], ["published_at", Sat, 02 Nov 2013 00:56:23 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:23+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353782"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:22+00:00", :link=>"http://example.com/test/1383353782", :description=>"Magna velit dolor veniam ea excepteur ullamco consectetur excepteur minim laboris.", :pubDate=>2013-11-01 17:56:22 -0700, :guid=>"http://example.com/test/1383353782", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353782"], ["published_at", Sat, 02 Nov 2013 00:56:22 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:22+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353781"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:21+00:00", :link=>"http://example.com/test/1383353781", :description=>"Ex do elit non sint sunt.", :pubDate=>2013-11-01 17:56:21 -0700, :guid=>"http://example.com/test/1383353781", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353781"], ["published_at", Sat, 02 Nov 2013 00:56:21 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:21+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353780"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:20+00:00", :link=>"http://example.com/test/1383353780", :description=>"Et consequat ipsum elit non Lorem velit voluptate officia exercitation aute sint sunt quis.", :pubDate=>2013-11-01 17:56:20 -0700, :guid=>"http://example.com/test/1383353780", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353780"], ["published_at", Sat, 02 Nov 2013 00:56:20 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:20+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353779"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:19+00:00", :link=>"http://example.com/test/1383353779", :description=>"Consequat amet sunt qui sit adipisicing laborum.", :pubDate=>2013-11-01 17:56:19 -0700, :guid=>"http://example.com/test/1383353779", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353779"], ["published_at", Sat, 02 Nov 2013 00:56:19 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:19+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353778"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:18+00:00", :link=>"http://example.com/test/1383353778", :description=>"Fugiat esse qui occaecat aliquip id fugiat.", :pubDate=>2013-11-01 17:56:18 -0700, :guid=>"http://example.com/test/1383353778", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353778"], ["published_at", Sat, 02 Nov 2013 00:56:18 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:18+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353777"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:17+00:00", :link=>"http://example.com/test/1383353777", :description=>"Do aliqua minim duis ipsum.", :pubDate=>2013-11-01 17:56:17 -0700, :guid=>"http://example.com/test/1383353777", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353777"], ["published_at", Sat, 02 Nov 2013 00:56:17 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:17+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:26 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 301ms (Views: 20.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:26 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:26 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:30 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:30 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:31 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.7ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:32 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:33 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 62ms (Views: 60.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:33 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:33 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:33 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:33 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.8ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:34 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.4ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:35 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:36 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:36 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:36 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  SELECT "entries"."guid" FROM "entries" 
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353796"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:36+00:00", :link=>"http://example.com/test/1383353796", :description=>"Fugiat qui tempor dolor quis proident ea eiusmod fugiat aliquip et anim est duis incididunt.", :pubDate=>2013-11-01 17:56:36 -0700, :guid=>"http://example.com/test/1383353796", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353796"], ["published_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:36+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353795"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:35+00:00", :link=>"http://example.com/test/1383353795", :description=>"Dolore minim consectetur id laborum deserunt ullamco velit fugiat quis.", :pubDate=>2013-11-01 17:56:35 -0700, :guid=>"http://example.com/test/1383353795", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353795"], ["published_at", Sat, 02 Nov 2013 00:56:35 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:35+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353794"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:34+00:00", :link=>"http://example.com/test/1383353794", :description=>"Duis exercitation ea irure aliqua cillum qui veniam ea velit Lorem proident sit dolore.", :pubDate=>2013-11-01 17:56:34 -0700, :guid=>"http://example.com/test/1383353794", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353794"], ["published_at", Sat, 02 Nov 2013 00:56:34 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:34+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353793"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:33+00:00", :link=>"http://example.com/test/1383353793", :description=>"Non ut quis consectetur pariatur deserunt qui ipsum ad ut.", :pubDate=>2013-11-01 17:56:33 -0700, :guid=>"http://example.com/test/1383353793", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353793"], ["published_at", Sat, 02 Nov 2013 00:56:33 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:33+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353792"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:32+00:00", :link=>"http://example.com/test/1383353792", :description=>"Duis voluptate enim nulla est irure est occaecat quis commodo ea nulla cupidatat incididunt.", :pubDate=>2013-11-01 17:56:32 -0700, :guid=>"http://example.com/test/1383353792", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353792"], ["published_at", Sat, 02 Nov 2013 00:56:32 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:32+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353791"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:31+00:00", :link=>"http://example.com/test/1383353791", :description=>"Magna duis eiusmod excepteur et veniam cupidatat amet.", :pubDate=>2013-11-01 17:56:31 -0700, :guid=>"http://example.com/test/1383353791", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353791"], ["published_at", Sat, 02 Nov 2013 00:56:31 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:31+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353790"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:30+00:00", :link=>"http://example.com/test/1383353790", :description=>"Deserunt dolor consectetur dolore adipisicing Lorem minim.", :pubDate=>2013-11-01 17:56:30 -0700, :guid=>"http://example.com/test/1383353790", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353790"], ["published_at", Sat, 02 Nov 2013 00:56:30 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:30+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353789"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:29+00:00", :link=>"http://example.com/test/1383353789", :description=>"Deserunt sit nisi cillum ex tempor nulla minim laboris non mollit.", :pubDate=>2013-11-01 17:56:29 -0700, :guid=>"http://example.com/test/1383353789", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353789"], ["published_at", Sat, 02 Nov 2013 00:56:29 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:29+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353788"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:28+00:00", :link=>"http://example.com/test/1383353788", :description=>"Cupidatat anim ipsum aliqua ullamco proident labore velit tempor adipisicing commodo.", :pubDate=>2013-11-01 17:56:28 -0700, :guid=>"http://example.com/test/1383353788", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353788"], ["published_at", Sat, 02 Nov 2013 00:56:28 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:28+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `guid`
+Binary data inserted for `string` type on column `link`
+Binary data inserted for `string` type on column `title`
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00], ["feed_id", 7], ["guid", "http://example.com/test/1383353787"], ["json", {:title=>"Lorem ipsum 2013-11-02T00:56:27+00:00", :link=>"http://example.com/test/1383353787", :description=>"Minim duis laborum Lorem eu est do nostrud amet ut.", :pubDate=>2013-11-01 17:56:27 -0700, :guid=>"http://example.com/test/1383353787", :dc_creator=>"John Smith"}], ["link", "http://example.com/test/1383353787"], ["published_at", Sat, 02 Nov 2013 00:56:27 UTC +00:00], ["title", "Lorem ipsum 2013-11-02T00:56:27+00:00"], ["updated_at", Sat, 02 Nov 2013 00:56:36 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 301ms (Views: 24.0ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:36 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.2ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:37 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mFeed Load (0.1ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7[0m
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/7" for 127.0.0.1 at 2013-11-01 17:56:37 -0700
+Processing by FeedsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mFeed Load (0.1ms)[0m  SELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7 ORDER BY "entries"."id" DESC LIMIT 1[0m
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = 7
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.7ms)

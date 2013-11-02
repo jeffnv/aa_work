@@ -1,6 +1,6 @@
 NewsReader.Views.ShowFeed = Backbone.View.extend({
   initialize: function(){
-    // this.listenTo(this.model, "change", this.render);
+     this.listenTo(this.model, "change", this.render);
   },
   template: JST['feeds/show'],
   events: {
@@ -12,7 +12,7 @@ NewsReader.Views.ShowFeed = Backbone.View.extend({
     var that = this;
     this.model.fetch({success: function(){
       console.log("model fetched successfully")
-      that.render();
+      // that.render();
     }});
   },
   
