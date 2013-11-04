@@ -1,0 +1,1888 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/opt/local/bin/node', '/opt/local/bin/npm', 'install' ]
+2 info using npm@1.2.14
+3 info using node@v0.8.22
+4 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/package.json
+5 warn package.json chat-app@0.0.1 No README.md file found!
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ '/Users/appacademy/Desktop/aa_work/w8/chatApp',
+7 verbose install   [ 'express', 'socket.io', 'mime' ] ]
+8 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/package.json
+9 info preinstall chat-app@0.0.1
+10 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/package.json
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'express@3.4.2', null ]
+13 verbose cache add name=undefined spec="express@3.4.2" args=["express@3.4.2",null]
+14 verbose parsed url { pathname: 'express@3.4.2',
+14 verbose parsed url   path: 'express@3.4.2',
+14 verbose parsed url   href: 'express@3.4.2' }
+15 verbose cache add name="express" spec="3.4.2" args=["express","3.4.2"]
+16 verbose parsed url { pathname: '3.4.2', path: '3.4.2', href: '3.4.2' }
+17 verbose addNamed [ 'express', '3.4.2' ]
+18 verbose addNamed [ '3.4.2', '3.4.2' ]
+19 verbose cache add [ 'socket.io@~0.9.6', null ]
+20 verbose cache add name=undefined spec="socket.io@~0.9.6" args=["socket.io@~0.9.6",null]
+21 verbose parsed url { pathname: 'socket.io@~0.9.6',
+21 verbose parsed url   path: 'socket.io@~0.9.6',
+21 verbose parsed url   href: 'socket.io@~0.9.6' }
+22 verbose cache add name="socket.io" spec="~0.9.6" args=["socket.io","~0.9.6"]
+23 verbose parsed url { pathname: '~0.9.6', path: '~0.9.6', href: '~0.9.6' }
+24 verbose addNamed [ 'socket.io', '~0.9.6' ]
+25 verbose addNamed [ null, '>=0.9.6- <0.10.0-' ]
+26 silly lockFile 76e556b0-express-3-4-2 express@3.4.2
+27 verbose lock express@3.4.2 /Users/appacademy/.npm/76e556b0-express-3-4-2.lock
+28 silly lockFile f2e07591-socket-io-0-9-6 socket.io@~0.9.6
+29 verbose lock socket.io@~0.9.6 /Users/appacademy/.npm/f2e07591-socket-io-0-9-6.lock
+30 silly addNameRange { name: 'socket.io', range: '>=0.9.6- <0.10.0-', hasData: false }
+31 verbose url raw express/3.4.2
+32 verbose url resolving [ 'https://registry.npmjs.org/', './express/3.4.2' ]
+33 verbose url resolved https://registry.npmjs.org/express/3.4.2
+34 info trying registry request attempt 1 at 10:47:20
+35 http GET https://registry.npmjs.org/express/3.4.2
+36 verbose cache add [ 'mime@~1.2.7', null ]
+37 verbose cache add name=undefined spec="mime@~1.2.7" args=["mime@~1.2.7",null]
+38 verbose parsed url { pathname: 'mime@~1.2.7',
+38 verbose parsed url   path: 'mime@~1.2.7',
+38 verbose parsed url   href: 'mime@~1.2.7' }
+39 verbose cache add name="mime" spec="~1.2.7" args=["mime","~1.2.7"]
+40 verbose parsed url { pathname: '~1.2.7', path: '~1.2.7', href: '~1.2.7' }
+41 verbose addNamed [ 'mime', '~1.2.7' ]
+42 verbose addNamed [ null, '>=1.2.7- <1.3.0-' ]
+43 silly lockFile 3725bc70-mime-1-2-7 mime@~1.2.7
+44 verbose lock mime@~1.2.7 /Users/appacademy/.npm/3725bc70-mime-1-2-7.lock
+45 silly addNameRange { name: 'mime', range: '>=1.2.7- <1.3.0-', hasData: false }
+46 verbose url raw socket.io
+47 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io' ]
+48 verbose url resolved https://registry.npmjs.org/socket.io
+49 info trying registry request attempt 1 at 10:47:20
+50 verbose etag "DSF55RABJJRXIZ3PXJ5PQ9N4A"
+51 http GET https://registry.npmjs.org/socket.io
+52 verbose url raw mime
+53 verbose url resolving [ 'https://registry.npmjs.org/', './mime' ]
+54 verbose url resolved https://registry.npmjs.org/mime
+55 info trying registry request attempt 1 at 10:47:20
+56 verbose etag "7EO2K9LTTTQE0CBK2EEXXT9R"
+57 http GET https://registry.npmjs.org/mime
+58 http 304 https://registry.npmjs.org/mime
+59 silly registry.get cb [ 304,
+59 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+59 silly registry.get     etag: '"7EO2K9LTTTQE0CBK2EEXXT9R"',
+59 silly registry.get     date: 'Mon, 04 Nov 2013 18:47:38 GMT',
+59 silly registry.get     'content-length': '0' } ]
+60 verbose etag mime from cache
+61 silly addNameRange number 2 { name: 'mime', range: '>=1.2.7- <1.3.0-', hasData: true }
+62 silly addNameRange versions [ 'mime',
+62 silly addNameRange   [ '1.0.0',
+62 silly addNameRange     '1.1.0',
+62 silly addNameRange     '1.2.1',
+62 silly addNameRange     '1.2.2',
+62 silly addNameRange     '1.2.3',
+62 silly addNameRange     '1.2.4',
+62 silly addNameRange     '1.2.5',
+62 silly addNameRange     '1.2.6',
+62 silly addNameRange     '1.2.7',
+62 silly addNameRange     '1.2.8',
+62 silly addNameRange     '1.2.9',
+62 silly addNameRange     '1.2.10',
+62 silly addNameRange     '1.2.11' ] ]
+63 verbose addNamed [ 'mime', '1.2.11' ]
+64 verbose addNamed [ '1.2.11', '1.2.11' ]
+65 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+66 verbose lock mime@1.2.11 /Users/appacademy/.npm/c4b0741f-mime-1-2-11.lock
+67 verbose read json /Users/appacademy/.npm/mime/1.2.11/package/package.json
+68 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+69 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+70 silly lockFile 3725bc70-mime-1-2-7 mime@~1.2.7
+71 silly lockFile 3725bc70-mime-1-2-7 mime@~1.2.7
+72 http 304 https://registry.npmjs.org/socket.io
+73 silly registry.get cb [ 304,
+73 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+73 silly registry.get     etag: '"DSF55RABJJRXIZ3PXJ5PQ9N4A"',
+73 silly registry.get     date: 'Mon, 04 Nov 2013 18:47:38 GMT',
+73 silly registry.get     'content-length': '0' } ]
+74 verbose etag socket.io from cache
+75 silly addNameRange number 2 { name: 'socket.io', range: '>=0.9.6- <0.10.0-', hasData: true }
+76 silly addNameRange versions [ 'socket.io',
+76 silly addNameRange   [ '0.3.8',
+76 silly addNameRange     '0.4.0',
+76 silly addNameRange     '0.4.1',
+76 silly addNameRange     '0.5.1',
+76 silly addNameRange     '0.5.3',
+76 silly addNameRange     '0.6.0',
+76 silly addNameRange     '0.6.1',
+76 silly addNameRange     '0.6.3',
+76 silly addNameRange     '0.6.4',
+76 silly addNameRange     '0.6.5',
+76 silly addNameRange     '0.6.6',
+76 silly addNameRange     '0.6.7',
+76 silly addNameRange     '0.6.8',
+76 silly addNameRange     '0.6.9',
+76 silly addNameRange     '0.6.10',
+76 silly addNameRange     '0.6.11',
+76 silly addNameRange     '0.6.12',
+76 silly addNameRange     '0.6.14',
+76 silly addNameRange     '0.6.15',
+76 silly addNameRange     '0.6.16',
+76 silly addNameRange     '0.6.17',
+76 silly addNameRange     '0.6.18',
+76 silly addNameRange     '0.7.0',
+76 silly addNameRange     '0.7.1',
+76 silly addNameRange     '0.7.2',
+76 silly addNameRange     '0.7.3',
+76 silly addNameRange     '0.7.4',
+76 silly addNameRange     '0.7.5',
+76 silly addNameRange     '0.7.6',
+76 silly addNameRange     '0.7.7',
+76 silly addNameRange     '0.7.8',
+76 silly addNameRange     '0.7.9',
+76 silly addNameRange     '0.7.10',
+76 silly addNameRange     '0.7.11',
+76 silly addNameRange     '0.8.0',
+76 silly addNameRange     '0.8.1',
+76 silly addNameRange     '0.8.2',
+76 silly addNameRange     '0.8.3',
+76 silly addNameRange     '0.8.4',
+76 silly addNameRange     '0.8.5',
+76 silly addNameRange     '0.8.6',
+76 silly addNameRange     '0.8.7',
+76 silly addNameRange     '0.9.0',
+76 silly addNameRange     '0.9.1',
+76 silly addNameRange     '0.9.1-1',
+76 silly addNameRange     '0.9.2',
+76 silly addNameRange     '0.9.3',
+76 silly addNameRange     '0.9.4',
+76 silly addNameRange     '0.9.5',
+76 silly addNameRange     '0.9.6',
+76 silly addNameRange     '0.9.7',
+76 silly addNameRange     '0.9.8',
+76 silly addNameRange     '0.9.9',
+76 silly addNameRange     '0.9.10',
+76 silly addNameRange     '0.9.11',
+76 silly addNameRange     '0.9.12',
+76 silly addNameRange     '0.9.13',
+76 silly addNameRange     '0.9.14',
+76 silly addNameRange     '0.9.15',
+76 silly addNameRange     '0.9.16' ] ]
+77 verbose addNamed [ 'socket.io', '0.9.16' ]
+78 verbose addNamed [ '0.9.16', '0.9.16' ]
+79 silly lockFile a7acce22-socket-io-0-9-16 socket.io@0.9.16
+80 verbose lock socket.io@0.9.16 /Users/appacademy/.npm/a7acce22-socket-io-0-9-16.lock
+81 verbose read json /Users/appacademy/.npm/socket.io/0.9.16/package/package.json
+82 silly lockFile a7acce22-socket-io-0-9-16 socket.io@0.9.16
+83 silly lockFile a7acce22-socket-io-0-9-16 socket.io@0.9.16
+84 silly lockFile f2e07591-socket-io-0-9-6 socket.io@~0.9.6
+85 silly lockFile f2e07591-socket-io-0-9-6 socket.io@~0.9.6
+86 http 200 https://registry.npmjs.org/express/3.4.2
+87 silly registry.get cb [ 200,
+87 silly registry.get   { vary: 'Accept',
+87 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+87 silly registry.get     etag: '"DKZZXP5I7PNN2271E4AVY3OJI"',
+87 silly registry.get     date: 'Mon, 04 Nov 2013 18:47:40 GMT',
+87 silly registry.get     'content-type': 'application/json',
+87 silly registry.get     'content-length': '6038' } ]
+88 silly lockFile f24a3ae6-js-org-express-express-3-4-2-tgz https://registry.npmjs.org/express/-/express-3.4.2.tgz
+89 verbose lock https://registry.npmjs.org/express/-/express-3.4.2.tgz /Users/appacademy/.npm/f24a3ae6-js-org-express-express-3-4-2-tgz.lock
+90 verbose addRemoteTarball [ 'https://registry.npmjs.org/express/-/express-3.4.2.tgz',
+90 verbose addRemoteTarball   '3cfaa66fb1e1fac5012129b473f0e2143544aa07' ]
+91 info retry fetch attempt 1 at 10:47:37
+92 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+93 http GET https://registry.npmjs.org/express/-/express-3.4.2.tgz
+94 http 200 https://registry.npmjs.org/express/-/express-3.4.2.tgz
+95 silly shasum updated bytes 36360
+96 info shasum 3cfaa66fb1e1fac5012129b473f0e2143544aa07
+96 info shasum /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+97 verbose tar unpack /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+98 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+99 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package /Users/appacademy/.npm/7cd57835-57686-0-3171381722204387-package.lock
+100 silly lockFile 9a752377-57686-0-3171381722204387-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+101 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz /Users/appacademy/.npm/9a752377-57686-0-3171381722204387-tmp-tgz.lock
+102 silly gunzTarPerm modes [ '755', '644' ]
+103 silly gunzTarPerm extractEntry package.json
+104 silly gunzTarPerm extractEntry .npmignore
+105 silly gunzTarPerm extractEntry LICENSE
+106 silly gunzTarPerm extractEntry index.js
+107 silly gunzTarPerm extractEntry .travis.yml
+108 silly gunzTarPerm extractEntry bin/express
+109 silly gunzTarPerm extractEntry History.md
+110 silly gunzTarPerm extractEntry lib/application.js
+111 silly gunzTarPerm extractEntry lib/express.js
+112 silly gunzTarPerm extractEntry lib/middleware.js
+113 silly gunzTarPerm extractEntry lib/request.js
+114 silly gunzTarPerm extractEntry lib/response.js
+115 silly gunzTarPerm extractEntry lib/utils.js
+116 silly gunzTarPerm extractEntry lib/view.js
+117 silly gunzTarPerm extractEntry lib/router/index.js
+118 silly gunzTarPerm extractEntry lib/router/route.js
+119 silly gunzTarPerm extractEntry Makefile
+120 silly gunzTarPerm extractEntry Readme.md
+121 verbose read json /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package/package.json
+122 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+123 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+124 silly lockFile 9a752377-57686-0-3171381722204387-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+125 silly lockFile 9a752377-57686-0-3171381722204387-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/tmp.tgz
+126 verbose from cache /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package/package.json
+127 verbose tar pack [ '/Users/appacademy/.npm/express/3.4.2/package.tgz',
+127 verbose tar pack   '/var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package' ]
+128 verbose tarball /Users/appacademy/.npm/express/3.4.2/package.tgz
+129 verbose folder /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+130 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+131 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package /Users/appacademy/.npm/7cd57835-57686-0-3171381722204387-package.lock
+132 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+133 verbose lock /Users/appacademy/.npm/express/3.4.2/package.tgz /Users/appacademy/.npm/7fce8e70-my-npm-express-3-4-2-package-tgz.lock
+134 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+135 silly lockFile 7cd57835-57686-0-3171381722204387-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590857686-0.3171381722204387/package
+136 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+137 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+138 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+139 verbose lock /Users/appacademy/.npm/express/3.4.2/package /Users/appacademy/.npm/da0e7c2c-cademy-npm-express-3-4-2-package.lock
+140 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+141 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+142 verbose tar unpack /Users/appacademy/.npm/express/3.4.2/package.tgz
+143 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+144 verbose lock /Users/appacademy/.npm/express/3.4.2/package /Users/appacademy/.npm/da0e7c2c-cademy-npm-express-3-4-2-package.lock
+145 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+146 verbose lock /Users/appacademy/.npm/express/3.4.2/package.tgz /Users/appacademy/.npm/7fce8e70-my-npm-express-3-4-2-package-tgz.lock
+147 silly gunzTarPerm modes [ '755', '644' ]
+148 silly gunzTarPerm extractEntry package.json
+149 silly gunzTarPerm extractEntry .npmignore
+150 silly gunzTarPerm extractEntry LICENSE
+151 silly gunzTarPerm extractEntry index.js
+152 silly gunzTarPerm extractEntry .travis.yml
+153 silly gunzTarPerm extractEntry bin/express
+154 silly gunzTarPerm extractEntry History.md
+155 silly gunzTarPerm extractEntry lib/application.js
+156 silly gunzTarPerm extractEntry lib/express.js
+157 silly gunzTarPerm extractEntry lib/middleware.js
+158 silly gunzTarPerm extractEntry lib/request.js
+159 silly gunzTarPerm extractEntry lib/response.js
+160 silly gunzTarPerm extractEntry lib/utils.js
+161 silly gunzTarPerm extractEntry lib/view.js
+162 silly gunzTarPerm extractEntry lib/router/index.js
+163 silly gunzTarPerm extractEntry lib/router/route.js
+164 silly gunzTarPerm extractEntry Makefile
+165 silly gunzTarPerm extractEntry Readme.md
+166 verbose read json /Users/appacademy/.npm/express/3.4.2/package/package.json
+167 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+168 silly lockFile da0e7c2c-cademy-npm-express-3-4-2-package /Users/appacademy/.npm/express/3.4.2/package
+169 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+170 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+171 silly shasum updated bytes 36360
+172 info shasum 3cfaa66fb1e1fac5012129b473f0e2143544aa07
+172 info shasum /Users/appacademy/.npm/express/3.4.2/package.tgz
+173 verbose from cache /Users/appacademy/.npm/express/3.4.2/package/package.json
+174 verbose chmod /Users/appacademy/.npm/express/3.4.2/package.tgz 644
+175 verbose chown /Users/appacademy/.npm/express/3.4.2/package.tgz [ 501, 20 ]
+176 silly lockFile f24a3ae6-js-org-express-express-3-4-2-tgz https://registry.npmjs.org/express/-/express-3.4.2.tgz
+177 silly lockFile f24a3ae6-js-org-express-express-3-4-2-tgz https://registry.npmjs.org/express/-/express-3.4.2.tgz
+178 silly lockFile 76e556b0-express-3-4-2 express@3.4.2
+179 silly lockFile 76e556b0-express-3-4-2 express@3.4.2
+180 silly resolved [ { author:
+180 silly resolved      { name: 'Robert Kieffer',
+180 silly resolved        email: 'robert@broofa.com',
+180 silly resolved        url: 'http://github.com/broofa' },
+180 silly resolved     contributors: [ [Object] ],
+180 silly resolved     dependencies: {},
+180 silly resolved     description: 'A comprehensive library for mime-type mapping',
+180 silly resolved     devDependencies: {},
+180 silly resolved     keywords: [ 'util', 'mime' ],
+180 silly resolved     main: 'mime.js',
+180 silly resolved     name: 'mime',
+180 silly resolved     repository: { url: 'https://github.com/broofa/node-mime', type: 'git' },
+180 silly resolved     version: '1.2.11',
+180 silly resolved     readme: '# mime\n\nComprehensive MIME type mapping API. Includes all 600+ types and 800+ extensions defined by the Apache project, plus additional types submitted by the node.js community.\n\n## Install\n\nInstall with [npm](http://github.com/isaacs/npm):\n\n    npm install mime\n\n## API - Queries\n\n### mime.lookup(path)\nGet the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive lookup using the extension in `path` (the substring after the last \'/\' or \'.\').  E.g.\n\n    var mime = require(\'mime\');\n\n    mime.lookup(\'/path/to/file.txt\');         // => \'text/plain\'\n    mime.lookup(\'file.txt\');                  // => \'text/plain\'\n    mime.lookup(\'.TXT\');                      // => \'text/plain\'\n    mime.lookup(\'htm\');                       // => \'text/html\'\n\n### mime.default_type\nSets the mime type returned when `mime.lookup` fails to find the extension searched for. (Default is `application/octet-stream`.)\n\n### mime.extension(type)\nGet the default extension for `type`\n\n    mime.extension(\'text/html\');                 // => \'html\'\n    mime.extension(\'application/octet-stream\');  // => \'bin\'\n\n### mime.charsets.lookup()\n\nMap mime-type to charset\n\n    mime.charsets.lookup(\'text/plain\');        // => \'UTF-8\'\n\n(The logic for charset lookups is pretty rudimentary.  Feel free to suggest improvements.)\n\n## API - Defining Custom Types\n\nThe following APIs allow you to add your own type mappings within your project.  If you feel a type should be included as part of node-mime, see [requesting new types](https://github.com/broofa/node-mime/wiki/Requesting-New-Types).\n\n### mime.define()\n\nAdd custom mime/extension mappings\n\n    mime.define({\n        \'text/x-some-format\': [\'x-sf\', \'x-sft\', \'x-sfml\'],\n        \'application/x-my-type\': [\'x-mt\', \'x-mtt\'],\n        // etc ...\n    });\n\n    mime.lookup(\'x-sft\');                 // => \'text/x-some-format\'\n\nThe first entry in the extensions array is returned by `mime.extension()`. E.g.\n\n    mime.extension(\'text/x-some-format\'); // => \'x-sf\'\n\n### mime.load(filepath)\n\nLoad mappings from an Apache ".types" format file\n\n    mime.load(\'./my_project.types\');\n\nThe .types file format is simple -  See the `types` dir for examples.\n',
+180 silly resolved     readmeFilename: 'README.md',
+180 silly resolved     _id: 'mime@1.2.11',
+180 silly resolved     _from: 'mime@~1.2.7' },
+180 silly resolved   { name: 'socket.io',
+180 silly resolved     version: '0.9.16',
+180 silly resolved     description: 'Real-time apps made cross-browser & easy with a WebSocket-like API',
+180 silly resolved     homepage: 'http://socket.io',
+180 silly resolved     keywords: [ 'websocket', 'socket', 'realtime', 'socket.io', 'comet', 'ajax' ],
+180 silly resolved     author: { name: 'Guillermo Rauch', email: 'guillermo@learnboost.com' },
+180 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+180 silly resolved     repository:
+180 silly resolved      { type: 'git',
+180 silly resolved        url: 'https://github.com/LearnBoost/socket.io.git' },
+180 silly resolved     dependencies:
+180 silly resolved      { 'socket.io-client': '0.9.16',
+180 silly resolved        policyfile: '0.0.4',
+180 silly resolved        base64id: '0.1.0',
+180 silly resolved        redis: '0.7.3' },
+180 silly resolved     devDependencies:
+180 silly resolved      { expresso: '0.9.2',
+180 silly resolved        should: '*',
+180 silly resolved        benchmark: '0.2.2',
+180 silly resolved        microtime: '0.1.3-1',
+180 silly resolved        colors: '0.5.1' },
+180 silly resolved     optionalDependencies: { redis: '0.7.3' },
+180 silly resolved     main: 'index',
+180 silly resolved     engines: { node: '>= 0.4.0' },
+180 silly resolved     scripts: { test: 'make test' },
+180 silly resolved     readme: '# Socket.IO\n\nSocket.IO is a Node.JS project that makes WebSockets and realtime possible in\nall browsers. It also enhances WebSockets by providing built-in multiplexing,\nhorizontal scalability, automatic JSON encoding/decoding, and more.\n\n## How to Install\n\n```bash\nnpm install socket.io\n```\n\n## How to use\n\nFirst, require `socket.io`:\n\n```js\nvar io = require(\'socket.io\');\n```\n\nNext, attach it to a HTTP/HTTPS server. If you\'re using the fantastic `express`\nweb framework:\n\n#### Express 3.x\n\n```js\nvar app = express()\n  , server = require(\'http\').createServer(app)\n  , io = io.listen(server);\n\nserver.listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.emit(\'news\', { hello: \'world\' });\n  socket.on(\'my other event\', function (data) {\n    console.log(data);\n  });\n});\n```\n\n#### Express 2.x\n\n```js\nvar app = express.createServer()\n  , io = io.listen(app);\n\napp.listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.emit(\'news\', { hello: \'world\' });\n  socket.on(\'my other event\', function (data) {\n    console.log(data);\n  });\n});\n```\n\nFinally, load it from the client side code:\n\n```html\n<script src="/socket.io/socket.io.js"></script>\n<script>\n  var socket = io.connect(\'http://localhost\');\n  socket.on(\'news\', function (data) {\n    console.log(data);\n    socket.emit(\'my other event\', { my: \'data\' });\n  });\n</script>\n```\n\nFor more thorough examples, look at the `examples/` directory.\n\n## Short recipes\n\n### Sending and receiving events.\n\nSocket.IO allows you to emit and receive custom events.\nBesides `connect`, `message` and `disconnect`, you can emit custom events:\n\n```js\n// note, io.listen(<port>) will create a http server for you\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  io.sockets.emit(\'this\', { will: \'be received by everyone\' });\n\n  socket.on(\'private message\', function (from, msg) {\n    console.log(\'I received a private message by \', from, \' saying \', msg);\n  });\n\n  socket.on(\'disconnect\', function () {\n    io.sockets.emit(\'user disconnected\');\n  });\n});\n```\n\n### Storing data associated to a client\n\nSometimes it\'s necessary to store data associated with a client that\'s\nnecessary for the duration of the session.\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.on(\'set nickname\', function (name) {\n    socket.set(\'nickname\', name, function () { socket.emit(\'ready\'); });\n  });\n\n  socket.on(\'msg\', function () {\n    socket.get(\'nickname\', function (err, name) {\n      console.log(\'Chat message by \', name);\n    });\n  });\n});\n```\n\n#### Client side\n\n```html\n<script>\n  var socket = io.connect(\'http://localhost\');\n\n  socket.on(\'connect\', function () {\n    socket.emit(\'set nickname\', prompt(\'What is your nickname?\'));\n    socket.on(\'ready\', function () {\n      console.log(\'Connected !\');\n      socket.emit(\'msg\', prompt(\'What is your message?\'));\n    });\n  });\n</script>\n```\n\n### Restricting yourself to a namespace\n\nIf you have control over all the messages and events emitted for a particular\napplication, using the default `/` namespace works.\n\nIf you want to leverage 3rd-party code, or produce code to share with others,\nsocket.io provides a way of namespacing a `socket`.\n\nThis has the benefit of `multiplexing` a single connection. Instead of\nsocket.io using two `WebSocket` connections, it\'ll use one.\n\nThe following example defines a socket that listens on \'/chat\' and one for\n\'/news\':\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nvar chat = io\n  .of(\'/chat\')\n  .on(\'connection\', function (socket) {\n    socket.emit(\'a message\', { that: \'only\', \'/chat\': \'will get\' });\n    chat.emit(\'a message\', { everyone: \'in\', \'/chat\': \'will get\' });\n  });\n\nvar news = io\n  .of(\'/news\');\n  .on(\'connection\', function (socket) {\n    socket.emit(\'item\', { news: \'item\' });\n  });\n```\n\n#### Client side:\n\n```html\n<script>\n  var chat = io.connect(\'http://localhost/chat\')\n    , news = io.connect(\'http://localhost/news\');\n\n  chat.on(\'connect\', function () {\n    chat.emit(\'hi!\');\n  });\n\n  news.on(\'news\', function () {\n    news.emit(\'woot\');\n  });\n</script>\n```\n\n### Sending volatile messages.\n\nSometimes certain messages can be dropped. Let\'s say you have an app that\nshows realtime tweets for the keyword `bieber`. \n\nIf a certain client is not ready to receive messages (because of network slowness\nor other issues, or because he\'s connected through long polling and is in the\nmiddle of a request-response cycle), if he doesn\'t receive ALL the tweets related\nto bieber your application won\'t suffer.\n\nIn that case, you might want to send those messages as volatile messages.\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  var tweets = setInterval(function () {\n    getBieberTweet(function (tweet) {\n      socket.volatile.emit(\'bieber tweet\', tweet);\n    });\n  }, 100);\n\n  socket.on(\'disconnect\', function () {\n    clearInterval(tweets);\n  });\n});\n```\n\n#### Client side\n\nIn the client side, messages are received the same way whether they\'re volatile\nor not.\n\n### Getting acknowledgements\n\nSometimes, you might want to get a callback when the client confirmed the message\nreception.\n\nTo do this, simply pass a function as the last parameter of `.send` or `.emit`.\nWhat\'s more, when you use `.emit`, the acknowledgement is done by you, which\nmeans you can also pass data along:\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.on(\'ferret\', function (name, fn) {\n    fn(\'woot\');\n  });\n});\n```\n\n#### Client side\n\n```html\n<script>\n  var socket = io.connect(); // TIP: .connect with no args does auto-discovery\n  socket.on(\'connect\', function () { // TIP: you can avoid listening on `connect` and listen on events directly too!\n    socket.emit(\'ferret\', \'tobi\', function (data) {\n      console.log(data); // data will be \'woot\'\n    });\n  });\n</script>\n```\n\n### Broadcasting messages\n\nTo broadcast, simply add a `broadcast` flag to `emit` and `send` method calls.\nBroadcasting means sending a message to everyone else except for the socket\nthat starts it.\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.broadcast.emit(\'user connected\');\n  socket.broadcast.json.send({ a: \'message\' });\n});\n```\n\n### Rooms\n\nSometimes you want to put certain sockets in the same room, so that it\'s easy\nto broadcast to all of them together.\n\nThink of this as built-in channels for sockets. Sockets `join` and `leave`\nrooms in each socket.\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.join(\'justin bieber fans\');\n  socket.broadcast.to(\'justin bieber fans\').emit(\'new fan\');\n  io.sockets.in(\'rammstein fans\').emit(\'new non-fan\');\n});\n```\n\n### Using it just as a cross-browser WebSocket\n\nIf you just want the WebSocket semantics, you can do that too.\nSimply leverage `send` and listen on the `message` event:\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.sockets.on(\'connection\', function (socket) {\n  socket.on(\'message\', function () { });\n  socket.on(\'disconnect\', function () { });\n});\n```\n\n#### Client side\n\n```html\n<script>\n  var socket = io.connect(\'http://localhost/\');\n  socket.on(\'connect\', function () {\n    socket.send(\'hi\');\n\n    socket.on(\'message\', function (msg) {\n      // my msg\n    });\n  });\n</script>\n```\n\n### Changing configuration\n\nConfiguration in socket.io is TJ-style:\n\n#### Server side\n\n```js\nvar io = require(\'socket.io\').listen(80);\n\nio.configure(function () {\n  io.set(\'transports\', [\'websocket\', \'flashsocket\', \'xhr-polling\']);\n});\n\nio.configure(\'development\', function () {\n  io.set(\'transports\', [\'websocket\', \'xhr-polling\']);\n  io.enable(\'log\');\n});\n```\n\n## License \n\n(The MIT License)\n\nCopyright (c) 2011 Guillermo Rauch &lt;guillermo@learnboost.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+180 silly resolved     readmeFilename: 'Readme.md',
+180 silly resolved     _id: 'socket.io@0.9.16',
+180 silly resolved     _from: 'socket.io@~0.9.6' },
+180 silly resolved   { name: 'express',
+180 silly resolved     description: 'Sinatra inspired web development framework',
+180 silly resolved     version: '3.4.2',
+180 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+180 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+180 silly resolved     dependencies:
+180 silly resolved      { connect: '2.9.2',
+180 silly resolved        commander: '1.3.2',
+180 silly resolved        'range-parser': '0.0.4',
+180 silly resolved        mkdirp: '0.3.5',
+180 silly resolved        cookie: '0.1.0',
+180 silly resolved        'buffer-crc32': '0.2.1',
+180 silly resolved        fresh: '0.2.0',
+180 silly resolved        methods: '0.0.1',
+180 silly resolved        send: '0.1.4',
+180 silly resolved        'cookie-signature': '1.0.1',
+180 silly resolved        debug: '*' },
+180 silly resolved     devDependencies:
+180 silly resolved      { ejs: '*',
+180 silly resolved        mocha: '*',
+180 silly resolved        jade: '0.30.0',
+180 silly resolved        hjs: '*',
+180 silly resolved        stylus: '*',
+180 silly resolved        should: '2',
+180 silly resolved        'connect-redis': '*',
+180 silly resolved        marked: '*',
+180 silly resolved        supertest: '0.6.0' },
+180 silly resolved     keywords:
+180 silly resolved      [ 'express',
+180 silly resolved        'framework',
+180 silly resolved        'sinatra',
+180 silly resolved        'web',
+180 silly resolved        'rest',
+180 silly resolved        'restful',
+180 silly resolved        'router',
+180 silly resolved        'app',
+180 silly resolved        'api' ],
+180 silly resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/express' },
+180 silly resolved     main: 'index',
+180 silly resolved     bin: { express: './bin/express' },
+180 silly resolved     scripts: { prepublish: 'npm prune', test: 'make test' },
+180 silly resolved     engines: { node: '*' },
+180 silly resolved     readme: '[![express logo](http://f.cl.ly/items/0V2S1n0K1i3y1c122g04/Screen%20Shot%202012-04-11%20at%209.59.42%20AM.png)](http://expressjs.com/)\n\n  Fast, unopinionated, minimalist web framework for [node](http://nodejs.org).\n\n  [![Build Status](https://secure.travis-ci.org/visionmedia/express.png)](http://travis-ci.org/visionmedia/express) [![Gittip](http://img.shields.io/gittip/visionmedia.png)](https://www.gittip.com/visionmedia/)\n\n```js\nvar express = require(\'express\');\nvar app = express();\n\napp.get(\'/\', function(req, res){\n  res.send(\'Hello World\');\n});\n\napp.listen(3000);\n```\n\n## Installation\n\n    $ npm install -g express\n\n## Quick Start\n\n The quickest way to get started with express is to utilize the executable `express(1)` to generate an application as shown below:\n\n Create the app:\n\n    $ npm install -g express\n    $ express /tmp/foo && cd /tmp/foo\n\n Install dependencies:\n\n    $ npm install\n\n Start the server:\n\n    $ node app\n\n## Features\n\n  * Built on [Connect](http://github.com/senchalabs/connect)\n  * Robust routing\n  * HTTP helpers (redirection, caching, etc)\n  * View system supporting 14+ template engines\n  * Content negotiation\n  * Focus on high performance\n  * Environment based configuration\n  * Executable for generating applications quickly\n  * High test coverage\n\n## Philosophy\n\n  The Express philosophy is to provide small, robust tooling for HTTP servers. Making\n  it a great solution for single page applications, web sites, hybrids, or public\n  HTTP APIs.\n\n  Built on Connect you can use _only_ what you need, and nothing more, applications\n  can be as big or as small as you like, even a single file. Express does\n  not force you to use any specific ORM or template engine. With support for over\n  14 template engines via [Consolidate.js](http://github.com/visionmedia/consolidate.js)\n  you can quickly craft your perfect framework.\n\n## More Information\n\n  * [Website and Documentation](http://expressjs.com/) stored at [visionmedia/expressjs.com](https://github.com/visionmedia/expressjs.com)\n  * Join #express on freenode\n  * [Google Group](http://groups.google.com/group/express-js) for discussion\n  * Follow [tjholowaychuk](http://twitter.com/tjholowaychuk) on twitter for updates\n  * Visit the [Wiki](http://github.com/visionmedia/express/wiki)\n  * [Русскоязычная документация](http://jsman.ru/express/)\n  * Run express examples [online](https://runnable.com/express)\n\n## Viewing Examples\n\nClone the Express repo, then install the dev dependencies to install all the example / test suite deps:\n\n    $ git clone git://github.com/visionmedia/express.git --depth 1\n    $ cd express\n    $ npm install\n\nthen run whichever tests you want:\n\n    $ node examples/content-negotiation\n\nYou can also view live examples here\n\n<a href="https://runnable.com/express" target="_blank"><img src="https://runnable.com/external/styles/assets/runnablebtn.png" style="width:67px;height:25px;"></a>\n\n## Running Tests\n\nTo run the test suite first invoke the following command within the repo, installing the development dependencies:\n\n    $ npm install\n\nthen run the tests:\n\n    $ make test\n\n## Contributors\n\n  https://github.com/visionmedia/express/graphs/contributors\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2009-2012 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+180 silly resolved     readmeFilename: 'Readme.md',
+180 silly resolved     _id: 'express@3.4.2',
+180 silly resolved     dist: { shasum: '3cfaa66fb1e1fac5012129b473f0e2143544aa07' },
+180 silly resolved     _from: 'express@3.4.2',
+180 silly resolved     _resolved: 'https://registry.npmjs.org/express/-/express-3.4.2.tgz' } ]
+181 info install mime@1.2.11 into /Users/appacademy/Desktop/aa_work/w8/chatApp
+182 info install socket.io@0.9.16 into /Users/appacademy/Desktop/aa_work/w8/chatApp
+183 info install express@3.4.2 into /Users/appacademy/Desktop/aa_work/w8/chatApp
+184 info installOne mime@1.2.11
+185 info installOne socket.io@0.9.16
+186 info installOne express@3.4.2
+187 verbose from cache /Users/appacademy/.npm/mime/1.2.11/package/package.json
+188 verbose from cache /Users/appacademy/.npm/socket.io/0.9.16/package/package.json
+189 verbose from cache /Users/appacademy/.npm/express/3.4.2/package/package.json
+190 info /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime unbuild
+191 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime/package.json
+192 info /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io unbuild
+193 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io/package.json
+194 info /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express unbuild
+195 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express/package.json
+196 verbose tar unpack /Users/appacademy/.npm/mime/1.2.11/package.tgz
+197 verbose tar unpack /Users/appacademy/.npm/socket.io/0.9.16/package.tgz
+198 verbose tar unpack /Users/appacademy/.npm/express/3.4.2/package.tgz
+199 silly lockFile 6f2cb84a-ork-w8-chatApp-node-modules-mime /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime
+200 verbose lock /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime /Users/appacademy/.npm/6f2cb84a-ork-w8-chatApp-node-modules-mime.lock
+201 silly lockFile a9817239-demy-npm-mime-1-2-11-package-tgz /Users/appacademy/.npm/mime/1.2.11/package.tgz
+202 verbose lock /Users/appacademy/.npm/mime/1.2.11/package.tgz /Users/appacademy/.npm/a9817239-demy-npm-mime-1-2-11-package-tgz.lock
+203 silly lockFile 6fb478ad-8-chatApp-node-modules-socket-io /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io
+204 verbose lock /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io /Users/appacademy/.npm/6fb478ad-8-chatApp-node-modules-socket-io.lock
+205 silly lockFile 5c98d4b7-npm-socket-io-0-9-16-package-tgz /Users/appacademy/.npm/socket.io/0.9.16/package.tgz
+206 verbose lock /Users/appacademy/.npm/socket.io/0.9.16/package.tgz /Users/appacademy/.npm/5c98d4b7-npm-socket-io-0-9-16-package-tgz.lock
+207 silly lockFile 4edc999b--w8-chatApp-node-modules-express /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express
+208 verbose lock /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express /Users/appacademy/.npm/4edc999b--w8-chatApp-node-modules-express.lock
+209 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+210 verbose lock /Users/appacademy/.npm/express/3.4.2/package.tgz /Users/appacademy/.npm/7fce8e70-my-npm-express-3-4-2-package-tgz.lock
+211 silly gunzTarPerm modes [ '755', '644' ]
+212 silly gunzTarPerm modes [ '755', '644' ]
+213 silly gunzTarPerm modes [ '755', '644' ]
+214 silly gunzTarPerm extractEntry package.json
+215 silly gunzTarPerm extractEntry .npmignore
+216 silly gunzTarPerm extractEntry LICENSE
+217 silly gunzTarPerm extractEntry index.js
+218 silly gunzTarPerm extractEntry .travis.yml
+219 silly gunzTarPerm extractEntry bin/express
+220 silly gunzTarPerm extractEntry History.md
+221 silly gunzTarPerm extractEntry lib/application.js
+222 silly gunzTarPerm extractEntry lib/express.js
+223 silly gunzTarPerm extractEntry lib/middleware.js
+224 silly gunzTarPerm extractEntry lib/request.js
+225 silly gunzTarPerm extractEntry lib/response.js
+226 silly gunzTarPerm extractEntry lib/utils.js
+227 silly gunzTarPerm extractEntry lib/view.js
+228 silly gunzTarPerm extractEntry lib/router/index.js
+229 silly gunzTarPerm extractEntry package.json
+230 silly gunzTarPerm extractEntry lib/router/route.js
+231 silly gunzTarPerm extractEntry README.md
+232 silly gunzTarPerm extractEntry LICENSE
+233 silly gunzTarPerm extractEntry Makefile
+234 silly gunzTarPerm extractEntry mime.js
+235 silly gunzTarPerm extractEntry test.js
+236 silly gunzTarPerm extractEntry Readme.md
+237 silly gunzTarPerm extractEntry types/mime.types
+238 silly gunzTarPerm extractEntry types/node.types
+239 silly gunzTarPerm extractEntry package.json
+240 silly gunzTarPerm extractEntry .npmignore
+241 silly gunzTarPerm extractEntry LICENSE
+242 silly gunzTarPerm extractEntry index.js
+243 silly gunzTarPerm extractEntry .travis.yml
+244 silly gunzTarPerm extractEntry benchmarks/decode.bench.js
+245 silly gunzTarPerm extractEntry benchmarks/encode.bench.js
+246 silly gunzTarPerm extractEntry benchmarks/runner.js
+247 silly gunzTarPerm extractEntry History.md
+248 silly gunzTarPerm extractEntry lib/logger.js
+249 silly gunzTarPerm extractEntry lib/namespace.js
+250 silly gunzTarPerm extractEntry lib/parser.js
+251 silly gunzTarPerm extractEntry lib/socket.io.js
+252 silly gunzTarPerm extractEntry lib/socket.js
+253 silly gunzTarPerm extractEntry lib/manager.js
+254 silly gunzTarPerm extractEntry lib/store.js
+255 silly gunzTarPerm extractEntry lib/transport.js
+256 silly gunzTarPerm extractEntry lib/util.js
+257 silly gunzTarPerm extractEntry lib/static.js
+258 silly gunzTarPerm extractEntry lib/stores/memory.js
+259 silly gunzTarPerm extractEntry lib/stores/redis.js
+260 silly gunzTarPerm extractEntry lib/transports/flashsocket.js
+261 silly gunzTarPerm extractEntry lib/transports/htmlfile.js
+262 silly gunzTarPerm extractEntry lib/transports/http-polling.js
+263 silly gunzTarPerm extractEntry lib/transports/http.js
+264 silly gunzTarPerm extractEntry lib/transports/index.js
+265 silly gunzTarPerm extractEntry lib/transports/jsonp-polling.js
+266 silly gunzTarPerm extractEntry lib/transports/websocket.js
+267 silly gunzTarPerm extractEntry lib/transports/xhr-polling.js
+268 silly gunzTarPerm extractEntry lib/transports/websocket/default.js
+269 silly gunzTarPerm extractEntry lib/transports/websocket/hybi-07-12.js
+270 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime/package.json
+271 silly gunzTarPerm extractEntry lib/transports/websocket/hybi-16.js
+272 silly gunzTarPerm extractEntry lib/transports/websocket/index.js
+273 silly gunzTarPerm extractEntry Makefile
+274 silly gunzTarPerm extractEntry Readme.md
+275 silly lockFile 6f2cb84a-ork-w8-chatApp-node-modules-mime /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime
+276 silly lockFile 6f2cb84a-ork-w8-chatApp-node-modules-mime /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime
+277 silly lockFile a9817239-demy-npm-mime-1-2-11-package-tgz /Users/appacademy/.npm/mime/1.2.11/package.tgz
+278 silly lockFile a9817239-demy-npm-mime-1-2-11-package-tgz /Users/appacademy/.npm/mime/1.2.11/package.tgz
+279 info preinstall mime@1.2.11
+280 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime/package.json
+281 verbose readDependencies using package.json deps
+282 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime/package.json
+283 verbose readDependencies using package.json deps
+284 silly resolved []
+285 verbose about to build /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime
+286 info build /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime
+287 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/mime/package.json
+288 verbose linkStuff [ false,
+288 verbose linkStuff   false,
+288 verbose linkStuff   false,
+288 verbose linkStuff   '/Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules' ]
+289 info linkStuff mime@1.2.11
+290 verbose linkBins mime@1.2.11
+291 verbose linkMans mime@1.2.11
+292 verbose rebuildBundles mime@1.2.11
+293 info install mime@1.2.11
+294 info postinstall mime@1.2.11
+295 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express/package.json
+296 silly lockFile 4edc999b--w8-chatApp-node-modules-express /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express
+297 silly lockFile 4edc999b--w8-chatApp-node-modules-express /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express
+298 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+299 silly lockFile 7fce8e70-my-npm-express-3-4-2-package-tgz /Users/appacademy/.npm/express/3.4.2/package.tgz
+300 info preinstall express@3.4.2
+301 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express/package.json
+302 verbose readDependencies using package.json deps
+303 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express/package.json
+304 verbose readDependencies using package.json deps
+305 verbose cache add [ 'connect@2.9.2', null ]
+306 verbose cache add name=undefined spec="connect@2.9.2" args=["connect@2.9.2",null]
+307 verbose parsed url { pathname: 'connect@2.9.2',
+307 verbose parsed url   path: 'connect@2.9.2',
+307 verbose parsed url   href: 'connect@2.9.2' }
+308 verbose cache add name="connect" spec="2.9.2" args=["connect","2.9.2"]
+309 verbose parsed url { pathname: '2.9.2', path: '2.9.2', href: '2.9.2' }
+310 verbose addNamed [ 'connect', '2.9.2' ]
+311 verbose addNamed [ '2.9.2', '2.9.2' ]
+312 silly lockFile f9180aac-connect-2-9-2 connect@2.9.2
+313 verbose lock connect@2.9.2 /Users/appacademy/.npm/f9180aac-connect-2-9-2.lock
+314 verbose cache add [ 'commander@1.3.2', null ]
+315 verbose cache add name=undefined spec="commander@1.3.2" args=["commander@1.3.2",null]
+316 verbose parsed url { pathname: 'commander@1.3.2',
+316 verbose parsed url   path: 'commander@1.3.2',
+316 verbose parsed url   href: 'commander@1.3.2' }
+317 verbose cache add name="commander" spec="1.3.2" args=["commander","1.3.2"]
+318 verbose parsed url { pathname: '1.3.2', path: '1.3.2', href: '1.3.2' }
+319 verbose addNamed [ 'commander', '1.3.2' ]
+320 verbose addNamed [ '1.3.2', '1.3.2' ]
+321 silly lockFile 2016e061-commander-1-3-2 commander@1.3.2
+322 verbose lock commander@1.3.2 /Users/appacademy/.npm/2016e061-commander-1-3-2.lock
+323 verbose cache add [ 'range-parser@0.0.4', null ]
+324 verbose cache add name=undefined spec="range-parser@0.0.4" args=["range-parser@0.0.4",null]
+325 verbose parsed url { pathname: 'range-parser@0.0.4',
+325 verbose parsed url   path: 'range-parser@0.0.4',
+325 verbose parsed url   href: 'range-parser@0.0.4' }
+326 verbose cache add name="range-parser" spec="0.0.4" args=["range-parser","0.0.4"]
+327 verbose parsed url { pathname: '0.0.4', path: '0.0.4', href: '0.0.4' }
+328 verbose addNamed [ 'range-parser', '0.0.4' ]
+329 verbose addNamed [ '0.0.4', '0.0.4' ]
+330 silly lockFile 0760c556-range-parser-0-0-4 range-parser@0.0.4
+331 verbose lock range-parser@0.0.4 /Users/appacademy/.npm/0760c556-range-parser-0-0-4.lock
+332 verbose cache add [ 'mkdirp@0.3.5', null ]
+333 verbose cache add name=undefined spec="mkdirp@0.3.5" args=["mkdirp@0.3.5",null]
+334 verbose parsed url { pathname: 'mkdirp@0.3.5',
+334 verbose parsed url   path: 'mkdirp@0.3.5',
+334 verbose parsed url   href: 'mkdirp@0.3.5' }
+335 verbose cache add name="mkdirp" spec="0.3.5" args=["mkdirp","0.3.5"]
+336 verbose parsed url { pathname: '0.3.5', path: '0.3.5', href: '0.3.5' }
+337 verbose addNamed [ 'mkdirp', '0.3.5' ]
+338 verbose addNamed [ '0.3.5', '0.3.5' ]
+339 silly lockFile 67d2df2a-mkdirp-0-3-5 mkdirp@0.3.5
+340 verbose lock mkdirp@0.3.5 /Users/appacademy/.npm/67d2df2a-mkdirp-0-3-5.lock
+341 verbose cache add [ 'cookie@0.1.0', null ]
+342 verbose cache add name=undefined spec="cookie@0.1.0" args=["cookie@0.1.0",null]
+343 verbose parsed url { pathname: 'cookie@0.1.0',
+343 verbose parsed url   path: 'cookie@0.1.0',
+343 verbose parsed url   href: 'cookie@0.1.0' }
+344 verbose cache add name="cookie" spec="0.1.0" args=["cookie","0.1.0"]
+345 verbose parsed url { pathname: '0.1.0', path: '0.1.0', href: '0.1.0' }
+346 verbose addNamed [ 'cookie', '0.1.0' ]
+347 verbose addNamed [ '0.1.0', '0.1.0' ]
+348 silly lockFile b55e145e-cookie-0-1-0 cookie@0.1.0
+349 verbose lock cookie@0.1.0 /Users/appacademy/.npm/b55e145e-cookie-0-1-0.lock
+350 verbose cache add [ 'buffer-crc32@0.2.1', null ]
+351 verbose cache add name=undefined spec="buffer-crc32@0.2.1" args=["buffer-crc32@0.2.1",null]
+352 verbose parsed url { pathname: 'buffer-crc32@0.2.1',
+352 verbose parsed url   path: 'buffer-crc32@0.2.1',
+352 verbose parsed url   href: 'buffer-crc32@0.2.1' }
+353 verbose cache add name="buffer-crc32" spec="0.2.1" args=["buffer-crc32","0.2.1"]
+354 verbose parsed url { pathname: '0.2.1', path: '0.2.1', href: '0.2.1' }
+355 verbose addNamed [ 'buffer-crc32', '0.2.1' ]
+356 verbose addNamed [ '0.2.1', '0.2.1' ]
+357 silly lockFile 057d0d26-buffer-crc32-0-2-1 buffer-crc32@0.2.1
+358 verbose lock buffer-crc32@0.2.1 /Users/appacademy/.npm/057d0d26-buffer-crc32-0-2-1.lock
+359 verbose cache add [ 'fresh@0.2.0', null ]
+360 verbose cache add name=undefined spec="fresh@0.2.0" args=["fresh@0.2.0",null]
+361 verbose parsed url { pathname: 'fresh@0.2.0',
+361 verbose parsed url   path: 'fresh@0.2.0',
+361 verbose parsed url   href: 'fresh@0.2.0' }
+362 verbose cache add name="fresh" spec="0.2.0" args=["fresh","0.2.0"]
+363 verbose parsed url { pathname: '0.2.0', path: '0.2.0', href: '0.2.0' }
+364 verbose addNamed [ 'fresh', '0.2.0' ]
+365 verbose addNamed [ '0.2.0', '0.2.0' ]
+366 silly lockFile 1a4cf0d3-fresh-0-2-0 fresh@0.2.0
+367 verbose lock fresh@0.2.0 /Users/appacademy/.npm/1a4cf0d3-fresh-0-2-0.lock
+368 verbose cache add [ 'methods@0.0.1', null ]
+369 verbose cache add name=undefined spec="methods@0.0.1" args=["methods@0.0.1",null]
+370 verbose parsed url { pathname: 'methods@0.0.1',
+370 verbose parsed url   path: 'methods@0.0.1',
+370 verbose parsed url   href: 'methods@0.0.1' }
+371 verbose cache add name="methods" spec="0.0.1" args=["methods","0.0.1"]
+372 verbose parsed url { pathname: '0.0.1', path: '0.0.1', href: '0.0.1' }
+373 verbose addNamed [ 'methods', '0.0.1' ]
+374 verbose addNamed [ '0.0.1', '0.0.1' ]
+375 silly lockFile 209c2920-methods-0-0-1 methods@0.0.1
+376 verbose lock methods@0.0.1 /Users/appacademy/.npm/209c2920-methods-0-0-1.lock
+377 verbose cache add [ 'send@0.1.4', null ]
+378 verbose cache add name=undefined spec="send@0.1.4" args=["send@0.1.4",null]
+379 verbose parsed url { pathname: 'send@0.1.4',
+379 verbose parsed url   path: 'send@0.1.4',
+379 verbose parsed url   href: 'send@0.1.4' }
+380 verbose cache add name="send" spec="0.1.4" args=["send","0.1.4"]
+381 verbose parsed url { pathname: '0.1.4', path: '0.1.4', href: '0.1.4' }
+382 verbose addNamed [ 'send', '0.1.4' ]
+383 verbose addNamed [ '0.1.4', '0.1.4' ]
+384 silly lockFile 555fd08a-send-0-1-4 send@0.1.4
+385 verbose lock send@0.1.4 /Users/appacademy/.npm/555fd08a-send-0-1-4.lock
+386 verbose cache add [ 'cookie-signature@1.0.1', null ]
+387 verbose cache add name=undefined spec="cookie-signature@1.0.1" args=["cookie-signature@1.0.1",null]
+388 verbose parsed url { pathname: 'cookie-signature@1.0.1',
+388 verbose parsed url   path: 'cookie-signature@1.0.1',
+388 verbose parsed url   href: 'cookie-signature@1.0.1' }
+389 verbose cache add name="cookie-signature" spec="1.0.1" args=["cookie-signature","1.0.1"]
+390 verbose parsed url { pathname: '1.0.1', path: '1.0.1', href: '1.0.1' }
+391 verbose addNamed [ 'cookie-signature', '1.0.1' ]
+392 verbose addNamed [ '1.0.1', '1.0.1' ]
+393 silly lockFile d4a1eba1-cookie-signature-1-0-1 cookie-signature@1.0.1
+394 verbose lock cookie-signature@1.0.1 /Users/appacademy/.npm/d4a1eba1-cookie-signature-1-0-1.lock
+395 verbose cache add [ 'debug@*', null ]
+396 verbose cache add name=undefined spec="debug@*" args=["debug@*",null]
+397 verbose parsed url { pathname: 'debug@*', path: 'debug@*', href: 'debug@*' }
+398 verbose cache add name="debug" spec="*" args=["debug","*"]
+399 verbose parsed url { pathname: '*', path: '*', href: '*' }
+400 verbose addNamed [ 'debug', '*' ]
+401 verbose addNamed [ null, '' ]
+402 silly lockFile 3ac45eff-debug debug@*
+403 verbose lock debug@* /Users/appacademy/.npm/3ac45eff-debug.lock
+404 verbose url raw commander/1.3.2
+405 verbose url resolving [ 'https://registry.npmjs.org/', './commander/1.3.2' ]
+406 verbose url resolved https://registry.npmjs.org/commander/1.3.2
+407 info trying registry request attempt 1 at 10:47:55
+408 http GET https://registry.npmjs.org/commander/1.3.2
+409 verbose url raw connect/2.9.2
+410 verbose url resolving [ 'https://registry.npmjs.org/', './connect/2.9.2' ]
+411 verbose url resolved https://registry.npmjs.org/connect/2.9.2
+412 info trying registry request attempt 1 at 10:47:55
+413 http GET https://registry.npmjs.org/connect/2.9.2
+414 silly addNameRange { name: 'debug', range: '', hasData: false }
+415 verbose url raw range-parser/0.0.4
+416 verbose url resolving [ 'https://registry.npmjs.org/', './range-parser/0.0.4' ]
+417 verbose url resolved https://registry.npmjs.org/range-parser/0.0.4
+418 info trying registry request attempt 1 at 10:47:55
+419 http GET https://registry.npmjs.org/range-parser/0.0.4
+420 verbose url raw buffer-crc32/0.2.1
+421 verbose url resolving [ 'https://registry.npmjs.org/', './buffer-crc32/0.2.1' ]
+422 verbose url resolved https://registry.npmjs.org/buffer-crc32/0.2.1
+423 info trying registry request attempt 1 at 10:47:55
+424 http GET https://registry.npmjs.org/buffer-crc32/0.2.1
+425 verbose url raw fresh/0.2.0
+426 verbose url resolving [ 'https://registry.npmjs.org/', './fresh/0.2.0' ]
+427 verbose url resolved https://registry.npmjs.org/fresh/0.2.0
+428 info trying registry request attempt 1 at 10:47:55
+429 http GET https://registry.npmjs.org/fresh/0.2.0
+430 verbose url raw methods/0.0.1
+431 verbose url resolving [ 'https://registry.npmjs.org/', './methods/0.0.1' ]
+432 verbose url resolved https://registry.npmjs.org/methods/0.0.1
+433 info trying registry request attempt 1 at 10:47:55
+434 http GET https://registry.npmjs.org/methods/0.0.1
+435 verbose url raw cookie-signature/1.0.1
+436 verbose url resolving [ 'https://registry.npmjs.org/', './cookie-signature/1.0.1' ]
+437 verbose url resolved https://registry.npmjs.org/cookie-signature/1.0.1
+438 info trying registry request attempt 1 at 10:47:55
+439 http GET https://registry.npmjs.org/cookie-signature/1.0.1
+440 verbose url raw cookie/0.1.0
+441 verbose url resolving [ 'https://registry.npmjs.org/', './cookie/0.1.0' ]
+442 verbose url resolved https://registry.npmjs.org/cookie/0.1.0
+443 info trying registry request attempt 1 at 10:47:55
+444 http GET https://registry.npmjs.org/cookie/0.1.0
+445 verbose url raw debug
+446 verbose url resolving [ 'https://registry.npmjs.org/', './debug' ]
+447 verbose url resolved https://registry.npmjs.org/debug
+448 info trying registry request attempt 1 at 10:47:55
+449 http GET https://registry.npmjs.org/debug
+450 verbose url raw send/0.1.4
+451 verbose url resolving [ 'https://registry.npmjs.org/', './send/0.1.4' ]
+452 verbose url resolved https://registry.npmjs.org/send/0.1.4
+453 info trying registry request attempt 1 at 10:47:55
+454 http GET https://registry.npmjs.org/send/0.1.4
+455 verbose url raw mkdirp/0.3.5
+456 verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp/0.3.5' ]
+457 verbose url resolved https://registry.npmjs.org/mkdirp/0.3.5
+458 info trying registry request attempt 1 at 10:47:55
+459 http GET https://registry.npmjs.org/mkdirp/0.3.5
+460 verbose read json /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io/package.json
+461 silly lockFile 6fb478ad-8-chatApp-node-modules-socket-io /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io
+462 silly lockFile 6fb478ad-8-chatApp-node-modules-socket-io /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io
+463 silly lockFile 5c98d4b7-npm-socket-io-0-9-16-package-tgz /Users/appacademy/.npm/socket.io/0.9.16/package.tgz
+464 silly lockFile 5c98d4b7-npm-socket-io-0-9-16-package-tgz /Users/appacademy/.npm/socket.io/0.9.16/package.tgz
+465 info preinstall socket.io@0.9.16
+466 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io/package.json
+467 verbose readDependencies using package.json deps
+468 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/socket.io/package.json
+469 verbose readDependencies using package.json deps
+470 verbose cache add [ 'socket.io-client@0.9.16', null ]
+471 verbose cache add name=undefined spec="socket.io-client@0.9.16" args=["socket.io-client@0.9.16",null]
+472 verbose parsed url { pathname: 'socket.io-client@0.9.16',
+472 verbose parsed url   path: 'socket.io-client@0.9.16',
+472 verbose parsed url   href: 'socket.io-client@0.9.16' }
+473 verbose cache add name="socket.io-client" spec="0.9.16" args=["socket.io-client","0.9.16"]
+474 verbose parsed url { pathname: '0.9.16', path: '0.9.16', href: '0.9.16' }
+475 verbose addNamed [ 'socket.io-client', '0.9.16' ]
+476 verbose addNamed [ '0.9.16', '0.9.16' ]
+477 silly lockFile c81dc0af-socket-io-client-0-9-16 socket.io-client@0.9.16
+478 verbose lock socket.io-client@0.9.16 /Users/appacademy/.npm/c81dc0af-socket-io-client-0-9-16.lock
+479 verbose cache add [ 'policyfile@0.0.4', null ]
+480 verbose cache add name=undefined spec="policyfile@0.0.4" args=["policyfile@0.0.4",null]
+481 verbose parsed url { pathname: 'policyfile@0.0.4',
+481 verbose parsed url   path: 'policyfile@0.0.4',
+481 verbose parsed url   href: 'policyfile@0.0.4' }
+482 verbose cache add name="policyfile" spec="0.0.4" args=["policyfile","0.0.4"]
+483 verbose parsed url { pathname: '0.0.4', path: '0.0.4', href: '0.0.4' }
+484 verbose addNamed [ 'policyfile', '0.0.4' ]
+485 verbose addNamed [ '0.0.4', '0.0.4' ]
+486 silly lockFile 8b99131a-policyfile-0-0-4 policyfile@0.0.4
+487 verbose lock policyfile@0.0.4 /Users/appacademy/.npm/8b99131a-policyfile-0-0-4.lock
+488 verbose cache add [ 'base64id@0.1.0', null ]
+489 verbose cache add name=undefined spec="base64id@0.1.0" args=["base64id@0.1.0",null]
+490 verbose parsed url { pathname: 'base64id@0.1.0',
+490 verbose parsed url   path: 'base64id@0.1.0',
+490 verbose parsed url   href: 'base64id@0.1.0' }
+491 verbose cache add name="base64id" spec="0.1.0" args=["base64id","0.1.0"]
+492 verbose parsed url { pathname: '0.1.0', path: '0.1.0', href: '0.1.0' }
+493 verbose addNamed [ 'base64id', '0.1.0' ]
+494 verbose addNamed [ '0.1.0', '0.1.0' ]
+495 silly lockFile b2185bf4-base64id-0-1-0 base64id@0.1.0
+496 verbose lock base64id@0.1.0 /Users/appacademy/.npm/b2185bf4-base64id-0-1-0.lock
+497 verbose cache add [ 'redis@0.7.3', null ]
+498 verbose cache add name=undefined spec="redis@0.7.3" args=["redis@0.7.3",null]
+499 verbose parsed url { pathname: 'redis@0.7.3',
+499 verbose parsed url   path: 'redis@0.7.3',
+499 verbose parsed url   href: 'redis@0.7.3' }
+500 verbose cache add name="redis" spec="0.7.3" args=["redis","0.7.3"]
+501 verbose parsed url { pathname: '0.7.3', path: '0.7.3', href: '0.7.3' }
+502 verbose addNamed [ 'redis', '0.7.3' ]
+503 verbose addNamed [ '0.7.3', '0.7.3' ]
+504 silly lockFile 10399cfa-redis-0-7-3 redis@0.7.3
+505 verbose lock redis@0.7.3 /Users/appacademy/.npm/10399cfa-redis-0-7-3.lock
+506 verbose url raw socket.io-client/0.9.16
+507 verbose url resolving [ 'https://registry.npmjs.org/', './socket.io-client/0.9.16' ]
+508 verbose url resolved https://registry.npmjs.org/socket.io-client/0.9.16
+509 info trying registry request attempt 1 at 10:47:55
+510 http GET https://registry.npmjs.org/socket.io-client/0.9.16
+511 verbose url raw base64id/0.1.0
+512 verbose url resolving [ 'https://registry.npmjs.org/', './base64id/0.1.0' ]
+513 verbose url resolved https://registry.npmjs.org/base64id/0.1.0
+514 info trying registry request attempt 1 at 10:47:55
+515 verbose etag "CTLQBM2XI54YVEFGWA4X7AK4Y"
+516 http GET https://registry.npmjs.org/base64id/0.1.0
+517 verbose url raw policyfile/0.0.4
+518 verbose url resolving [ 'https://registry.npmjs.org/', './policyfile/0.0.4' ]
+519 verbose url resolved https://registry.npmjs.org/policyfile/0.0.4
+520 info trying registry request attempt 1 at 10:47:55
+521 verbose etag "EQQXYDZ0BJGG3E5IVIRAEV9J"
+522 http GET https://registry.npmjs.org/policyfile/0.0.4
+523 verbose url raw redis/0.7.3
+524 verbose url resolving [ 'https://registry.npmjs.org/', './redis/0.7.3' ]
+525 verbose url resolved https://registry.npmjs.org/redis/0.7.3
+526 info trying registry request attempt 1 at 10:47:55
+527 verbose etag "7M9HDQPHSGQI0ESS2TCYPM7X5"
+528 http GET https://registry.npmjs.org/redis/0.7.3
+529 http 200 https://registry.npmjs.org/range-parser/0.0.4
+530 silly registry.get cb [ 200,
+530 silly registry.get   { vary: 'Accept',
+530 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+530 silly registry.get     etag: '"27HRUXP1C4FYWUHH9AKW9J76C"',
+530 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:25 GMT',
+530 silly registry.get     'content-type': 'application/json',
+530 silly registry.get     'content-length': '728' } ]
+531 silly lockFile edd85cc6-ge-parser-range-parser-0-0-4-tgz https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+532 verbose lock https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz /Users/appacademy/.npm/edd85cc6-ge-parser-range-parser-0-0-4-tgz.lock
+533 verbose addRemoteTarball [ 'https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz',
+533 verbose addRemoteTarball   'c0427ffef51c10acba0782a46c9602e744ff620b' ]
+534 info retry fetch attempt 1 at 10:48:22
+535 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902553-0.24321826617233455/tmp.tgz
+536 http GET https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+537 http 200 https://registry.npmjs.org/buffer-crc32/0.2.1
+538 silly registry.get cb [ 200,
+538 silly registry.get   { vary: 'Accept',
+538 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+538 silly registry.get     etag: '"4JLO8SIQOKXMA94PVFN5E59WV"',
+538 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:25 GMT',
+538 silly registry.get     'content-type': 'application/json',
+538 silly registry.get     'content-length': '2483' } ]
+539 silly lockFile bc249dfa-fer-crc32-buffer-crc32-0-2-1-tgz https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+540 verbose lock https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz /Users/appacademy/.npm/bc249dfa-fer-crc32-buffer-crc32-0-2-1-tgz.lock
+541 verbose addRemoteTarball [ 'https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz',
+541 verbose addRemoteTarball   'be3e5382fc02b6d6324956ac1af98aa98b08534c' ]
+542 info retry fetch attempt 1 at 10:48:22
+543 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+544 http GET https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+545 http 200 https://registry.npmjs.org/fresh/0.2.0
+546 silly registry.get cb [ 200,
+546 silly registry.get   { vary: 'Accept',
+546 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+546 silly registry.get     etag: '"6CDQ014VE8MJLSGJOYMKCVKVG"',
+546 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:25 GMT',
+546 silly registry.get     'content-type': 'application/json',
+546 silly registry.get     'content-length': '2459' } ]
+547 silly lockFile 1150ef08--npmjs-org-fresh-fresh-0-2-0-tgz https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+548 verbose lock https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz /Users/appacademy/.npm/1150ef08--npmjs-org-fresh-fresh-0-2-0-tgz.lock
+549 verbose addRemoteTarball [ 'https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz',
+549 verbose addRemoteTarball   'bfd9402cf3df12c4a4c310c79f99a3dde13d34a7' ]
+550 info retry fetch attempt 1 at 10:48:22
+551 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902615-0.47036022739484906/tmp.tgz
+552 http GET https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+553 http 200 https://registry.npmjs.org/commander/1.3.2
+554 silly registry.get cb [ 200,
+554 silly registry.get   { vary: 'Accept',
+554 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+554 silly registry.get     etag: '"27IZG02YYKQFVTUPHC3CC5OQ5"',
+554 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:25 GMT',
+554 silly registry.get     'content-type': 'application/json',
+554 silly registry.get     'content-length': '8167' } ]
+555 http 200 https://registry.npmjs.org/connect/2.9.2
+556 silly registry.get cb [ 200,
+556 silly registry.get   { vary: 'Accept',
+556 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+556 silly registry.get     etag: '"6VJVVVC1M4YCIYHHO77GGEVZW"',
+556 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:25 GMT',
+556 silly registry.get     'content-type': 'application/json',
+556 silly registry.get     'content-length': '4524' } ]
+557 silly lockFile 0d5429af-rg-commander-commander-1-3-2-tgz https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+558 verbose lock https://registry.npmjs.org/commander/-/commander-1.3.2.tgz /Users/appacademy/.npm/0d5429af-rg-commander-commander-1-3-2-tgz.lock
+559 silly lockFile ccfe2948-js-org-connect-connect-2-9-2-tgz https://registry.npmjs.org/connect/-/connect-2.9.2.tgz
+560 verbose lock https://registry.npmjs.org/connect/-/connect-2.9.2.tgz /Users/appacademy/.npm/ccfe2948-js-org-connect-connect-2-9-2-tgz.lock
+561 verbose addRemoteTarball [ 'https://registry.npmjs.org/commander/-/commander-1.3.2.tgz',
+561 verbose addRemoteTarball   '8a8f30ec670a6fdd64af52f1914b907d79ead5b5' ]
+562 verbose addRemoteTarball [ 'https://registry.npmjs.org/connect/-/connect-2.9.2.tgz',
+562 verbose addRemoteTarball   '5866640d2c18e2adcf3f080f5f730c9ee47158bf' ]
+563 info retry fetch attempt 1 at 10:48:22
+564 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902629-0.5753017808310688/tmp.tgz
+565 info retry fetch attempt 1 at 10:48:22
+566 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+567 http GET https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+568 http GET https://registry.npmjs.org/connect/-/connect-2.9.2.tgz
+569 info retry will retry, error on last attempt: Error: socket hang up
+570 info retry will retry, error on last attempt: Error: socket hang up
+571 info retry will retry, error on last attempt: Error: socket hang up
+572 info retry will retry, error on last attempt: Error: socket hang up
+573 info retry will retry, error on last attempt: Error: socket hang up
+574 http 500 https://registry.npmjs.org/mkdirp/0.3.5
+575 verbose bad json Internal routing error
+575 verbose bad json
+575 verbose bad json Sorry, we cannot connect to the intended server.
+575 verbose bad json
+575 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+575 verbose bad json
+575 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+576 error registry error parsing json
+577 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+577 info retry Internal routing error
+577 info retry
+577 info retry Sorry, we cannot connect to the intended server.
+577 info retry
+577 info retry We have just been notified of this problem. We will correct it as soon as possible.
+577 info retry
+577 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+578 error fetch failed https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+579 info retry will retry, error on last attempt: Error: socket hang up
+580 http 500 https://registry.npmjs.org/redis/0.7.3
+581 verbose bad json Internal routing error
+581 verbose bad json
+581 verbose bad json Sorry, we cannot connect to the intended server.
+581 verbose bad json
+581 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+581 verbose bad json
+581 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+582 error registry error parsing json
+583 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+583 info retry Internal routing error
+583 info retry
+583 info retry Sorry, we cannot connect to the intended server.
+583 info retry
+583 info retry We have just been notified of this problem. We will correct it as soon as possible.
+583 info retry
+583 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+584 http 500 https://registry.npmjs.org/base64id/0.1.0
+585 verbose bad json Internal routing error
+585 verbose bad json
+585 verbose bad json Sorry, we cannot connect to the intended server.
+585 verbose bad json
+585 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+585 verbose bad json
+585 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+586 error registry error parsing json
+587 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+587 info retry Internal routing error
+587 info retry
+587 info retry Sorry, we cannot connect to the intended server.
+587 info retry
+587 info retry We have just been notified of this problem. We will correct it as soon as possible.
+587 info retry
+587 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+588 error fetch failed https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+589 info retry will retry, error on last attempt: Error: socket hang up
+590 error fetch failed https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+591 info retry will retry, error on last attempt: Error: socket hang up
+592 http 304 https://registry.npmjs.org/policyfile/0.0.4
+593 silly registry.get cb [ 304,
+593 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+593 silly registry.get     etag: '"EQQXYDZ0BJGG3E5IVIRAEV9J"',
+593 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:41 GMT',
+593 silly registry.get     'content-length': '0' } ]
+594 verbose etag policyfile/0.0.4 from cache
+595 verbose read json /Users/appacademy/.npm/policyfile/0.0.4/package/package.json
+596 silly lockFile 8b99131a-policyfile-0-0-4 policyfile@0.0.4
+597 silly lockFile 8b99131a-policyfile-0-0-4 policyfile@0.0.4
+598 http 200 https://registry.npmjs.org/socket.io-client/0.9.16
+599 silly registry.get cb [ 200,
+599 silly registry.get   { vary: 'Accept',
+599 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+599 silly registry.get     etag: '"48K4DPDE5851FDNEJQ3WETQ07"',
+599 silly registry.get     date: 'Mon, 04 Nov 2013 18:48:42 GMT',
+599 silly registry.get     'content-type': 'application/json',
+599 silly registry.get     'content-length': '7780' } ]
+600 silly lockFile 83592abd-ient-socket-io-client-0-9-16-tgz https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz
+601 verbose lock https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz /Users/appacademy/.npm/83592abd-ient-socket-io-client-0-9-16-tgz.lock
+602 verbose addRemoteTarball [ 'https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz',
+602 verbose addRemoteTarball   '4da7515c5e773041d1b423970415bcc430f35fc6' ]
+603 info retry fetch attempt 1 at 10:48:39
+604 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+605 http GET https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz
+606 http 200 https://registry.npmjs.org/connect/-/connect-2.9.2.tgz
+607 silly shasum updated bytes 40960
+608 silly shasum updated bytes 36162
+609 info shasum 5866640d2c18e2adcf3f080f5f730c9ee47158bf
+609 info shasum /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+610 verbose tar unpack /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+611 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+612 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package /Users/appacademy/.npm/b27e12f9-02630-0-9177577230148017-package.lock
+613 silly lockFile 7b5c1a7b-02630-0-9177577230148017-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+614 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz /Users/appacademy/.npm/7b5c1a7b-02630-0-9177577230148017-tmp-tgz.lock
+615 silly gunzTarPerm modes [ '755', '644' ]
+616 silly gunzTarPerm extractEntry package.json
+617 silly gunzTarPerm extractEntry .npmignore
+618 silly gunzTarPerm extractEntry LICENSE
+619 silly gunzTarPerm extractEntry index.js
+620 silly gunzTarPerm extractEntry .travis.yml
+621 silly gunzTarPerm extractEntry lib/cache.js
+622 silly gunzTarPerm extractEntry lib/connect.js
+623 silly gunzTarPerm extractEntry lib/index.js
+624 silly gunzTarPerm extractEntry lib/patch.js
+625 silly gunzTarPerm extractEntry lib/proto.js
+626 silly gunzTarPerm extractEntry lib/utils.js
+627 silly gunzTarPerm extractEntry lib/middleware/basicAuth.js
+628 silly gunzTarPerm extractEntry lib/middleware/errorHandler.js
+629 silly gunzTarPerm extractEntry lib/middleware/favicon.js
+630 silly gunzTarPerm extractEntry lib/middleware/json.js
+631 silly gunzTarPerm extractEntry lib/middleware/limit.js
+632 silly gunzTarPerm extractEntry lib/middleware/directory.js
+633 silly gunzTarPerm extractEntry lib/middleware/methodOverride.js
+634 silly gunzTarPerm extractEntry lib/middleware/multipart.js
+635 silly gunzTarPerm extractEntry lib/middleware/query.js
+636 silly gunzTarPerm extractEntry lib/middleware/responseTime.js
+637 silly gunzTarPerm extractEntry lib/middleware/urlencoded.js
+638 silly gunzTarPerm extractEntry lib/middleware/csrf.js
+639 silly gunzTarPerm extractEntry lib/middleware/session.js
+640 silly gunzTarPerm extractEntry lib/middleware/cookieSession.js
+641 silly gunzTarPerm extractEntry lib/middleware/static.js
+642 silly gunzTarPerm extractEntry lib/middleware/cookieParser.js
+643 silly gunzTarPerm extractEntry lib/middleware/staticCache.js
+644 silly gunzTarPerm extractEntry lib/middleware/compress.js
+645 silly gunzTarPerm extractEntry lib/middleware/timeout.js
+646 silly gunzTarPerm extractEntry lib/middleware/bodyParser.js
+647 silly gunzTarPerm extractEntry lib/middleware/vhost.js
+648 silly gunzTarPerm extractEntry lib/middleware/logger.js
+649 silly gunzTarPerm extractEntry lib/middleware/session/cookie.js
+650 silly gunzTarPerm extractEntry lib/middleware/session/memory.js
+651 silly gunzTarPerm extractEntry lib/middleware/session/session.js
+652 silly gunzTarPerm extractEntry lib/middleware/session/store.js
+653 silly gunzTarPerm extractEntry lib/public/directory.html
+654 silly gunzTarPerm extractEntry lib/public/error.html
+655 silly gunzTarPerm extractEntry lib/public/favicon.ico
+656 silly gunzTarPerm extractEntry lib/public/icons/page_white_edit.png
+657 silly gunzTarPerm extractEntry lib/public/icons/page.png
+658 silly gunzTarPerm extractEntry lib/public/icons/page_attach.png
+659 silly gunzTarPerm extractEntry lib/public/icons/page_code.png
+660 silly gunzTarPerm extractEntry lib/public/icons/page_copy.png
+661 silly gunzTarPerm extractEntry lib/public/icons/page_delete.png
+662 silly gunzTarPerm extractEntry lib/public/icons/page_edit.png
+663 silly gunzTarPerm extractEntry lib/public/icons/page_error.png
+664 silly gunzTarPerm extractEntry lib/public/icons/page_excel.png
+665 silly gunzTarPerm extractEntry lib/public/icons/page_find.png
+666 silly gunzTarPerm extractEntry lib/public/icons/page_gear.png
+667 silly gunzTarPerm extractEntry lib/public/icons/page_go.png
+668 silly gunzTarPerm extractEntry lib/public/icons/page_green.png
+669 silly gunzTarPerm extractEntry lib/public/icons/page_key.png
+670 silly gunzTarPerm extractEntry lib/public/icons/page_lightning.png
+671 silly gunzTarPerm extractEntry lib/public/icons/page_link.png
+672 silly gunzTarPerm extractEntry lib/public/icons/page_paintbrush.png
+673 silly gunzTarPerm extractEntry lib/public/icons/page_paste.png
+674 silly gunzTarPerm extractEntry lib/public/icons/page_red.png
+675 silly gunzTarPerm extractEntry lib/public/icons/page_refresh.png
+676 silly gunzTarPerm extractEntry lib/public/icons/page_save.png
+677 silly gunzTarPerm extractEntry lib/public/icons/page_white.png
+678 silly gunzTarPerm extractEntry lib/public/icons/page_white_acrobat.png
+679 silly gunzTarPerm extractEntry lib/public/icons/page_white_actionscript.png
+680 silly gunzTarPerm extractEntry lib/public/icons/page_white_add.png
+681 silly gunzTarPerm extractEntry lib/public/icons/page_white_c.png
+682 silly gunzTarPerm extractEntry lib/public/icons/page_white_camera.png
+683 silly gunzTarPerm extractEntry lib/public/icons/page_white_cd.png
+684 silly gunzTarPerm extractEntry lib/public/icons/page_white_code.png
+685 silly gunzTarPerm extractEntry lib/public/icons/page_white_code_red.png
+686 silly gunzTarPerm extractEntry lib/public/icons/page_white_coldfusion.png
+687 silly gunzTarPerm extractEntry lib/public/icons/page_white_compressed.png
+688 silly gunzTarPerm extractEntry lib/public/icons/page_white_copy.png
+689 silly gunzTarPerm extractEntry lib/public/icons/page_white_cplusplus.png
+690 silly gunzTarPerm extractEntry lib/public/icons/page_white_csharp.png
+691 silly gunzTarPerm extractEntry lib/public/icons/page_white_cup.png
+692 silly gunzTarPerm extractEntry lib/public/icons/page_white_database.png
+693 silly gunzTarPerm extractEntry lib/public/icons/page_white_delete.png
+694 silly gunzTarPerm extractEntry lib/public/icons/page_white_dvd.png
+695 silly gunzTarPerm extractEntry lib/public/icons/page_add.png
+696 silly gunzTarPerm extractEntry lib/public/icons/page_white_error.png
+697 silly gunzTarPerm extractEntry lib/public/icons/page_white_excel.png
+698 silly gunzTarPerm extractEntry lib/public/icons/page_white_find.png
+699 silly gunzTarPerm extractEntry lib/public/icons/page_white_flash.png
+700 silly gunzTarPerm extractEntry lib/public/icons/page_white_freehand.png
+701 silly gunzTarPerm extractEntry lib/public/icons/page_white_gear.png
+702 silly gunzTarPerm extractEntry lib/public/icons/page_white_get.png
+703 silly gunzTarPerm extractEntry lib/public/icons/page_white_go.png
+704 silly gunzTarPerm extractEntry lib/public/icons/page_white_h.png
+705 silly gunzTarPerm extractEntry lib/public/icons/page_white_horizontal.png
+706 silly gunzTarPerm extractEntry lib/public/icons/page_white_key.png
+707 silly gunzTarPerm extractEntry lib/public/icons/page_white_lightning.png
+708 silly gunzTarPerm extractEntry lib/public/icons/page_white_link.png
+709 silly gunzTarPerm extractEntry lib/public/icons/page_white_magnify.png
+710 silly gunzTarPerm extractEntry lib/public/icons/page_white_medal.png
+711 silly gunzTarPerm extractEntry lib/public/icons/page_white_office.png
+712 silly gunzTarPerm extractEntry lib/public/icons/page_white_paint.png
+713 silly gunzTarPerm extractEntry lib/public/icons/page_white_paintbrush.png
+714 silly gunzTarPerm extractEntry lib/public/icons/page_white_paste.png
+715 silly gunzTarPerm extractEntry lib/public/icons/page_white_php.png
+716 silly gunzTarPerm extractEntry lib/public/icons/page_white_picture.png
+717 silly gunzTarPerm extractEntry lib/public/icons/page_white_powerpoint.png
+718 silly gunzTarPerm extractEntry lib/public/icons/page_white_put.png
+719 silly gunzTarPerm extractEntry lib/public/icons/page_white_ruby.png
+720 silly gunzTarPerm extractEntry lib/public/icons/page_white_stack.png
+721 silly gunzTarPerm extractEntry lib/public/icons/page_white_star.png
+722 silly gunzTarPerm extractEntry lib/public/icons/page_white_swoosh.png
+723 silly gunzTarPerm extractEntry lib/public/icons/page_white_text.png
+724 silly gunzTarPerm extractEntry lib/public/icons/page_white_text_width.png
+725 silly gunzTarPerm extractEntry lib/public/icons/page_white_tux.png
+726 silly gunzTarPerm extractEntry lib/public/icons/page_white_vector.png
+727 silly gunzTarPerm extractEntry lib/public/icons/page_white_visualstudio.png
+728 silly gunzTarPerm extractEntry lib/public/icons/page_white_width.png
+729 silly gunzTarPerm extractEntry lib/public/icons/page_white_word.png
+730 silly gunzTarPerm extractEntry lib/public/icons/page_white_world.png
+731 silly gunzTarPerm extractEntry lib/public/icons/page_white_wrench.png
+732 silly gunzTarPerm extractEntry lib/public/icons/page_white_zip.png
+733 silly gunzTarPerm extractEntry lib/public/icons/page_word.png
+734 silly gunzTarPerm extractEntry lib/public/icons/page_world.png
+735 silly gunzTarPerm extractEntry lib/public/style.css
+736 silly gunzTarPerm extractEntry Readme.md
+737 verbose read json /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package/package.json
+738 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+739 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+740 silly lockFile 7b5c1a7b-02630-0-9177577230148017-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+741 silly lockFile 7b5c1a7b-02630-0-9177577230148017-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/tmp.tgz
+742 verbose from cache /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package/package.json
+743 verbose tar pack [ '/Users/appacademy/.npm/connect/2.9.2/package.tgz',
+743 verbose tar pack   '/var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package' ]
+744 verbose tarball /Users/appacademy/.npm/connect/2.9.2/package.tgz
+745 verbose folder /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+746 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+747 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package /Users/appacademy/.npm/b27e12f9-02630-0-9177577230148017-package.lock
+748 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+749 verbose lock /Users/appacademy/.npm/connect/2.9.2/package.tgz /Users/appacademy/.npm/5507400f-my-npm-connect-2-9-2-package-tgz.lock
+750 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+751 silly lockFile b27e12f9-02630-0-9177577230148017-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902630-0.9177577230148017/package
+752 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+753 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+754 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+755 verbose lock /Users/appacademy/.npm/connect/2.9.2/package /Users/appacademy/.npm/8a1593de-cademy-npm-connect-2-9-2-package.lock
+756 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+757 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+758 verbose tar unpack /Users/appacademy/.npm/connect/2.9.2/package.tgz
+759 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+760 verbose lock /Users/appacademy/.npm/connect/2.9.2/package /Users/appacademy/.npm/8a1593de-cademy-npm-connect-2-9-2-package.lock
+761 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+762 verbose lock /Users/appacademy/.npm/connect/2.9.2/package.tgz /Users/appacademy/.npm/5507400f-my-npm-connect-2-9-2-package-tgz.lock
+763 silly gunzTarPerm modes [ '755', '644' ]
+764 silly gunzTarPerm extractEntry package.json
+765 silly gunzTarPerm extractEntry .npmignore
+766 silly gunzTarPerm extractEntry LICENSE
+767 silly gunzTarPerm extractEntry index.js
+768 silly gunzTarPerm extractEntry .travis.yml
+769 silly gunzTarPerm extractEntry lib/cache.js
+770 silly gunzTarPerm extractEntry lib/connect.js
+771 silly gunzTarPerm extractEntry lib/index.js
+772 silly gunzTarPerm extractEntry lib/patch.js
+773 silly gunzTarPerm extractEntry lib/proto.js
+774 silly gunzTarPerm extractEntry lib/utils.js
+775 silly gunzTarPerm extractEntry lib/middleware/basicAuth.js
+776 silly gunzTarPerm extractEntry lib/middleware/errorHandler.js
+777 silly gunzTarPerm extractEntry lib/middleware/favicon.js
+778 silly gunzTarPerm extractEntry lib/middleware/json.js
+779 silly gunzTarPerm extractEntry lib/middleware/limit.js
+780 silly gunzTarPerm extractEntry lib/middleware/directory.js
+781 silly gunzTarPerm extractEntry lib/middleware/methodOverride.js
+782 silly gunzTarPerm extractEntry lib/middleware/multipart.js
+783 silly gunzTarPerm extractEntry lib/middleware/query.js
+784 silly gunzTarPerm extractEntry lib/middleware/responseTime.js
+785 silly gunzTarPerm extractEntry lib/middleware/urlencoded.js
+786 silly gunzTarPerm extractEntry lib/middleware/csrf.js
+787 silly gunzTarPerm extractEntry lib/middleware/session.js
+788 silly gunzTarPerm extractEntry lib/middleware/cookieSession.js
+789 silly gunzTarPerm extractEntry lib/middleware/static.js
+790 silly gunzTarPerm extractEntry lib/middleware/cookieParser.js
+791 silly gunzTarPerm extractEntry lib/middleware/staticCache.js
+792 silly gunzTarPerm extractEntry lib/middleware/compress.js
+793 silly gunzTarPerm extractEntry lib/middleware/timeout.js
+794 silly gunzTarPerm extractEntry lib/middleware/bodyParser.js
+795 silly gunzTarPerm extractEntry lib/middleware/vhost.js
+796 silly gunzTarPerm extractEntry lib/middleware/logger.js
+797 silly gunzTarPerm extractEntry lib/middleware/session/cookie.js
+798 silly gunzTarPerm extractEntry lib/middleware/session/memory.js
+799 silly gunzTarPerm extractEntry lib/middleware/session/session.js
+800 silly gunzTarPerm extractEntry lib/middleware/session/store.js
+801 silly gunzTarPerm extractEntry lib/public/directory.html
+802 silly gunzTarPerm extractEntry lib/public/error.html
+803 silly gunzTarPerm extractEntry lib/public/favicon.ico
+804 silly gunzTarPerm extractEntry lib/public/icons/page_white_edit.png
+805 silly gunzTarPerm extractEntry lib/public/icons/page.png
+806 silly gunzTarPerm extractEntry lib/public/icons/page_attach.png
+807 silly gunzTarPerm extractEntry lib/public/icons/page_code.png
+808 silly gunzTarPerm extractEntry lib/public/icons/page_copy.png
+809 silly gunzTarPerm extractEntry lib/public/icons/page_delete.png
+810 silly gunzTarPerm extractEntry lib/public/icons/page_edit.png
+811 silly gunzTarPerm extractEntry lib/public/icons/page_error.png
+812 silly gunzTarPerm extractEntry lib/public/icons/page_excel.png
+813 silly gunzTarPerm extractEntry lib/public/icons/page_find.png
+814 silly gunzTarPerm extractEntry lib/public/icons/page_gear.png
+815 silly gunzTarPerm extractEntry lib/public/icons/page_go.png
+816 silly gunzTarPerm extractEntry lib/public/icons/page_green.png
+817 silly gunzTarPerm extractEntry lib/public/icons/page_key.png
+818 silly gunzTarPerm extractEntry lib/public/icons/page_lightning.png
+819 silly gunzTarPerm extractEntry lib/public/icons/page_link.png
+820 silly gunzTarPerm extractEntry lib/public/icons/page_paintbrush.png
+821 silly gunzTarPerm extractEntry lib/public/icons/page_paste.png
+822 silly gunzTarPerm extractEntry lib/public/icons/page_red.png
+823 silly gunzTarPerm extractEntry lib/public/icons/page_refresh.png
+824 silly gunzTarPerm extractEntry lib/public/icons/page_save.png
+825 silly gunzTarPerm extractEntry lib/public/icons/page_white.png
+826 silly gunzTarPerm extractEntry lib/public/icons/page_white_acrobat.png
+827 silly gunzTarPerm extractEntry lib/public/icons/page_white_actionscript.png
+828 silly gunzTarPerm extractEntry lib/public/icons/page_white_add.png
+829 silly gunzTarPerm extractEntry lib/public/icons/page_white_c.png
+830 silly gunzTarPerm extractEntry lib/public/icons/page_white_camera.png
+831 silly gunzTarPerm extractEntry lib/public/icons/page_white_cd.png
+832 silly gunzTarPerm extractEntry lib/public/icons/page_white_code.png
+833 silly gunzTarPerm extractEntry lib/public/icons/page_white_code_red.png
+834 silly gunzTarPerm extractEntry lib/public/icons/page_white_coldfusion.png
+835 silly gunzTarPerm extractEntry lib/public/icons/page_white_compressed.png
+836 silly gunzTarPerm extractEntry lib/public/icons/page_white_copy.png
+837 silly gunzTarPerm extractEntry lib/public/icons/page_white_cplusplus.png
+838 silly gunzTarPerm extractEntry lib/public/icons/page_white_csharp.png
+839 silly gunzTarPerm extractEntry lib/public/icons/page_white_cup.png
+840 silly gunzTarPerm extractEntry lib/public/icons/page_white_database.png
+841 silly gunzTarPerm extractEntry lib/public/icons/page_white_delete.png
+842 silly gunzTarPerm extractEntry lib/public/icons/page_white_dvd.png
+843 silly gunzTarPerm extractEntry lib/public/icons/page_add.png
+844 silly gunzTarPerm extractEntry lib/public/icons/page_white_error.png
+845 silly gunzTarPerm extractEntry lib/public/icons/page_white_excel.png
+846 silly gunzTarPerm extractEntry lib/public/icons/page_white_find.png
+847 silly gunzTarPerm extractEntry lib/public/icons/page_white_flash.png
+848 silly gunzTarPerm extractEntry lib/public/icons/page_white_freehand.png
+849 silly gunzTarPerm extractEntry lib/public/icons/page_white_gear.png
+850 silly gunzTarPerm extractEntry lib/public/icons/page_white_get.png
+851 silly gunzTarPerm extractEntry lib/public/icons/page_white_go.png
+852 silly gunzTarPerm extractEntry lib/public/icons/page_white_h.png
+853 silly gunzTarPerm extractEntry lib/public/icons/page_white_horizontal.png
+854 silly gunzTarPerm extractEntry lib/public/icons/page_white_key.png
+855 silly gunzTarPerm extractEntry lib/public/icons/page_white_lightning.png
+856 silly gunzTarPerm extractEntry lib/public/icons/page_white_link.png
+857 silly gunzTarPerm extractEntry lib/public/icons/page_white_magnify.png
+858 silly gunzTarPerm extractEntry lib/public/icons/page_white_medal.png
+859 silly gunzTarPerm extractEntry lib/public/icons/page_white_office.png
+860 silly gunzTarPerm extractEntry lib/public/icons/page_white_paint.png
+861 silly gunzTarPerm extractEntry lib/public/icons/page_white_paintbrush.png
+862 silly gunzTarPerm extractEntry lib/public/icons/page_white_paste.png
+863 silly gunzTarPerm extractEntry lib/public/icons/page_white_php.png
+864 silly gunzTarPerm extractEntry lib/public/icons/page_white_picture.png
+865 silly gunzTarPerm extractEntry lib/public/icons/page_white_powerpoint.png
+866 silly gunzTarPerm extractEntry lib/public/icons/page_white_put.png
+867 silly gunzTarPerm extractEntry lib/public/icons/page_white_ruby.png
+868 silly gunzTarPerm extractEntry lib/public/icons/page_white_stack.png
+869 silly gunzTarPerm extractEntry lib/public/icons/page_white_star.png
+870 silly gunzTarPerm extractEntry lib/public/icons/page_white_swoosh.png
+871 silly gunzTarPerm extractEntry lib/public/icons/page_white_text.png
+872 silly gunzTarPerm extractEntry lib/public/icons/page_white_text_width.png
+873 silly gunzTarPerm extractEntry lib/public/icons/page_white_tux.png
+874 silly gunzTarPerm extractEntry lib/public/icons/page_white_vector.png
+875 silly gunzTarPerm extractEntry lib/public/icons/page_white_visualstudio.png
+876 silly gunzTarPerm extractEntry lib/public/icons/page_white_width.png
+877 silly gunzTarPerm extractEntry lib/public/icons/page_white_word.png
+878 silly gunzTarPerm extractEntry lib/public/icons/page_white_world.png
+879 silly gunzTarPerm extractEntry lib/public/icons/page_white_wrench.png
+880 silly gunzTarPerm extractEntry lib/public/icons/page_white_zip.png
+881 silly gunzTarPerm extractEntry lib/public/icons/page_word.png
+882 silly gunzTarPerm extractEntry lib/public/icons/page_world.png
+883 silly gunzTarPerm extractEntry lib/public/style.css
+884 silly gunzTarPerm extractEntry Readme.md
+885 verbose read json /Users/appacademy/.npm/connect/2.9.2/package/package.json
+886 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+887 silly lockFile 8a1593de-cademy-npm-connect-2-9-2-package /Users/appacademy/.npm/connect/2.9.2/package
+888 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+889 silly lockFile 5507400f-my-npm-connect-2-9-2-package-tgz /Users/appacademy/.npm/connect/2.9.2/package.tgz
+890 silly shasum updated bytes 40960
+891 silly shasum updated bytes 36162
+892 info shasum 5866640d2c18e2adcf3f080f5f730c9ee47158bf
+892 info shasum /Users/appacademy/.npm/connect/2.9.2/package.tgz
+893 verbose from cache /Users/appacademy/.npm/connect/2.9.2/package/package.json
+894 verbose chmod /Users/appacademy/.npm/connect/2.9.2/package.tgz 644
+895 verbose chown /Users/appacademy/.npm/connect/2.9.2/package.tgz [ 501, 20 ]
+896 silly lockFile ccfe2948-js-org-connect-connect-2-9-2-tgz https://registry.npmjs.org/connect/-/connect-2.9.2.tgz
+897 silly lockFile ccfe2948-js-org-connect-connect-2-9-2-tgz https://registry.npmjs.org/connect/-/connect-2.9.2.tgz
+898 silly lockFile f9180aac-connect-2-9-2 connect@2.9.2
+899 silly lockFile f9180aac-connect-2-9-2 connect@2.9.2
+900 http 200 https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+901 silly shasum updated bytes 3871
+902 info shasum be3e5382fc02b6d6324956ac1af98aa98b08534c
+902 info shasum /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+903 verbose tar unpack /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+904 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+905 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package /Users/appacademy/.npm/64e12292-02602-0-7870912731159478-package.lock
+906 silly lockFile 8001230c-02602-0-7870912731159478-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+907 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz /Users/appacademy/.npm/8001230c-02602-0-7870912731159478-tmp-tgz.lock
+908 silly gunzTarPerm modes [ '755', '644' ]
+909 silly gunzTarPerm extractEntry package.json
+910 silly gunzTarPerm extractEntry .npmignore
+911 silly gunzTarPerm extractEntry README.md
+912 silly gunzTarPerm extractEntry index.js
+913 silly gunzTarPerm extractEntry .travis.yml
+914 silly gunzTarPerm extractEntry tests/crc.test.js
+915 verbose read json /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package/package.json
+916 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+917 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+918 silly lockFile 8001230c-02602-0-7870912731159478-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+919 silly lockFile 8001230c-02602-0-7870912731159478-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/tmp.tgz
+920 verbose from cache /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package/package.json
+921 verbose tar pack [ '/Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz',
+921 verbose tar pack   '/var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package' ]
+922 verbose tarball /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+923 verbose folder /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+924 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+925 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package /Users/appacademy/.npm/64e12292-02602-0-7870912731159478-package.lock
+926 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+927 verbose lock /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz /Users/appacademy/.npm/baae65f5-m-buffer-crc32-0-2-1-package-tgz.lock
+928 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+929 silly lockFile 64e12292-02602-0-7870912731159478-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902602-0.7870912731159478/package
+930 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+931 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+932 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+933 verbose lock /Users/appacademy/.npm/buffer-crc32/0.2.1/package /Users/appacademy/.npm/8c2248e3-y-npm-buffer-crc32-0-2-1-package.lock
+934 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+935 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+936 verbose tar unpack /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+937 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+938 verbose lock /Users/appacademy/.npm/buffer-crc32/0.2.1/package /Users/appacademy/.npm/8c2248e3-y-npm-buffer-crc32-0-2-1-package.lock
+939 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+940 verbose lock /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz /Users/appacademy/.npm/baae65f5-m-buffer-crc32-0-2-1-package-tgz.lock
+941 silly gunzTarPerm modes [ '755', '644' ]
+942 silly gunzTarPerm extractEntry package.json
+943 silly gunzTarPerm extractEntry .npmignore
+944 silly gunzTarPerm extractEntry README.md
+945 silly gunzTarPerm extractEntry index.js
+946 silly gunzTarPerm extractEntry .travis.yml
+947 silly gunzTarPerm extractEntry tests/crc.test.js
+948 verbose read json /Users/appacademy/.npm/buffer-crc32/0.2.1/package/package.json
+949 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+950 silly lockFile 8c2248e3-y-npm-buffer-crc32-0-2-1-package /Users/appacademy/.npm/buffer-crc32/0.2.1/package
+951 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+952 silly lockFile baae65f5-m-buffer-crc32-0-2-1-package-tgz /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+953 silly shasum updated bytes 3871
+954 info shasum be3e5382fc02b6d6324956ac1af98aa98b08534c
+954 info shasum /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz
+955 verbose from cache /Users/appacademy/.npm/buffer-crc32/0.2.1/package/package.json
+956 verbose chmod /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz 644
+957 verbose chown /Users/appacademy/.npm/buffer-crc32/0.2.1/package.tgz [ 501, 20 ]
+958 silly lockFile bc249dfa-fer-crc32-buffer-crc32-0-2-1-tgz https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+959 silly lockFile bc249dfa-fer-crc32-buffer-crc32-0-2-1-tgz https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+960 silly lockFile 057d0d26-buffer-crc32-0-2-1 buffer-crc32@0.2.1
+961 silly lockFile 057d0d26-buffer-crc32-0-2-1 buffer-crc32@0.2.1
+962 info trying registry request attempt 2 at 10:48:42
+963 http GET https://registry.npmjs.org/cookie-signature/1.0.1
+964 info trying registry request attempt 2 at 10:48:42
+965 http GET https://registry.npmjs.org/send/0.1.4
+966 info trying registry request attempt 2 at 10:48:42
+967 http GET https://registry.npmjs.org/cookie/0.1.0
+968 info trying registry request attempt 2 at 10:48:42
+969 http GET https://registry.npmjs.org/methods/0.0.1
+970 info trying registry request attempt 2 at 10:48:42
+971 http GET https://registry.npmjs.org/debug
+972 info trying registry request attempt 2 at 10:48:43
+973 http GET https://registry.npmjs.org/mkdirp/0.3.5
+974 info retry fetch attempt 2 at 10:48:43
+975 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902553-0.24321826617233455/tmp.tgz
+976 http GET https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+977 info trying registry request attempt 2 at 10:48:45
+978 verbose etag "7M9HDQPHSGQI0ESS2TCYPM7X5"
+979 http GET https://registry.npmjs.org/redis/0.7.3
+980 info trying registry request attempt 2 at 10:48:45
+981 verbose etag "CTLQBM2XI54YVEFGWA4X7AK4Y"
+982 http GET https://registry.npmjs.org/base64id/0.1.0
+983 info retry fetch attempt 2 at 10:48:45
+984 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902615-0.47036022739484906/tmp.tgz
+985 info retry fetch attempt 2 at 10:48:45
+986 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902629-0.5753017808310688/tmp.tgz
+987 http GET https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+988 http GET https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+989 http 200 https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz
+990 silly shasum updated bytes 40960
+991 silly shasum updated bytes 40960
+992 silly shasum updated bytes 40960
+993 silly shasum updated bytes 40960
+994 silly shasum updated bytes 40960
+995 silly shasum updated bytes 40960
+996 silly shasum updated bytes 40960
+997 silly shasum updated bytes 40960
+998 silly shasum updated bytes 40960
+999 silly shasum updated bytes 40960
+1000 silly shasum updated bytes 40960
+1001 silly shasum updated bytes 40960
+1002 silly shasum updated bytes 40960
+1003 silly shasum updated bytes 40960
+1004 silly shasum updated bytes 40960
+1005 silly shasum updated bytes 40960
+1006 silly shasum updated bytes 40960
+1007 silly shasum updated bytes 40960
+1008 silly shasum updated bytes 40960
+1009 silly shasum updated bytes 40960
+1010 silly shasum updated bytes 40960
+1011 silly shasum updated bytes 40960
+1012 silly shasum updated bytes 40960
+1013 silly shasum updated bytes 40960
+1014 silly shasum updated bytes 32939
+1015 info shasum 4da7515c5e773041d1b423970415bcc430f35fc6
+1015 info shasum /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+1016 verbose tar unpack /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+1017 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1018 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package /Users/appacademy/.npm/55677af8-9696-0-13163388962857425-package.lock
+1019 silly lockFile a5d44491-9696-0-13163388962857425-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+1020 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz /Users/appacademy/.npm/a5d44491-9696-0-13163388962857425-tmp-tgz.lock
+1021 silly gunzTarPerm modes [ '755', '644' ]
+1022 silly gunzTarPerm extractEntry package.json
+1023 silly gunzTarPerm extractEntry .npmignore
+1024 silly gunzTarPerm extractEntry README.md
+1025 silly gunzTarPerm extractEntry bin/builder.js
+1026 silly gunzTarPerm extractEntry components/component-bind/index.js
+1027 silly gunzTarPerm extractEntry components/component-bind/component.json
+1028 silly gunzTarPerm extractEntry components/component-emitter/index.js
+1029 silly gunzTarPerm extractEntry components/component-emitter/component.json
+1030 silly gunzTarPerm extractEntry components/component-json/index.js
+1031 silly gunzTarPerm extractEntry components/component-json/component.json
+1032 silly gunzTarPerm extractEntry components/component-json-fallback/index.js
+1033 silly gunzTarPerm extractEntry components/component-json-fallback/component.json
+1034 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/component.json
+1035 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/emitter.js
+1036 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/index.js
+1037 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/parser.js
+1038 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/socket.js
+1039 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transport.js
+1040 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/util.js
+1041 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/flashsocket.js
+1042 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/index.js
+1043 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling-jsonp.js
+1044 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling-xhr.js
+1045 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling.js
+1046 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/websocket.js
+1047 silly gunzTarPerm extractEntry components/learnboost-socket.io-protocol/index.js
+1048 silly gunzTarPerm extractEntry components/learnboost-socket.io-protocol/component.json
+1049 silly gunzTarPerm extractEntry components/timoxley-to-array/index.js
+1050 silly gunzTarPerm extractEntry components/timoxley-to-array/component.json
+1051 silly gunzTarPerm extractEntry components/visionmedia-debug/debug.js
+1052 silly gunzTarPerm extractEntry components/visionmedia-debug/index.js
+1053 silly gunzTarPerm extractEntry components/visionmedia-debug/component.json
+1054 silly gunzTarPerm extractEntry dist/socket.io.js
+1055 silly gunzTarPerm extractEntry dist/socket.io.min.js
+1056 silly gunzTarPerm extractEntry dist/WebSocketMain.swf
+1057 silly gunzTarPerm extractEntry dist/WebSocketMainInsecure.swf
+1058 silly gunzTarPerm extractEntry History.md
+1059 silly gunzTarPerm extractEntry lib/events.js
+1060 silly gunzTarPerm extractEntry lib/io.js
+1061 silly gunzTarPerm extractEntry lib/json.js
+1062 silly gunzTarPerm extractEntry lib/namespace.js
+1063 silly gunzTarPerm extractEntry lib/parser.js
+1064 silly gunzTarPerm extractEntry lib/socket.js
+1065 silly gunzTarPerm extractEntry lib/transport.js
+1066 silly gunzTarPerm extractEntry lib/util.js
+1067 silly gunzTarPerm extractEntry lib/transports/flashsocket.js
+1068 silly gunzTarPerm extractEntry lib/transports/htmlfile.js
+1069 silly gunzTarPerm extractEntry lib/transports/jsonp-polling.js
+1070 silly gunzTarPerm extractEntry lib/transports/websocket.js
+1071 silly gunzTarPerm extractEntry lib/transports/xhr-polling.js
+1072 silly gunzTarPerm extractEntry lib/transports/xhr.js
+1073 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/.npmignore
+1074 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/README.md
+1075 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/swfobject.js
+1076 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/web_socket.js
+1077 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/build.sh
+1078 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/adobe/net/proxies/RFC2817Socket.as
+1079 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as
+1080 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/MozillaRootCertificates.as
+1081 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as
+1082 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as
+1083 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as
+1084 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as
+1085 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as
+1086 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as
+1087 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as
+1088 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as
+1089 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as
+1090 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as
+1091 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as
+1092 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as
+1093 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as
+1094 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as
+1095 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as
+1096 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as
+1097 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as
+1098 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/rsa/RSAKey.as
+1099 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as
+1100 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as
+1101 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as
+1102 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as
+1103 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as
+1104 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as
+1105 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as
+1106 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as
+1107 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/dump.txt
+1108 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as
+1109 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as
+1110 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as
+1111 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/aeskey.pl
+1112 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as
+1113 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as
+1114 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as
+1115 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as
+1116 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as
+1117 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as
+1118 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as
+1119 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SSLPad.as
+1120 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as
+1121 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as
+1122 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as
+1123 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as
+1124 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as
+1125 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as
+1126 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as
+1127 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as
+1128 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as
+1129 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as
+1130 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as
+1131 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as
+1132 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as
+1133 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as
+1134 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as
+1135 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as
+1136 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as
+1137 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as
+1138 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as
+1139 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as
+1140 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as
+1141 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as
+1142 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as
+1143 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as
+1144 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as
+1145 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as
+1146 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as
+1147 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/BulkCiphers.as
+1148 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as
+1149 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as
+1150 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as
+1151 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as
+1152 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLConnectionState.as
+1153 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as
+1154 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as
+1155 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as
+1156 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as
+1157 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEngine.as
+1158 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as
+1159 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as
+1160 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as
+1161 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as
+1162 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as
+1163 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSTest.as
+1164 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as
+1165 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as
+1166 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as
+1167 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as
+1168 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as
+1169 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as
+1170 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as
+1171 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as
+1172 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as
+1173 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as
+1174 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as
+1175 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as
+1176 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as
+1177 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as
+1178 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as
+1179 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as
+1180 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as
+1181 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as
+1182 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as
+1183 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as
+1184 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as
+1185 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as
+1186 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as
+1187 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/IWebSocketLogger.as
+1188 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocket.as
+1189 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketEvent.as
+1190 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketMain.as
+1191 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketMainInsecure.as
+1192 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/sample.html
+1193 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/WebSocketMain.swf
+1194 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/WebSocketMainInsecure.zip
+1195 silly gunzTarPerm extractEntry Makefile
+1196 silly gunzTarPerm extractEntry test/events.test.js
+1197 silly gunzTarPerm extractEntry test/io.test.js
+1198 silly gunzTarPerm extractEntry test/parser.test.js
+1199 silly gunzTarPerm extractEntry test/socket.test.js
+1200 silly gunzTarPerm extractEntry test/util.test.js
+1201 silly gunzTarPerm extractEntry test/worker.js
+1202 silly gunzTarPerm extractEntry test/node/builder.common.js
+1203 silly gunzTarPerm extractEntry test/node/builder.test.js
+1204 verbose read json /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package/package.json
+1205 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1206 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1207 silly lockFile a5d44491-9696-0-13163388962857425-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+1208 silly lockFile a5d44491-9696-0-13163388962857425-tmp-tgz /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/tmp.tgz
+1209 verbose from cache /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package/package.json
+1210 verbose tar pack [ '/Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz',
+1210 verbose tar pack   '/var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package' ]
+1211 verbose tarball /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1212 verbose folder /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1213 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1214 verbose lock /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package /Users/appacademy/.npm/55677af8-9696-0-13163388962857425-package.lock
+1215 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1216 verbose lock /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz /Users/appacademy/.npm/5802b0f5-ket-io-client-0-9-16-package-tgz.lock
+1217 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1218 silly lockFile 55677af8-9696-0-13163388962857425-package /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590919696-0.13163388962857425/package
+1219 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1220 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1221 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1222 verbose lock /Users/appacademy/.npm/socket.io-client/0.9.16/package /Users/appacademy/.npm/0de36099--socket-io-client-0-9-16-package.lock
+1223 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1224 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1225 verbose tar unpack /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1226 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1227 verbose lock /Users/appacademy/.npm/socket.io-client/0.9.16/package /Users/appacademy/.npm/0de36099--socket-io-client-0-9-16-package.lock
+1228 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1229 verbose lock /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz /Users/appacademy/.npm/5802b0f5-ket-io-client-0-9-16-package-tgz.lock
+1230 silly gunzTarPerm modes [ '755', '644' ]
+1231 silly gunzTarPerm extractEntry package.json
+1232 silly gunzTarPerm extractEntry .npmignore
+1233 silly gunzTarPerm extractEntry README.md
+1234 silly gunzTarPerm extractEntry bin/builder.js
+1235 silly gunzTarPerm extractEntry components/component-bind/index.js
+1236 silly gunzTarPerm extractEntry components/component-bind/component.json
+1237 silly gunzTarPerm extractEntry components/component-emitter/index.js
+1238 silly gunzTarPerm extractEntry components/component-emitter/component.json
+1239 silly gunzTarPerm extractEntry components/component-json/index.js
+1240 silly gunzTarPerm extractEntry components/component-json/component.json
+1241 silly gunzTarPerm extractEntry components/component-json-fallback/index.js
+1242 silly gunzTarPerm extractEntry components/component-json-fallback/component.json
+1243 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/component.json
+1244 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/emitter.js
+1245 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/index.js
+1246 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/parser.js
+1247 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/socket.js
+1248 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transport.js
+1249 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/util.js
+1250 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/flashsocket.js
+1251 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/index.js
+1252 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling-jsonp.js
+1253 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling-xhr.js
+1254 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/polling.js
+1255 silly gunzTarPerm extractEntry components/learnboost-engine.io-client/lib/transports/websocket.js
+1256 silly gunzTarPerm extractEntry components/learnboost-socket.io-protocol/index.js
+1257 silly gunzTarPerm extractEntry components/learnboost-socket.io-protocol/component.json
+1258 silly gunzTarPerm extractEntry components/timoxley-to-array/index.js
+1259 silly gunzTarPerm extractEntry components/timoxley-to-array/component.json
+1260 silly gunzTarPerm extractEntry components/visionmedia-debug/debug.js
+1261 silly gunzTarPerm extractEntry components/visionmedia-debug/index.js
+1262 silly gunzTarPerm extractEntry components/visionmedia-debug/component.json
+1263 silly gunzTarPerm extractEntry dist/socket.io.js
+1264 silly gunzTarPerm extractEntry dist/socket.io.min.js
+1265 silly gunzTarPerm extractEntry dist/WebSocketMain.swf
+1266 silly gunzTarPerm extractEntry dist/WebSocketMainInsecure.swf
+1267 silly gunzTarPerm extractEntry History.md
+1268 silly gunzTarPerm extractEntry lib/events.js
+1269 silly gunzTarPerm extractEntry lib/io.js
+1270 silly gunzTarPerm extractEntry lib/json.js
+1271 silly gunzTarPerm extractEntry lib/namespace.js
+1272 silly gunzTarPerm extractEntry lib/parser.js
+1273 silly gunzTarPerm extractEntry lib/socket.js
+1274 silly gunzTarPerm extractEntry lib/transport.js
+1275 silly gunzTarPerm extractEntry lib/util.js
+1276 silly gunzTarPerm extractEntry lib/transports/flashsocket.js
+1277 silly gunzTarPerm extractEntry lib/transports/htmlfile.js
+1278 silly gunzTarPerm extractEntry lib/transports/jsonp-polling.js
+1279 silly gunzTarPerm extractEntry lib/transports/websocket.js
+1280 silly gunzTarPerm extractEntry lib/transports/xhr-polling.js
+1281 silly gunzTarPerm extractEntry lib/transports/xhr.js
+1282 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/.npmignore
+1283 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/README.md
+1284 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/swfobject.js
+1285 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/web_socket.js
+1286 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/build.sh
+1287 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/adobe/net/proxies/RFC2817Socket.as
+1288 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as
+1289 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/MozillaRootCertificates.as
+1290 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as
+1291 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as
+1292 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as
+1293 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as
+1294 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as
+1295 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as
+1296 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as
+1297 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as
+1298 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as
+1299 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as
+1300 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as
+1301 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as
+1302 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as
+1303 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as
+1304 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as
+1305 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as
+1306 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as
+1307 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/rsa/RSAKey.as
+1308 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as
+1309 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as
+1310 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as
+1311 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as
+1312 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as
+1313 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as
+1314 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as
+1315 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as
+1316 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/dump.txt
+1317 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as
+1318 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as
+1319 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as
+1320 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/aeskey.pl
+1321 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as
+1322 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as
+1323 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as
+1324 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as
+1325 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as
+1326 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as
+1327 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as
+1328 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SSLPad.as
+1329 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as
+1330 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as
+1331 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as
+1332 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as
+1333 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as
+1334 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as
+1335 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as
+1336 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as
+1337 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as
+1338 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as
+1339 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as
+1340 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as
+1341 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as
+1342 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as
+1343 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as
+1344 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as
+1345 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as
+1346 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as
+1347 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as
+1348 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as
+1349 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as
+1350 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as
+1351 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as
+1352 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as
+1353 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as
+1354 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as
+1355 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as
+1356 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/BulkCiphers.as
+1357 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as
+1358 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as
+1359 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as
+1360 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as
+1361 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLConnectionState.as
+1362 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as
+1363 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as
+1364 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as
+1365 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as
+1366 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEngine.as
+1367 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as
+1368 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as
+1369 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as
+1370 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as
+1371 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as
+1372 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSTest.as
+1373 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as
+1374 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as
+1375 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as
+1376 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as
+1377 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as
+1378 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as
+1379 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as
+1380 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as
+1381 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as
+1382 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as
+1383 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as
+1384 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as
+1385 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as
+1386 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as
+1387 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as
+1388 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as
+1389 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as
+1390 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as
+1391 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as
+1392 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as
+1393 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as
+1394 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as
+1395 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as
+1396 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/IWebSocketLogger.as
+1397 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocket.as
+1398 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketEvent.as
+1399 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketMain.as
+1400 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/flash-src/WebSocketMainInsecure.as
+1401 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/sample.html
+1402 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/WebSocketMain.swf
+1403 silly gunzTarPerm extractEntry lib/vendor/web-socket-js/WebSocketMainInsecure.zip
+1404 silly gunzTarPerm extractEntry Makefile
+1405 silly gunzTarPerm extractEntry test/events.test.js
+1406 silly gunzTarPerm extractEntry test/io.test.js
+1407 silly gunzTarPerm extractEntry test/parser.test.js
+1408 silly gunzTarPerm extractEntry test/socket.test.js
+1409 silly gunzTarPerm extractEntry test/util.test.js
+1410 silly gunzTarPerm extractEntry test/worker.js
+1411 silly gunzTarPerm extractEntry test/node/builder.common.js
+1412 silly gunzTarPerm extractEntry test/node/builder.test.js
+1413 verbose read json /Users/appacademy/.npm/socket.io-client/0.9.16/package/package.json
+1414 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1415 silly lockFile 0de36099--socket-io-client-0-9-16-package /Users/appacademy/.npm/socket.io-client/0.9.16/package
+1416 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1417 silly lockFile 5802b0f5-ket-io-client-0-9-16-package-tgz /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1418 silly shasum updated bytes 40960
+1419 silly shasum updated bytes 40960
+1420 silly shasum updated bytes 40960
+1421 silly shasum updated bytes 40960
+1422 silly shasum updated bytes 40960
+1423 silly shasum updated bytes 40960
+1424 silly shasum updated bytes 40960
+1425 silly shasum updated bytes 40960
+1426 silly shasum updated bytes 40960
+1427 silly shasum updated bytes 40960
+1428 silly shasum updated bytes 40960
+1429 silly shasum updated bytes 40960
+1430 silly shasum updated bytes 40960
+1431 silly shasum updated bytes 40960
+1432 silly shasum updated bytes 40960
+1433 silly shasum updated bytes 40960
+1434 silly shasum updated bytes 40960
+1435 silly shasum updated bytes 40960
+1436 silly shasum updated bytes 40960
+1437 silly shasum updated bytes 40960
+1438 silly shasum updated bytes 40960
+1439 silly shasum updated bytes 40960
+1440 silly shasum updated bytes 40960
+1441 silly shasum updated bytes 40960
+1442 silly shasum updated bytes 32939
+1443 info shasum 4da7515c5e773041d1b423970415bcc430f35fc6
+1443 info shasum /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz
+1444 verbose from cache /Users/appacademy/.npm/socket.io-client/0.9.16/package/package.json
+1445 verbose chmod /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz 644
+1446 verbose chown /Users/appacademy/.npm/socket.io-client/0.9.16/package.tgz [ 501, 20 ]
+1447 silly lockFile 83592abd-ient-socket-io-client-0-9-16-tgz https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz
+1448 silly lockFile 83592abd-ient-socket-io-client-0-9-16-tgz https://registry.npmjs.org/socket.io-client/-/socket.io-client-0.9.16.tgz
+1449 silly lockFile c81dc0af-socket-io-client-0-9-16 socket.io-client@0.9.16
+1450 silly lockFile c81dc0af-socket-io-client-0-9-16 socket.io-client@0.9.16
+1451 info retry will retry, error on last attempt: Error: socket hang up
+1452 info retry will retry, error on last attempt: Error: socket hang up
+1453 info retry will retry, error on last attempt: Error: socket hang up
+1454 info retry will retry, error on last attempt: Error: socket hang up
+1455 info retry will retry, error on last attempt: Error: socket hang up
+1456 http 500 https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+1457 error fetch failed https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+1458 info retry will retry, error on last attempt: Error: 500 Internal Server Error
+1459 http 500 https://registry.npmjs.org/base64id/0.1.0
+1460 verbose bad json Internal routing error
+1460 verbose bad json
+1460 verbose bad json Sorry, we cannot connect to the intended server.
+1460 verbose bad json
+1460 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+1460 verbose bad json
+1460 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+1461 error registry error parsing json
+1462 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+1462 info retry Internal routing error
+1462 info retry
+1462 info retry Sorry, we cannot connect to the intended server.
+1462 info retry
+1462 info retry We have just been notified of this problem. We will correct it as soon as possible.
+1462 info retry
+1462 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+1463 http 500 https://registry.npmjs.org/redis/0.7.3
+1464 verbose bad json Internal routing error
+1464 verbose bad json
+1464 verbose bad json Sorry, we cannot connect to the intended server.
+1464 verbose bad json
+1464 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+1464 verbose bad json
+1464 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+1465 error registry error parsing json
+1466 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+1466 info retry Internal routing error
+1466 info retry
+1466 info retry Sorry, we cannot connect to the intended server.
+1466 info retry
+1466 info retry We have just been notified of this problem. We will correct it as soon as possible.
+1466 info retry
+1466 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+1467 http 500 https://registry.npmjs.org/mkdirp/0.3.5
+1468 verbose bad json Internal routing error
+1468 verbose bad json
+1468 verbose bad json Sorry, we cannot connect to the intended server.
+1468 verbose bad json
+1468 verbose bad json We have just been notified of this problem. We will correct it as soon as possible.
+1468 verbose bad json
+1468 verbose bad json Feel free to contact us if you have any questions: support@iriscouch.com
+1469 error registry error parsing json
+1470 info retry will retry, error on last attempt: SyntaxError: Unexpected token I
+1470 info retry Internal routing error
+1470 info retry
+1470 info retry Sorry, we cannot connect to the intended server.
+1470 info retry
+1470 info retry We have just been notified of this problem. We will correct it as soon as possible.
+1470 info retry
+1470 info retry Feel free to contact us if you have any questions: support@iriscouch.com
+1471 http 500 https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+1472 error fetch failed https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+1473 info retry will retry, error on last attempt: Error: 500 Internal Server Error
+1474 info trying registry request attempt 3 at 10:50:14
+1475 http GET https://registry.npmjs.org/debug
+1476 info trying registry request attempt 3 at 10:50:14
+1477 http GET https://registry.npmjs.org/methods/0.0.1
+1478 info trying registry request attempt 3 at 10:50:14
+1479 http GET https://registry.npmjs.org/cookie-signature/1.0.1
+1480 info trying registry request attempt 3 at 10:50:14
+1481 http GET https://registry.npmjs.org/cookie/0.1.0
+1482 info trying registry request attempt 3 at 10:50:14
+1483 http GET https://registry.npmjs.org/send/0.1.4
+1484 info retry fetch attempt 3 at 10:50:15
+1485 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902553-0.24321826617233455/tmp.tgz
+1486 info trying registry request attempt 3 at 10:50:15
+1487 verbose etag "CTLQBM2XI54YVEFGWA4X7AK4Y"
+1488 http GET https://registry.npmjs.org/base64id/0.1.0
+1489 http GET https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+1490 info trying registry request attempt 3 at 10:50:15
+1491 verbose etag "7M9HDQPHSGQI0ESS2TCYPM7X5"
+1492 http GET https://registry.npmjs.org/redis/0.7.3
+1493 info trying registry request attempt 3 at 10:50:15
+1494 http GET https://registry.npmjs.org/mkdirp/0.3.5
+1495 info retry fetch attempt 3 at 10:50:15
+1496 verbose fetch to= /var/folders/z9/ccm9f83x2kd9_s24pz9q6x700000gn/T/npm-39927/1383590902615-0.47036022739484906/tmp.tgz
+1497 http GET https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+1498 silly lockFile 555fd08a-send-0-1-4 send@0.1.4
+1499 silly lockFile 555fd08a-send-0-1-4 send@0.1.4
+1500 silly lockFile 209c2920-methods-0-0-1 methods@0.0.1
+1501 silly lockFile 209c2920-methods-0-0-1 methods@0.0.1
+1502 verbose about to build /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express
+1503 info /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express unbuild
+1504 verbose from cache /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/express/package.json
+1505 info preuninstall express@3.4.2
+1506 silly lockFile b55e145e-cookie-0-1-0 cookie@0.1.0
+1507 silly lockFile b55e145e-cookie-0-1-0 cookie@0.1.0
+1508 silly lockFile d4a1eba1-cookie-signature-1-0-1 cookie-signature@1.0.1
+1509 silly lockFile d4a1eba1-cookie-signature-1-0-1 cookie-signature@1.0.1
+1510 silly lockFile 3ac45eff-debug debug@*
+1511 silly lockFile 3ac45eff-debug debug@*
+1512 info uninstall express@3.4.2
+1513 verbose true,/Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules,/Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules unbuild express@3.4.2
+1514 verbose /Users/appacademy/Desktop/aa_work/w8/chatApp/node_modules/.bin,[object Object] binRoot
+1515 info postuninstall express@3.4.2
+1516 error Error: socket hang up
+1516 error     at createHangUpError (http.js:1373:15)
+1516 error     at CleartextStream.socketCloseListener (http.js:1424:23)
+1516 error     at CleartextStream.EventEmitter.emit (events.js:126:20)
+1516 error     at SecurePair.destroy (tls.js:956:22)
+1516 error     at process.startup.processNextTick.process._tickCallback (node.js:245:9)
+1517 error If you need help, you may report this log at:
+1517 error     <http://github.com/isaacs/npm/issues>
+1517 error or email it to:
+1517 error     <npm-@googlegroups.com>
+1518 error System Darwin 12.2.1
+1519 error command "/opt/local/bin/node" "/opt/local/bin/npm" "install"
+1520 error cwd /Users/appacademy/Desktop/aa_work/w8/chatApp
+1521 error node -v v0.8.22
+1522 error npm -v 1.2.14
+1523 error code ECONNRESET
+1524 verbose exit [ 1, true ]
