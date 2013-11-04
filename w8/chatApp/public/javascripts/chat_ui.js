@@ -13,7 +13,9 @@
   var ChatUI = root.ChatUI = (root.ChatUI || {});
 
   ChatUI.printMessage = function(data){
-   $('#convo').append("<li>" + data.message +  "</li>")
+    var listItem = $('<li></li>')
+    listItem.text(data.message)
+   $('#convo').append(listItem)
  };
 
   var socket = ChatUI.socket = io.connect();
