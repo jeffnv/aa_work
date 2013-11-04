@@ -1,0 +1,17 @@
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/public/javascripts/serializeJSON.js"></script>
+</head>
+<body>
+  <h1>It works!</h1>
+  <form id="chat-input">
+    <label for="message">Message</label>
+    <input type="text" name="message" value="" id="message">
+    <button id='chat-button'>submit message</button>
+    <ul id="convo"></ul>
+  </form>
+  <script src="/public/javascripts/chat_ui.js"></script>
+</body>
+</html>

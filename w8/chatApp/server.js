@@ -1,9 +1,12 @@
 var http = require('http');
-var fs = require('fs');
+var path = require('path');
+var mime = require('mime');
+var router = require('./router').route;
 
-http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('Hello World\n');
+var our_server = http.createServer(function (request, response) {
+  router(request, response);
 }).listen(8080);
+
+var socket = require('./lib/chat_server.js')(our_server);
 
 console.log('Server running at http://127.0.0.1:8080/');
